@@ -1,0 +1,6 @@
+playwright==1.48.0
+duckduckgo_search==6.2.11
+requests==2.32.3
+beautifulsoup4==4.12.3
+dnspython==2.6.1
+pillow==10.4.0
