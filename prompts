@@ -1,0 +1,19 @@
+I need an AI-powered lead scraper and form filler built ASAP to generate leads until I’m rich. I’m broke, so this must use free tools only (no paid proxies or CAPTCHA solvers). Here’s the project:
+
+**Goal**: Build a Node.js bot using Puppeteer, Cheerio, and node-telegram-bot-api to:
+1. Search 1-2 keywords per minute (e.g., “Lawyers in California,” “Yacht Sales in Miami”) on Google, DuckDuckGo, and Bing with randomized delays (1-3 seconds) to avoid detection.
+2. Extract from each website (top 5 URLs per engine):
+   - Company name (from <title>, <h1>, or footer)
+   - Domain (e.g., skg-law.com)
+   - MX record (using Node.js dns module)
+   - Leads (phone, email, address)
+   - Contact page URL (find via links or patterns like /contact)
+3. Fill text-based contact forms with predefined data (e.g., “John Doe,” “john@example.com,” “555-123-4567,” “Interested in your services”). For forms with CAPTCHAs or errors, fill as much as possible and capture a screenshot.
+4. Take high-res screenshots (1920x1080) of filled forms (success, CAPTCHA, or error states), compress with sharp to meet Telegram’s 50 MB limit, and store in memory (no local storage).
+5. Send one Telegram message per domain with all data (company, domain, MX record, leads, contact page, status like “CAPTCHA detected”) and the screenshot, using node-telegram-bot-api.
+6. Cycle through a provided keyword list for varied results.
+7. Use free anti-detection (puppeteer-extra-plugin-stealth, randomized user agents, delays). No local storage. Skip file uploads for forms.
+
+**Urgency**: I need this working ASAP to generate leads. I’m on a zero budget, so no paid services. Work on this iteratively until it’s complete and I’m generating leads consistently. Provide a detailed code structure first, then implement and test with one keyword on Google (top 5 URLs), filling forms and sending to Telegram. Expand to all engines and keywords after testing. Include a legal warning about automated form filling risks (e.g., CCPA compliance).
+
+**My Code**: I have an old script (I’ll share it). Evaluate how close it is to the goal (as a percentage) and improve it. Let’s get this done fast so I can start making money!
