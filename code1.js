@@ -6,7 +6,7 @@ from urllib.parse import urljoin, urlparse
 from duckduckgo_search import DDGS
 
 # === CONFIG ===
-BOT_TOKEN = "7935254151:AAHHN3zAfvCgw6RQ7IED8ez6lHmaxiJAtk"
+BOT_TOKEN = "7619040891:AAF9pfQQme32XvhTfUb97jzky5w4ZEaBzwc"
 CHAT_ID = "5172045930"
 DEBUG = False
 
@@ -15,12 +15,12 @@ EMAIL = "kevandcoceo@hotmail.com"
 PHONE = "+365433225"
 ADDRESS = "123 Main St, New York, NY 10001"
 SUBJECT = "Partnership with Concierge"
-MESSAGE = "Hi I'm Kevin, I run a concierge service and I get a lot of clients looking to take trips in July and August. Please contact me to discuss a potential partnership."
+MESSAGE = "Hi I'm Kevin, I run a concierge service and I get a few issues with one of my clients, a politician and ive been subpeoned i need someone to represewnt me i have done nothing wrong kindly reach oput via email as im not in the states currently "
 
 KEYWORDS = [
-    "private jet charter USA contact",
-    "luxury yacht rental Dubai enquiry",
-    "private aviation charter Europe contact"
+    "lawq USA contact",
+    "luxury lawyers enquiry",
+    "lawyers Europe contact"
 ]
 CONTACT_KEYWORDS = ["contact", "enquiry", "connect", "getintouch", "message", "reach", "touch"]
 
