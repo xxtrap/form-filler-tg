@@ -17,3 +17,4 @@ I need an AI-powered lead scraper and form filler built ASAP to generate leads u
 **Urgency**: I need this working ASAP to generate leads. I’m on a zero budget, so no paid services. Work on this iteratively until it’s complete and I’m generating leads consistently. Provide a detailed code structure first, then implement and test with one keyword on Google (top 5 URLs), filling forms and sending to Telegram. Expand to all engines and keywords after testing. Include a legal warning about automated form filling risks (e.g., CCPA compliance).
 
 **My Code**: I have an old script (I’ll share it). Evaluate how close it is to the goal (as a percentage) and improve it. Let’s get this done fast so I can start making money!
+now i got 2captcha api we can use for captchas
