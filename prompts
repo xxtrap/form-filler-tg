@@ -1,6 +1,6 @@
 I need an AI-powered lead scraper and form filler built ASAP to generate leads until I’m rich. I’m broke, so this must use free tools only. Here’s the project:
 
-**Goal**: Build a Node.js bot using Puppeteer, Cheerio, and node-telegram-bot-api to:
+**Goal**: Build a python script
 1. Search 1-2 keywords per minute (e.g., “Lawyers in California,” “Yacht Sales in Miami”) on Google, DuckDuckGo, and Bing with randomized delays (1-3 seconds) to avoid detection.
 2. Extract from each website (top 5 URLs per engine):
    - Company name (from <title>, <h1>, or footer)
