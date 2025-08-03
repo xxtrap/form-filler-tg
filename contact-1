@@ -1,0 +1,571 @@
+{
+    "title": "contact-us1",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.mirerlaw.com/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.mirerlaw.com/",
+                    "title": "Miami Criminal Defense Attorney | Law Office of Michael Mirer"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Contact Us[role=\"menuitem\"]"
+                ],
+                [
+                    "li.active > a"
+                ],
+                [
+                    "xpath///*[@id=\"HeaderS1TopNav\"]/li[9]/a"
+                ],
+                [
+                    "pierce/li.active > a"
+                ]
+            ],
+            "offsetY": 31.84375,
+            "offsetX": 50.578125,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.mirerlaw.com/contact-us/",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/First Name"
+                ],
+                [
+                    "#Form_ITM0_FirstName"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_FirstName\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_FirstName"
+                ]
+            ],
+            "offsetY": 16.703125,
+            "offsetX": 119.53125
+        },
+        {
+            "type": "change",
+            "value": "kevin",
+            "selectors": [
+                [
+                    "aria/First Name"
+                ],
+                [
+                    "#Form_ITM0_FirstName"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_FirstName\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_FirstName"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "fang",
+            "selectors": [
+                [
+                    "aria/Last Name"
+                ],
+                [
+                    "#Form_ITM0_LastName"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_LastName\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_LastName"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li:nth-of-type(3) label"
+                ],
+                [
+                    "xpath///*[@id=\"Form\"]/fieldset/ul/li[3]/div/label"
+                ],
+                [
+                    "pierce/li:nth-of-type(3) label"
+                ],
+                [
+                    "text/Phone"
+                ]
+            ],
+            "offsetY": 10.109375,
+            "offsetX": 81.53125
+        },
+        {
+            "type": "change",
+            "value": "+365433225",
+            "selectors": [
+                [
+                    "aria/Phone"
+                ],
+                [
+                    "#Form_ITM0_Phone"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_Phone\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_Phone"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kevandcoceo@hotmail.com",
+            "selectors": [
+                [
+                    "aria/Email[role=\"textbox\"]"
+                ],
+                [
+                    "#Form_ITM0_EmailAddress"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_EmailAddress\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_EmailAddress"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.sel label"
+                ],
+                [
+                    "xpath///*[@id=\"Form\"]/fieldset/ul/li[5]/div/label"
+                ],
+                [
+                    "pierce/li.sel label"
+                ],
+                [
+                    "text/Are you a new"
+                ]
+            ],
+            "offsetY": 9.125,
+            "offsetX": 312.53125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.sel > div"
+                ],
+                [
+                    "xpath///*[@id=\"Form\"]/fieldset/ul/li[5]/div"
+                ],
+                [
+                    "pierce/li.sel > div"
+                ]
+            ],
+            "offsetY": 23.421875,
+            "offsetX": 389.40625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Phone"
+                ],
+                [
+                    "#Form_ITM0_Phone"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_Phone\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_Phone"
+                ],
+                [
+                    "text/(365) 433-225"
+                ]
+            ],
+            "offsetY": 10.3125,
+            "offsetX": 139.53125
+        },
+        {
+            "type": "change",
+            "value": "(365) 433-2256",
+            "selectors": [
+                [
+                    "aria/Phone"
+                ],
+                [
+                    "#Form_ITM0_Phone"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_Phone\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_Phone"
+                ],
+                [
+                    "text/(365) 433-225"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Phone"
+                ],
+                [
+                    "#Form_ITM0_Phone"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_Phone\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_Phone"
+                ],
+                [
+                    "text/(365) 433-225"
+                ]
+            ],
+            "offsetY": 11.3125,
+            "offsetX": 200.53125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/[role=\"main\"]",
+                    "aria/[role=\"list\"]"
+                ],
+                [
+                    "#MainZone ul"
+                ],
+                [
+                    "xpath///*[@id=\"Form\"]/fieldset/ul"
+                ],
+                [
+                    "pierce/#MainZone ul"
+                ]
+            ],
+            "offsetY": 138.390625,
+            "offsetX": 121.40625,
+            "duration": 585.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Phone"
+                ],
+                [
+                    "#Form_ITM0_Phone"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_Phone\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_Phone"
+                ],
+                [
+                    "text/(365) 433-2256"
+                ]
+            ],
+            "offsetY": 11.3125,
+            "offsetX": 157.53125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.valid label"
+                ],
+                [
+                    "xpath///*[@id=\"Form\"]/fieldset/ul/li[3]/div/label"
+                ],
+                [
+                    "pierce/li.valid label"
+                ],
+                [
+                    "text/Phone"
+                ]
+            ],
+            "offsetY": 14.109375,
+            "offsetX": 131.53125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.valid label"
+                ],
+                [
+                    "xpath///*[@id=\"Form\"]/fieldset/ul/li[3]/div/label"
+                ],
+                [
+                    "pierce/li.valid label"
+                ],
+                [
+                    "text/Phone"
+                ]
+            ],
+            "offsetY": 11.109375,
+            "offsetX": 102.53125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.sel label"
+                ],
+                [
+                    "xpath///*[@id=\"Form\"]/fieldset/ul/li[5]/div/label"
+                ],
+                [
+                    "pierce/li.sel label"
+                ],
+                [
+                    "text/Are you a new"
+                ]
+            ],
+            "offsetY": 8.125,
+            "offsetX": 392.53125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.sel > div"
+                ],
+                [
+                    "xpath///*[@id=\"Form\"]/fieldset/ul/li[5]/div"
+                ],
+                [
+                    "pierce/li.sel > div"
+                ]
+            ],
+            "offsetY": 24.421875,
+            "offsetX": 400.40625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.sel > div"
+                ],
+                [
+                    "xpath///*[@id=\"Form\"]/fieldset/ul/li[5]/div"
+                ],
+                [
+                    "pierce/li.sel > div"
+                ]
+            ],
+            "offsetY": 24.421875,
+            "offsetX": 400.40625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Are you a new client?"
+                ],
+                [
+                    "#Form_ITM0_LeadTypeID"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_LeadTypeID\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_LeadTypeID"
+                ]
+            ],
+            "offsetY": 11.328125,
+            "offsetX": 515.53125
+        },
+        {
+            "type": "change",
+            "value": "1",
+            "selectors": [
+                [
+                    "aria/Are you a new client?"
+                ],
+                [
+                    "#Form_ITM0_LeadTypeID"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_LeadTypeID\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_LeadTypeID"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/How can we help you?"
+                ],
+                [
+                    "#Form_ITM0_Message"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_Message\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_Message"
+                ]
+            ],
+            "offsetY": 11.09375,
+            "offsetX": 302.53125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.msg > div"
+                ],
+                [
+                    "xpath///*[@id=\"Form\"]/fieldset/ul/li[6]/div"
+                ],
+                [
+                    "pierce/li.msg > div"
+                ],
+                [
+                    "text/How can we help you?\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\tPlease"
+                ]
+            ],
+            "offsetY": 9.1875,
+            "offsetX": 6.40625,
+            "duration": 1098.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/How can we help you?"
+                ],
+                [
+                    "#Form_ITM0_Message"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_Message\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_Message"
+                ]
+            ],
+            "offsetY": 6.09375,
+            "offsetX": 25.53125
+        },
+        {
+            "type": "change",
+            "value": "Hi I'm Kevin, I run a concierge service and I get a few issues with one of my clients, a politician and ive been subpeoned i need someone to represewnt me i have done nothing wrong kindly reach oput via email as im not in the states currently",
+            "selectors": [
+                [
+                    "aria/How can we help you?"
+                ],
+                [
+                    "#Form_ITM0_Message"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_Message\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_Message"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Send Message"
+                ],
+                [
+                    "#Form_ITM0_ctl16"
+                ],
+                [
+                    "xpath///*[@id=\"Form_ITM0_ctl16\"]"
+                ],
+                [
+                    "pierce/#Form_ITM0_ctl16"
+                ],
+                [
+                    "text/Send Message"
+                ]
+            ],
+            "offsetY": 22.125,
+            "offsetX": 119.40625,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://td.doubleclick.net/td/rul/1029562085?random=1754190073442&cv=11&fst=1754190073442&fmt=3&bg=ffffff&guid=ON&async=1&en=form_submit&gtm=45be57u1v9213701840za200zb839175480zd839175480&gcd=13l3l3l3l1l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813~105087538~105087540~105103161~105103163~105113531&u_w=1920&u_h=1080&url=https%3A%2F%2Fwww.mirerlaw.com%2Fcontact-us%2F&ref=https%3A%2F%2Fwww.mirerlaw.com%2F&hn=www.googleadservices.com&frm=0&tiba=Contact%20Us%20%7C%20Free%20Case%20Evaluations%20%7C%20Law%20Office%20of%20Michael%20Mirer&npa=0&pscdl=noapi&auid=1929445149.1754189767&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.184%7CGoogle%2520Chrome%3B138.0.7204.184&uamb=0&uam=&uap=macOS&uapv=14.5.0&uaw=0&fledge=1&data=event%3Dform_submit",
+                    "title": "Thank You | Miami Criminal Defense Attorney"
+                }
+            ]
+        }
+    ]
+}
