@@ -1,0 +1,620 @@
+{
+    "title": "c5",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.bryanfagan.com/contact-us/?_gl=1*l89q33*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw7rbEBhB5EiwA1V49nenXDJx4NauOp1XUmYEOrHjKqUiPNzVXTSap9EOl2aXI7iXg_cIItRoCVP4QAvD_BwE&gbraid=0AAAAAqOIGpx-b6bVNXMlFdONKXbd3sPox",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.bryanfagan.com/contact-us/?_gl=1*l89q33*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw7rbEBhB5EiwA1V49nenXDJx4NauOp1XUmYEOrHjKqUiPNzVXTSap9EOl2aXI7iXg_cIItRoCVP4QAvD_BwE&gbraid=0AAAAAqOIGpx-b6bVNXMlFdONKXbd3sPox",
+                    "title": "Contact Us At The Law Office Of Bryan Fagan, PLLC"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 49,
+            "offsetX": 117.5
+        },
+        {
+            "type": "change",
+            "value": "kh",
+            "selectors": [
+                [
+                    "#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 24,
+            "offsetX": 133.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 24,
+            "offsetX": 133.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 128.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 34,
+            "offsetX": 98
+        },
+        {
+            "type": "change",
+            "value": "kwe",
+            "selectors": [
+                [
+                    "#lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#email-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"email-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#email-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 17,
+            "offsetX": 165.5
+        },
+        {
+            "type": "change",
+            "value": "lolaissah@gmail.com",
+            "selectors": [
+                [
+                    "#email-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"email-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#email-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 138
+        },
+        {
+            "type": "change",
+            "value": "1722397162",
+            "selectors": [
+                [
+                    "#phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 38,
+            "offsetX": 379.5
+        },
+        {
+            "type": "change",
+            "value": "Criminal Law",
+            "selectors": [
+                [
+                    "#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#what_criminal_law_matter_can_we_assist_you_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"what_criminal_law_matter_can_we_assist_you_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#what_criminal_law_matter_can_we_assist_you_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 38,
+            "offsetX": 227.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 18.40625,
+            "offsetX": 219.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 10.40625,
+            "offsetX": 229.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 59,
+            "offsetX": 253.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "[data-test-id='hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6']"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/[data-test-id='hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6']"
+                ]
+            ],
+            "offsetY": 335,
+            "offsetX": 253.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 36.40625,
+            "offsetX": 327.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 34.40625,
+            "offsetX": 452.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/[role=\"alert\"]",
+                    "aria/[role=\"none\"]"
+                ],
+                [
+                    "fieldset:nth-of-type(4) li"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]/fieldset[4]/div/div[2]/ul/li"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(4) li"
+                ]
+            ],
+            "offsetY": 21,
+            "offsetX": 532.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 21.40625,
+            "offsetX": 437.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 26.40625,
+            "offsetX": 163.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/[role=\"alert\"]",
+                    "aria/[role=\"none\"]"
+                ],
+                [
+                    "fieldset:nth-of-type(4) li"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]/fieldset[4]/div/div[2]/ul/li"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(4) li"
+                ]
+            ],
+            "offsetY": 12,
+            "offsetX": 336.5
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "u"
+        },
+        {
+            "type": "keyUp",
+            "key": "u",
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "e"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "j"
+        },
+        {
+            "type": "keyUp",
+            "key": "e",
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "j",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#agreed_for_marketing_updates0-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"agreed_for_marketing_updates0-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#agreed_for_marketing_updates0-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 12.765625,
+            "offsetX": 9.75
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Send Information"
+                ],
+                [
+                    "[data-test-id='hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6'] > div input"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]/div/div[2]/input"
+                ],
+                [
+                    "pierce/[data-test-id='hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6'] > div input"
+                ],
+                [
+                    "text/Send Information"
+                ]
+            ],
+            "offsetY": 36.8125,
+            "offsetX": 40.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 44.40625,
+            "offsetX": 265.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.elementor-element-642ebbc9 > div"
+                ],
+                [
+                    "xpath///*[@id=\"content\"]/div/div/div[2]/div/div/div[1]/div"
+                ],
+                [
+                    "pierce/div.elementor-element-642ebbc9 > div"
+                ]
+            ],
+            "offsetY": 624,
+            "offsetX": 663.5,
+            "duration": 1039.3999999985099
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 72.40625,
+            "offsetX": 167.5
+        },
+        {
+            "type": "change",
+            "value": "vugsduew",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Send Information"
+                ],
+                [
+                    "div.hs_submit input"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]/div[2]/div[2]/input"
+                ],
+                [
+                    "pierce/div.hs_submit input"
+                ],
+                [
+                    "text/Send Information"
+                ]
+            ],
+            "offsetY": 44.8125,
+            "offsetX": 39.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Send Information"
+                ],
+                [
+                    "div.hs_submit input"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]/div[2]/div[2]/input"
+                ],
+                [
+                    "pierce/div.hs_submit input"
+                ],
+                [
+                    "text/Send Information"
+                ]
+            ],
+            "offsetY": 31.8125,
+            "offsetX": 131.5
+        }
+    ]
+}
