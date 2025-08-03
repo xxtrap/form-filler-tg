@@ -1,4 +1,4 @@
-I need an AI-powered lead scraper and form filler built ASAP to generate leads until I’m rich. I’m broke, so this must use free tools only (no paid proxies or CAPTCHA solvers). Here’s the project:
+I need an AI-powered lead scraper and form filler built ASAP to generate leads until I’m rich. I’m broke, so this must use free tools only. Here’s the project:
 
 **Goal**: Build a Node.js bot using Puppeteer, Cheerio, and node-telegram-bot-api to:
 1. Search 1-2 keywords per minute (e.g., “Lawyers in California,” “Yacht Sales in Miami”) on Google, DuckDuckGo, and Bing with randomized delays (1-3 seconds) to avoid detection.
@@ -13,8 +13,68 @@ I need an AI-powered lead scraper and form filler built ASAP to generate leads u
 5. Send one Telegram message per domain with all data (company, domain, MX record, leads, contact page, status like “CAPTCHA detected”) and the screenshot, using node-telegram-bot-api.
 6. Cycle through a provided keyword list for varied results.
 7. Use free anti-detection (puppeteer-extra-plugin-stealth, randomized user agents, delays). No local storage. Skip file uploads for forms.
+8.add blacklist of domains like if domains contain words like "microsoft" "outlook" should ALWAYS SKIP ill have a whole blacklist file
+9.always delete browser history and clear all cookies when doing the searches 
 
 **Urgency**: I need this working ASAP to generate leads. I’m on a zero budget, so no paid services. Work on this iteratively until it’s complete and I’m generating leads consistently. Provide a detailed code structure first, then implement and test with one keyword on Google (top 5 URLs), filling forms and sending to Telegram. Expand to all engines and keywords after testing. Include a legal warning about automated form filling risks (e.g., CCPA compliance).
 
 **My Code**: I have an old script (I’ll share it). Evaluate how close it is to the goal (as a percentage) and improve it. Let’s get this done fast so I can start making money!
 now i got 2captcha api we can use for captchas
+
+ill also record myt activity with about 2 to 3 sites so u see how easy its done
+
+for the searching see how i opened the multiple tabs, u can do same open them, liek hguman 1 by 1
+{
+    "title": "searching-1",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.google.com/search?q=criminal+lawyers+in+miami&oq=criminal+lawyers+in+miami+&gs_lcrp=EgZjaHJvbWUyCAgAEEUYHhg5MggIARAAGAcYHjIICAIQABgHGB4yBggDEAAYHjIGCAQQABgeMgYIBRAAGB4yBggGEAAYHjIICAcQABgFGB4yCggIEAAYBRgHGB4yCggJEAAYBRgHGB7SAQkxMTk4MGowajmoAgCwAgE&sourceid=chrome&ie=UTF-8",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=criminal+lawyers+in+miami&oq=criminal+lawyers+in+miami+&gs_lcrp=EgZjaHJvbWUyCAgAEEUYHhg5MggIARAAGAcYHjIICAIQABgHGB4yBggDEAAYHjIGCAQQABgeMgYIBRAAGB4yBggGEAAYHjIICAcQABgFGB4yCggIEAAYBRgHGB4yCggJEAAYBRgHGB7SAQkxMTk4MGowajmoAgCwAgE&sourceid=chrome&ie=UTF-8",
+                    "title": "criminal lawyers in miami - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Search[role=\"button\"]",
+                    "aria/[role=\"image\"]"
+                ],
+                [
+                    "#searchform button svg"
+                ],
+                [
+                    "xpath///*[@id=\"tsf\"]/div[1]/div[1]/div[2]/button/div/span/svg"
+                ],
+                [
+                    "pierce/#searchform button svg"
+                ]
+            ],
+            "offsetY": 8,
+            "offsetX": 16.5,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=criminal+lawyers+in+miami&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifPlMhTrlZffipcMoQ3MoGwOnjRt9w%3A1754189545646&ei=6c6OaM-gJ5Xii-gP0OuPmAw&ved=0ahUKEwiPufKl0e2OAxUV8QIHHdD1A8MQ4dUDCBA&oq=criminal+lawyers+in+miami&gs_lp=Egxnd3Mtd2l6LXNlcnAiGWNyaW1pbmFsIGxhd3llcnMgaW4gbWlhbWlIAFAAWABwAHgBkAEAmAEAoAEAqgEAuAEMyAEAmAIAoAIAmAMAkgcAoAcAsgcAuAcAwgcAyAcA&sclient=gws-wiz-serp",
+                    "title": "criminal lawyers in miami - Google Search"
+                }
+            ]
+        }
+    ]
+}
+
