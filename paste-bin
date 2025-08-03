@@ -2,34 +2,679 @@ https://pastebin.com/H1UDBytE
 https://pastebin.com/38XjpT5y
 https://pastebin.com/NSgi4xkF
 
-I need an AI-powered lead scraper and form filler built ASAP to generate leads until I’m rich. I’m broke, so this must use free tools only. Here’s the project:
-
-**Goal**: Build a python script
-1. Search 1-2 keywords per minute (e.g., “Lawyers in California,” “Yacht Sales in Miami”) on Google, DuckDuckGo, and Bing with randomized delays (1-3 seconds) to avoid detection.
-2. Extract from each website (top 5 URLs per engine):
-   - Company name (from <title>, <h1>, or footer)
-   - Domain (e.g., skg-law.com)
-   - MX record (using Node.js dns module)
-   - Leads (phone, email, address)
-   - Contact page URL (find via links or patterns like /contact)
-3. Fill text-based contact forms with predefined data (e.g., “John Doe,” “john@example.com,” “555-123-4567,” “Interested in your services”). For forms with CAPTCHAs or errors, fill as much as possible and capture a screenshot.
-4. Take high-res screenshots (1920x1080) of filled forms (success, CAPTCHA, or error states), compress with sharp to meet Telegram’s 50 MB limit, and store in memory (no local storage).
-5. Send one Telegram message per domain with all data (company, domain, MX record, leads, contact page, status like “CAPTCHA detected”) and the screenshot, using node-telegram-bot-api.
-6. Cycle through a provided keyword list for varied results.
-7. Use free anti-detection (puppeteer-extra-plugin-stealth, randomized user agents, delays). No local storage. Skip file uploads for forms.
-8.add blacklist of domains like if domains contain words like "microsoft" "outlook" should ALWAYS SKIP ill have a whole blacklist file
-9.always delete browser history and clear all cookies when doing the searches 
-
-**Urgency**: I need this working ASAP to generate leads. I’m on a zero budget, so no paid services. Work on this iteratively until it’s complete and I’m generating leads consistently. Provide a detailed code structure first, then implement and test with one keyword on Google (top 5 URLs), filling forms and sending to Telegram. Expand to all engines and keywords after testing. Include a legal warning about automated form filling risks (e.g., CCPA compliance).
-
-**My Code**: I have an old script (I’ll share it). Evaluate how close it is to the goal (as a percentage) and improve it. Let’s get this done fast so I can start making money!
-now i got 2captcha api we can use for captchas
-
-ill also record myt activity with about 5 sites so u see how easy its done, dont code until i told u to i want u to see my behavior i made mistakes dont make them and wheneevr i highlighted something its cos 
-i wanted u to see it 
-
-always make sure to tick all boxes and that
-
-for the searching see how i opened the multiple tabs, u can do same open them, like human 1 by 1
 
 2captcha api "71a87dcb7b9f01c390a0c26357a14788" i only got $3 dont abuse
+
+
+ filtering for ads or irrelevant domains pls
+
+Tab Opening: Confirm sequential tab opening (1-3s delays). 1 sec delays just ignore irellevant ads without my key words 
+Pagination: Confirm processing 2-3 pages per keyword. process first 5 pages alsways all domains lol
+CAPTCHA Budget: Prioritize 2Captcha usage (e.g., reCAPTCHA only)? yes only recaptcha skip difficult ones
+Keywords: Switch to Lawyers in California, Yacht Sales in Miami? lawuyers only forget about yacht and jets bs
+Testing: Ready to test after recordings? not yet lets discuss A-Z before u code anything
+
+{
+    "title": "c6",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://davidsoncolaw.com/services/commercial/?utm_source=Google+ads&utm_medium=CPC&utm_campaign=Commercial+services&utm_term=business%20lawyer%20in%20dubai&utm_campaign=Davidson+co+law+%7C+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=4221611439&hsa_cam=1438703999&hsa_grp=168264626282&hsa_ad=711572697019&hsa_src=g&hsa_tgt=kwd-377044815999&hsa_kw=business%20lawyer%20in%20dubai&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=1438703999&gbraid=0AAAAADFkUPKNvgDwoUpn8359ygWXx3jo-&gclid=CjwKCAjwkbzEBhAVEiwA4V-yqkMVa8cORkDS3oKl6YF7DdHguzEpyqsetFya7z8LAVj_bUTVw7sufxoCk_wQAvD_BwE",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://davidsoncolaw.com/services/commercial/?utm_source=Google+ads&utm_medium=CPC&utm_campaign=Commercial+services&utm_term=business%20lawyer%20in%20dubai&utm_campaign=Davidson+co+law+%7C+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=4221611439&hsa_cam=1438703999&hsa_grp=168264626282&hsa_ad=711572697019&hsa_src=g&hsa_tgt=kwd-377044815999&hsa_kw=business%20lawyer%20in%20dubai&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=1438703999&gbraid=0AAAAADFkUPKNvgDwoUpn8359ygWXx3jo-&gclid=CjwKCAjwkbzEBhAVEiwA4V-yqkMVa8cORkDS3oKl6YF7DdHguzEpyqsetFya7z8LAVj_bUTVw7sufxoCk_wQAvD_BwE",
+                    "title": "Commercial Litigation and Business Dispute Lawyers in Dubai"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/[role=\"banner\"]",
+                    "aria/Enquire Now"
+                ],
+                [
+                    "div.col-sm-9 > a"
+                ],
+                [
+                    "xpath//html/body/header/div[1]/div/div/div[2]/a"
+                ],
+                [
+                    "pierce/div.col-sm-9 > a"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 18.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Full Name*"
+                ],
+                [
+                    "#EnqFormPop1 div.enq-formWrap > div:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[1]/div/p/span/input"
+                ],
+                [
+                    "pierce/#EnqFormPop1 div.enq-formWrap > div:nth-of-type(1) input"
+                ]
+            ],
+            "offsetY": 52,
+            "offsetX": 357.625
+        },
+        {
+            "type": "change",
+            "value": "kevin fang",
+            "selectors": [
+                [
+                    "aria/Full Name*"
+                ],
+                [
+                    "#EnqFormPop1 div.enq-formWrap > div:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[1]/div/p/span/input"
+                ],
+                [
+                    "pierce/#EnqFormPop1 div.enq-formWrap > div:nth-of-type(1) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kevandcoceo@hotmail.com",
+            "selectors": [
+                [
+                    "aria/Email Address*"
+                ],
+                [
+                    "#EnqFormPop1 div.enq-formWrap > div:nth-of-type(2) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[2]/div/p/span/input"
+                ],
+                [
+                    "pierce/#EnqFormPop1 div.enq-formWrap > div:nth-of-type(2) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/What's your challenge?"
+                ],
+                [
+                    "#EnqFormPop1 textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[3]/div/p/span/textarea"
+                ],
+                [
+                    "pierce/#EnqFormPop1 textarea"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 329.625
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Shift"
+        },
+        {
+            "type": "keyUp",
+            "key": "Shift",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "im being sued by a client im 100% innocent can u have someone reachout its a slight business dispute asap ",
+            "selectors": [
+                [
+                    "aria/What's your challenge?"
+                ],
+                [
+                    "#EnqFormPop1 textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[3]/div/p/span/textarea"
+                ],
+                [
+                    "pierce/#EnqFormPop1 textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/What's your challenge?"
+                ],
+                [
+                    "#EnqFormPop1 textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[3]/div/p/span/textarea"
+                ],
+                [
+                    "pierce/#EnqFormPop1 textarea"
+                ]
+            ],
+            "offsetY": 42,
+            "offsetX": 278.625
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "ArrowRight"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowRight",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "im being sued by a client im 100% innocent can u have someone reachout its a slight business dispute.... kindly reach out asap ",
+            "selectors": [
+                [
+                    "aria/What's your challenge?"
+                ],
+                [
+                    "#EnqFormPop1 textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[3]/div/p/span/textarea"
+                ],
+                [
+                    "pierce/#EnqFormPop1 textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[4]/div/p/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) input"
+                ]
+            ],
+            "offsetY": 36,
+            "offsetX": 140.625,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://td.doubleclick.net/td/rul/828657906?random=1754238625578&cv=11&fst=1754238625578&fmt=3&bg=ffffff&guid=ON&async=1&en=conversion&gcl_ctr=1&gtm=45be57u1v9102618535za200zd9102618535&gcd=13l3l3l3l1l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813~105087538~105087540~105103161~105103163&u_w=1920&u_h=1080&url=https%3A%2F%2Fdavidsoncolaw.com%2Fservices%2Fcommercial%2F%3Futm_source%3DGoogle%2Bads%26utm_medium%3DCPC%26utm_campaign%3DCommercial%2Bservices%26utm_term%3Dbusiness%2520lawyer%2520in%2520dubai%26utm_campaign%3DDavidson%2Bco%2Blaw%2B%257C%2BBrand%26utm_source%3Dadwords%26utm_medium%3Dppc%26hsa_acc%3D4221611439%26hsa_cam%3D1438703999%26hsa_grp%3D168264626282%26hsa_ad%3D711572697019%26hsa_src%3Dg%26hsa_tgt%3Dkwd-377044815999%26hsa_kw%3Dbusiness%2520lawyer%2520in%2520dubai%26hsa_mt%3Db%26hsa_net%3Dadwords%26hsa_ver%3D3%26gad_source%3D1%26gad_campaignid%3D1438703999%26gbraid%3D0AAAAADFkUPKNvgDwoUpn8359ygWXx3jo-%26gclid%3DCjwKCAjw&ref=https%3A%2F%2Fwww.google.com%2F&gclaw_src=2_3&label=zo9rCKDLt3gQ8qGRiwM&hn=www.googleadservices.com&frm=0&tiba=Commercial%20Litigation%20and%20Business%20Dispute%20Lawyers%20in%20Dubai&gtm_ee=1&npa=0&gclgs=1&gclst=941579&gcllp=164241194&gac=UA-65303564-1%3ACjwKCAjwkbzEBhAVEiwA4V-yqkMVa8cORkDS3oKl6YF7DdHguzEpyqsetFya7z8LAVj_bUTVw7sufxoCk_wQAvD_BwE&gclaw=CjwKCAjwkbzEBhAVEiwA4V-yqkMVa8cORkDS3oKl6YF7DdHguzEpyqsetFya7z8LAVj_bUTVw7sufxoCk_wQAvD_BwE&pscdl=noapi&auid=34279722.1754237690&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.184%7CGoogle%2520Chrome%3B138.0.7204.184&uamb=0&uam=&uap=macOS&uapv=14.5.0&uaw=0&ec_m=%23wpcf7-f425-o1%3E%3Anth-child(2)%3E%3Anth-child(2)%3E%3Anth-child(3)%3E%3Anth-child(1)%3E%3Anth-child(1)%3E%3Anth-child(1)%3E%3Anth-child(1)*INPUT%3Atrue%3A23%3Afalse*1&ec_sel=%23wpcf7-f425-o1%3E%3Anth-child(2)%3E%3Anth-child(2)%3E%3Anth-child(3)%3E%3Anth-child(1)%3E%3Anth-child(1)%3E%3Anth-child(1)%3E%3Anth-child(1)&ec_meta=INPUT%3Atrue%3A23%3Afalse&ec_lat=0&ec_s=1&ec_mode=a&oid=790411825.1754238626&ecsid=1364599244.1754238618&fledge=1&capi=1&_tu=ABA&data=event%3Dconversion&em=tv.1~em.c9YmX5m-8YM3gDPPP8iDGwOLYnqKOZ8fBtgTbST1Lsc&ct_cookie_present=0",
+                    "title": "Thank you - Davidson & Co"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.PageWrap"
+                ],
+                [
+                    "xpath//html/body/div[1]"
+                ],
+                [
+                    "pierce/div.PageWrap"
+                ]
+            ],
+            "offsetY": 180,
+            "offsetX": 338,
+            "duration": 761.2999999970198
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Thank you for getting in touch!"
+                ],
+                [
+                    "h1"
+                ],
+                [
+                    "xpath//html/body/div[1]/div/div/section/div/div/div/div[1]/div/h1"
+                ],
+                [
+                    "pierce/h1"
+                ],
+                [
+                    "text/Thank you for"
+                ]
+            ],
+            "offsetY": 13,
+            "offsetX": 201.5
+        }
+    ]
+}
+
+
+dont be this slow oo
+
+{
+    "title": "c7",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://dubai.lawyer/contact/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://dubai.lawyer/contact/",
+                    "title": "Contact our Lawyers in Dubai"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/CONTACT[role=\"link\"]"
+                ],
+                [
+                    "#menu-item-991 > a"
+                ],
+                [
+                    "xpath///*[@id=\"menu-item-991\"]/a"
+                ],
+                [
+                    "pierce/#menu-item-991 > a"
+                ]
+            ],
+            "offsetY": 34.390625,
+            "offsetX": 38.703125,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://dubai.lawyer/contact/",
+                    "title": "One moment, please..."
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/OK, I AGREE"
+                ],
+                [
+                    "#total-plus-confirm"
+                ],
+                [
+                    "xpath///*[@id=\"total-plus-confirm\"]"
+                ],
+                [
+                    "pierce/#total-plus-confirm"
+                ],
+                [
+                    "text/Ok, I Agree"
+                ]
+            ],
+            "offsetY": 8.09375,
+            "offsetX": 82
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Full Name (required)"
+                ],
+                [
+                    "p:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[1]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(1) input"
+                ]
+            ],
+            "offsetY": 20.15625,
+            "offsetX": 247.5
+        },
+        {
+            "type": "change",
+            "value": "kev",
+            "selectors": [
+                [
+                    "aria/Full Name (required)"
+                ],
+                [
+                    "p:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[1]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(1) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kevandcoceo@hotmail.com",
+            "selectors": [
+                [
+                    "aria/Your Email (required)"
+                ],
+                [
+                    "p:nth-of-type(2) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[2]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(2) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "2415371627",
+            "selectors": [
+                [
+                    "aria/Your Phone"
+                ],
+                [
+                    "p:nth-of-type(3) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[3]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(3) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Subject"
+                ],
+                [
+                    "p:nth-of-type(4) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[4]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(4) input"
+                ]
+            ],
+            "offsetY": 22.984375,
+            "offsetX": 167.5
+        },
+        {
+            "type": "change",
+            "value": "need representaion",
+            "selectors": [
+                [
+                    "aria/Subject"
+                ],
+                [
+                    "p:nth-of-type(4) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[4]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(4) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "offsetY": 37.59375,
+            "offsetX": 138.5
+        },
+        {
+            "type": "change",
+            "value": "has a business dispute with my client i runa concierge ",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "offsetY": 30.59375,
+            "offsetX": 331.5
+        },
+        {
+            "type": "change",
+            "value": "has a business dispute with my client i run a concierge ",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "offsetY": 51.59375,
+            "offsetX": 530.5
+        },
+        {
+            "type": "change",
+            "value": "has a business dispute with my client i run a concierge, ",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Send"
+                ],
+                [
+                    "p:nth-of-type(6) > input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[6]/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(6) > input"
+                ],
+                [
+                    "text/Send"
+                ]
+            ],
+            "offsetY": 9.6875,
+            "offsetX": 54.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.swal2-container > div"
+                ],
+                [
+                    "xpath//html/body/div[5]/div"
+                ],
+                [
+                    "pierce/div.swal2-container > div"
+                ],
+                [
+                    "text/×Thank you for"
+                ]
+            ],
+            "offsetY": 102.171875,
+            "offsetX": 186.5,
+            "duration": 1149.5
+        }
+    ]
+}
+🏢 Company: Page Not Found
+🌐 Domain: lawmedia.us
+🔎 Keyword: new york law firms
+🔍 MX Record: lawmedia.us.
+📝 Contact Pages:
+  - https://lawmedia.us/contact-form: No fillable fields
+  - https://lawmedia.us/reach-out: No fillable fields
+  - https://lawmedia.us/contact/: Form submitted successfully
+
+
+i dont even like your contact page search uproach the fact that u go through the contact 
