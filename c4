@@ -1,0 +1,173 @@
+this isnt me filling this is me searching see how i go through all the pages the bot should be able to as welll im coming ill add me filling the forms soonish dont code yet oo just note
+
+{
+    "title": "c4",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.google.com/search?q=lawyers+texas+%2Fcontact+us&oq=lawyers+texas+%2Fcontact+us&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORigATIHCAEQIRigATIHCAIQIRigATIHCAMQIRiPAjIHCAQQIRiPAtIBCDkwNjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+texas+%2Fcontact+us&oq=lawyers+texas+%2Fcontact+us&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORigATIHCAEQIRigATIHCAIQIRigATIHCAMQIRiPAjIHCAQQIRiPAtIBCDkwNjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+                    "title": "lawyers texas /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Search[role=\"combobox\"]"
+                ],
+                [
+                    "#APjFqb"
+                ],
+                [
+                    "xpath///*[@id=\"APjFqb\"]"
+                ],
+                [
+                    "pierce/#APjFqb"
+                ]
+            ],
+            "offsetY": 22,
+            "offsetX": 84
+        },
+        {
+            "type": "change",
+            "value": "lawyers dubai /contact us",
+            "selectors": [
+                [
+                    "aria/Search[role=\"combobox\"]"
+                ],
+                [
+                    "#APjFqb"
+                ],
+                [
+                    "xpath///*[@id=\"APjFqb\"]"
+                ],
+                [
+                    "pierce/#APjFqb"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Enter"
+        },
+        {
+            "type": "keyUp",
+            "key": "Enter",
+            "target": "main",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+%2Fcontact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifPQEMhKdheXELl3AIJUBzITi3BD6Q%3A1754190792886&ei=yNOOaN7zNbj87_UPv5booAU&ved=0ahUKEwje98_41e2OAxU4_rsIHT8LGlQQ4dUDCBA&uact=5&oq=lawyers+dubai+%2Fcontact+us&gs_lp=Egxnd3Mtd2l6LXNlcnAiGWxhd3llcnMgZHViYWkgL2NvbnRhY3QgdXMyChAhGKABGMMEGAoyChAhGKABGMMEGApIvipQighY4idwAXgBkAEAmAGXBaABliCqAQczLTMuNC4yuAEDyAEA-AEBmAIEoAK_CcICChAAGLADGNYEGEfCAgUQABjvBcICCBAAGKIEGIkFwgIIEAAYgAQYogTCAgYQABgFGB7CAgYQABgIGB6YAwCIBgGQBgiSBwcxLjMtMi4xoAeKI7IHBTMtMi4xuAe2CcIHBTAuMS4zyAcV&sclient=gws-wiz-serp",
+                    "title": "lawyers dubai /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(5) div.CCgQ5 > span"
+                ],
+                [
+                    "xpath///*[@id=\"tads\"]/div[5]/div/div/div/div/div[1]/a/div[1]/span"
+                ],
+                [
+                    "pierce/div:nth-of-type(5) div.CCgQ5 > span"
+                ]
+            ],
+            "offsetY": 20.890625,
+            "offsetX": 157,
+            "button": "secondary"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#tads > div:nth-of-type(3) > div > div > div > div"
+                ],
+                [
+                    "xpath///*[@id=\"tads\"]/div[3]/div/div/div/div"
+                ],
+                [
+                    "pierce/#tads > div:nth-of-type(3) > div > div > div > div"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 2,
+            "duration": 1477.8999999985099
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Page 2"
+                ],
+                [
+                    "td:nth-of-type(3) > a"
+                ],
+                [
+                    "xpath///*[@id=\"botstuff\"]/div/div[3]/table/tbody/tr/td[3]/a"
+                ],
+                [
+                    "pierce/td:nth-of-type(3) > a"
+                ]
+            ],
+            "offsetY": 48.140625,
+            "offsetX": 11,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+/contact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifNJOR620uzaMVuPM__G8A64AGWQkw:1754237679582&ei=74qPaJqPI_2di-gP27zdgQw&start=10&sa=N&sstk=Ac65TH5IH6bi6Qui4ZNIH_hZSDzfeV0OwUgaerYzyDESUerHejTwJiUteVUXVEjwylBX7YBt9RUIbSzObVMx3FQvPl5hZEwMbhz-8A&ved=2ahUKEwjawvjNhO-OAxX9zgIHHVteN8AQ8tMDegQIDRAE&biw=1365&bih=992&dpr=1",
+                    "title": "lawyers dubai /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Page 3"
+                ],
+                [
+                    "td:nth-of-type(4) > a"
+                ],
+                [
+                    "xpath///*[@id=\"botstuff\"]/div/div[3]/table/tbody/tr/td[4]/a"
+                ],
+                [
+                    "pierce/td:nth-of-type(4) > a"
+                ]
+            ],
+            "offsetY": 50.03125,
+            "offsetX": 8.265625,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+/contact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifMMmZhhE1TsmaWXAxKKo70niGnp8Q:1754237701839&ei=BYuPaJWCM6n4i-gPm7DtwAw&start=20&sa=N&sstk=Ac65TH6I0spb7-yNoHA55RmDzn-cA_2F87WUoEVL8IpZ6wmgyAcmg-bn7RzXxCYHsVahIWRQ4UcwOvOAk-Lt4j12pibUb7pwWblyWH_ia6si83ZyKua9iXWlI_LTJJ7bwijY&ved=2ahUKEwjVmMfYhO-OAxUp_AIHHRtYG8g4ChDy0wN6BAgJEAc&biw=1365&bih=992&dpr=1",
+                    "title": ""
+                }
+            ]
+        }
+    ]
+}
