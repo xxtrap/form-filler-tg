@@ -1,0 +1,453 @@
+yes make sure not to amek human mistakes like ive been doing make sure to fill all slots of the forms
+
+see how with this i filled akk the spaces and even clicked from the pop up code the bot to always choose second from those kind of pop ups 
+
+{
+    "title": "c9",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://miolawfirm.com/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://miolawfirm.com/",
+                    "title": "Best Law Firm in Abu Dhabi & Dubai | Trusted Legal Consultants in UAE – Miolawfirm"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Name *"
+                ],
+                [
+                    "#Field2"
+                ],
+                [
+                    "xpath///*[@id=\"Field2\"]"
+                ],
+                [
+                    "pierce/#Field2"
+                ]
+            ],
+            "offsetY": 36.5625,
+            "offsetX": 185.5
+        },
+        {
+            "type": "change",
+            "value": "kevin fang",
+            "selectors": [
+                [
+                    "aria/Name *"
+                ],
+                [
+                    "#Field2"
+                ],
+                [
+                    "xpath///*[@id=\"Field2\"]"
+                ],
+                [
+                    "pierce/#Field2"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Email Address *"
+                ],
+                [
+                    "#Field3"
+                ],
+                [
+                    "xpath///*[@id=\"Field3\"]"
+                ],
+                [
+                    "pierce/#Field3"
+                ]
+            ],
+            "offsetY": 11.5625,
+            "offsetX": 135.5
+        },
+        {
+            "type": "change",
+            "value": "kevandco",
+            "selectors": [
+                [
+                    "aria/Email Address *"
+                ],
+                [
+                    "#Field3"
+                ],
+                [
+                    "xpath///*[@id=\"Field3\"]"
+                ],
+                [
+                    "pierce/#Field3"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Shift"
+        },
+        {
+            "type": "keyUp",
+            "key": "Shift",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kevandcoceo@hotmail.com",
+            "selectors": [
+                [
+                    "aria/Email Address *"
+                ],
+                [
+                    "#Field3"
+                ],
+                [
+                    "xpath///*[@id=\"Field3\"]"
+                ],
+                [
+                    "pierce/#Field3"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Phone Number *"
+                ],
+                [
+                    "#Field6"
+                ],
+                [
+                    "xpath///*[@id=\"Field6\"]"
+                ],
+                [
+                    "pierce/#Field6"
+                ]
+            ],
+            "offsetY": 22.5625,
+            "offsetX": 79.5
+        },
+        {
+            "type": "change",
+            "value": "1",
+            "selectors": [
+                [
+                    "aria/Phone Number *"
+                ],
+                [
+                    "#Field6"
+                ],
+                [
+                    "xpath///*[@id=\"Field6\"]"
+                ],
+                [
+                    "pierce/#Field6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "2",
+            "selectors": [
+                [
+                    "aria/Phone Number *"
+                ],
+                [
+                    "#Field6"
+                ],
+                [
+                    "xpath///*[@id=\"Field6\"]"
+                ],
+                [
+                    "pierce/#Field6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Phone Number *"
+                ],
+                [
+                    "#Field6"
+                ],
+                [
+                    "xpath///*[@id=\"Field6\"]"
+                ],
+                [
+                    "pierce/#Field6"
+                ]
+            ],
+            "offsetY": 18.5625,
+            "offsetX": 301.5
+        },
+        {
+            "type": "change",
+            "value": "3",
+            "selectors": [
+                [
+                    "aria/Phone Number *"
+                ],
+                [
+                    "#Field6"
+                ],
+                [
+                    "xpath///*[@id=\"Field6\"]"
+                ],
+                [
+                    "pierce/#Field6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Phone Number *"
+                ],
+                [
+                    "#Field6"
+                ],
+                [
+                    "xpath///*[@id=\"Field6\"]"
+                ],
+                [
+                    "pierce/#Field6"
+                ]
+            ],
+            "offsetY": 18.5625,
+            "offsetX": 301.5
+        },
+        {
+            "type": "change",
+            "value": "3218179382",
+            "selectors": [
+                [
+                    "aria/Phone Number *"
+                ],
+                [
+                    "#Field6"
+                ],
+                [
+                    "xpath///*[@id=\"Field6\"]"
+                ],
+                [
+                    "pierce/#Field6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Select City *"
+                ],
+                [
+                    "#Field7"
+                ],
+                [
+                    "xpath///*[@id=\"Field7\"]"
+                ],
+                [
+                    "pierce/#Field7"
+                ]
+            ],
+            "offsetY": 15.5625,
+            "offsetX": 235.5
+        },
+        {
+            "type": "change",
+            "value": "Dubai",
+            "selectors": [
+                [
+                    "aria/Select City *"
+                ],
+                [
+                    "#Field7"
+                ],
+                [
+                    "xpath///*[@id=\"Field7\"]"
+                ],
+                [
+                    "pierce/#Field7"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Legal Assistance *"
+                ],
+                [
+                    "#Field9"
+                ],
+                [
+                    "xpath///*[@id=\"Field9\"]"
+                ],
+                [
+                    "pierce/#Field9"
+                ]
+            ],
+            "offsetY": 18.5625,
+            "offsetX": 177.5
+        },
+        {
+            "type": "change",
+            "value": "Banking and Financial",
+            "selectors": [
+                [
+                    "aria/Legal Assistance *"
+                ],
+                [
+                    "#Field9"
+                ],
+                [
+                    "xpath///*[@id=\"Field9\"]"
+                ],
+                [
+                    "pierce/#Field9"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Tell us about your case"
+                ],
+                [
+                    "#Field11"
+                ],
+                [
+                    "xpath///*[@id=\"Field11\"]"
+                ],
+                [
+                    "pierce/#Field11"
+                ]
+            ],
+            "offsetY": 26.5625,
+            "offsetX": 143.5
+        },
+        {
+            "type": "change",
+            "value": "im being sued need representation pls",
+            "selectors": [
+                [
+                    "aria/Tell us about your case"
+                ],
+                [
+                    "#Field11"
+                ],
+                [
+                    "xpath///*[@id=\"Field11\"]"
+                ],
+                [
+                    "pierce/#Field11"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6Ld7IZsqAAAAAOftq3vm4nduDL48GBhj6Fko-lm7&co=aHR0cHM6Ly9taW9sYXdmaXJtLmNvbTo0NDM.&hl=en&v=DBIsSQ0s2djD_akThoRUDeHa&size=normal&anchor-ms=20000&execute-ms=15000&cb=ueggt3st7qbc",
+            "selectors": [
+                [
+                    "div.recaptcha-checkbox-border"
+                ],
+                [
+                    "xpath///*[@id=\"recaptcha-anchor\"]/div[1]"
+                ],
+                [
+                    "pierce/div.recaptcha-checkbox-border"
+                ]
+            ],
+            "offsetY": 16,
+            "offsetX": 11
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/BOOK CONSULTATION[role=\"button\"]"
+                ],
+                [
+                    "#saveForm"
+                ],
+                [
+                    "xpath///*[@id=\"saveForm\"]"
+                ],
+                [
+                    "pierce/#saveForm"
+                ]
+            ],
+            "offsetY": 17.5625,
+            "offsetX": 131.234375,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://miolawfirm.com/pages/thank-you#public",
+                    "title": "Thank you – Miolawfirm"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6Ld7IZsqAAAAAOftq3vm4nduDL48GBhj6Fko-lm7&co=aHR0cHM6Ly9taW9sYXdmaXJtLmNvbTo0NDM.&hl=en&v=DBIsSQ0s2djD_akThoRUDeHa&size=normal&anchor-ms=20000&execute-ms=15000&cb=ueggt3st7qbc",
+            "selectors": [
+                [
+                    "div.rc-anchor-content"
+                ],
+                [
+                    "xpath///*[@id=\"rc-anchor-container\"]/div[3]"
+                ],
+                [
+                    "pierce/div.rc-anchor-content"
+                ]
+            ],
+            "offsetY": 31,
+            "offsetX": 19,
+            "duration": 603.7000000029802
+        }
+    ]
+}
+
+
