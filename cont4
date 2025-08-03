@@ -1,0 +1,253 @@
+{
+    "title": "cont4",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.miamicriminaldefenselaw.com/contact-us/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.miamicriminaldefenselaw.com/contact-us/",
+                    "title": "Contact Us | Miami Criminal Lawyer Swartz Law Firm"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Name Please fill out this field."
+                ],
+                [
+                    "#form_1_f_1_Name"
+                ],
+                [
+                    "xpath///*[@id=\"form_1_f_1_Name\"]"
+                ],
+                [
+                    "pierce/#form_1_f_1_Name"
+                ]
+            ],
+            "offsetY": 35.828125,
+            "offsetX": 270.421875
+        },
+        {
+            "type": "change",
+            "value": "kevin",
+            "selectors": [
+                [
+                    "aria/Name Please fill out this field."
+                ],
+                [
+                    "#form_1_f_1_Name"
+                ],
+                [
+                    "xpath///*[@id=\"form_1_f_1_Name\"]"
+                ],
+                [
+                    "pierce/#form_1_f_1_Name"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#form_1_f_2_Email"
+                ],
+                [
+                    "xpath///*[@id=\"form_1_f_2_Email\"]"
+                ],
+                [
+                    "pierce/#form_1_f_2_Email"
+                ]
+            ],
+            "offsetY": 14.5,
+            "offsetX": 206.421875
+        },
+        {
+            "type": "change",
+            "value": "kg@",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#form_1_f_2_Email"
+                ],
+                [
+                    "xpath///*[@id=\"form_1_f_2_Email\"]"
+                ],
+                [
+                    "pierce/#form_1_f_2_Email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "2",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kg@gmail.com",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#form_1_f_2_Email"
+                ],
+                [
+                    "xpath///*[@id=\"form_1_f_2_Email\"]"
+                ],
+                [
+                    "pierce/#form_1_f_2_Email"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Phone"
+                ],
+                [
+                    "#form_1_f_3_Phone"
+                ],
+                [
+                    "xpath///*[@id=\"form_1_f_3_Phone\"]"
+                ],
+                [
+                    "pierce/#form_1_f_3_Phone"
+                ]
+            ],
+            "offsetY": 22.5,
+            "offsetX": 159.421875
+        },
+        {
+            "type": "change",
+            "value": "234775478",
+            "selectors": [
+                [
+                    "aria/Phone"
+                ],
+                [
+                    "#form_1_f_3_Phone"
+                ],
+                [
+                    "xpath///*[@id=\"form_1_f_3_Phone\"]"
+                ],
+                [
+                    "pierce/#form_1_f_3_Phone"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Message"
+                ],
+                [
+                    "#form_1_f_4_Message"
+                ],
+                [
+                    "xpath///*[@id=\"form_1_f_4_Message\"]"
+                ],
+                [
+                    "pierce/#form_1_f_4_Message"
+                ]
+            ],
+            "offsetY": 76.5,
+            "offsetX": 116.421875
+        },
+        {
+            "type": "change",
+            "value": "need rep pls",
+            "selectors": [
+                [
+                    "aria/Message"
+                ],
+                [
+                    "#form_1_f_4_Message"
+                ],
+                [
+                    "xpath///*[@id=\"form_1_f_4_Message\"]"
+                ],
+                [
+                    "pierce/#form_1_f_4_Message"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Contact Us Now"
+                ],
+                [
+                    "div.narrow-container button"
+                ],
+                [
+                    "xpath///*[@id=\"form-1-17\"]/button"
+                ],
+                [
+                    "pierce/div.narrow-container button"
+                ],
+                [
+                    "text/Contact Us Now"
+                ]
+            ],
+            "offsetY": 25.5,
+            "offsetX": 100.15625,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.miamicriminaldefenselaw.com/thank-you-info/?success=1&type=site&sent=1&form_location=Consultation%20Form&5_From_Page=https%3A%2F%2Fwww.miamicriminaldefenselaw.com%2Fcontact-us%2F&10_Name=kevin&20_Email=kg%40gmail.com&30_Phone=234775478&40_Message=need%20rep%20pls",
+                    "title": "Thank You | Miami Criminal Lawyer Swartz Law Firm"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#ui-narrative-10 > div"
+                ],
+                [
+                    "xpath///*[@id=\"ui-narrative-10\"]/div"
+                ],
+                [
+                    "pierce/#ui-narrative-10 > div"
+                ]
+            ],
+            "offsetY": 9.609375,
+            "offsetX": 489.5,
+            "duration": 1236
+        }
+    ]
+}
