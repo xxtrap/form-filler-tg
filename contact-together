@@ -1,0 +1,1418 @@
+{
+    "title": "cont3",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.rflawgroup.com/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.rflawgroup.com/",
+                    "title": "Miami Criminal Lawyer"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/CONTACT US"
+                ],
+                [
+                    "#menu-item-3302 > a"
+                ],
+                [
+                    "xpath///*[@id=\"menu-item-3302\"]/a"
+                ],
+                [
+                    "pierce/#menu-item-3302 > a"
+                ],
+                [
+                    "text/Contact Us"
+                ]
+            ],
+            "offsetY": 19.875,
+            "offsetX": 63.359375,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.rflawgroup.com/contact-us/",
+                    "title": "Contact Us | Ratzan & Faccidomo LLC"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "offsetY": 19.515625,
+            "offsetX": 421.59375
+        },
+        {
+            "type": "change",
+            "value": "kevin fang",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[2]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 15.296875,
+            "offsetX": 306.59375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[3]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 21.078125,
+            "offsetX": 227.59375
+        },
+        {
+            "type": "change",
+            "value": "+3654332252",
+            "selectors": [
+                [
+                    "div:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[3]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[2]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 5.296875,
+            "offsetX": 205.59375
+        },
+        {
+            "type": "change",
+            "value": "kevandcoceo@hotmail.com",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[2]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/[role=\"article\"]",
+                    "aria/[role=\"combobox\"]"
+                ],
+                [
+                    "select"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[4]/select"
+                ],
+                [
+                    "pierce/select"
+                ]
+            ],
+            "offsetY": 23.859375,
+            "offsetX": 390.59375
+        },
+        {
+            "type": "change",
+            "value": "Email",
+            "selectors": [
+                [
+                    "aria/[role=\"article\"]",
+                    "aria/[role=\"combobox\"]"
+                ],
+                [
+                    "select"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[4]/select"
+                ],
+                [
+                    "pierce/select"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "textarea"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[5]/textarea"
+                ],
+                [
+                    "pierce/textarea"
+                ]
+            ],
+            "offsetY": 21.640625,
+            "offsetX": 332.59375
+        },
+        {
+            "type": "change",
+            "value": "im being sued for a ",
+            "selectors": [
+                [
+                    "textarea"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[5]/textarea"
+                ],
+                [
+                    "pierce/textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "textarea"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[5]/textarea"
+                ],
+                [
+                    "pierce/textarea"
+                ]
+            ],
+            "offsetY": 18.640625,
+            "offsetX": 329.59375
+        },
+        {
+            "type": "change",
+            "value": "Hi I'm Kevin, I run a concierge service and I get a few issues with one of my clients, a politician and ive been subpeoned i need someone to represewnt me i have done nothing wrong kindly reach oput via email as im not in the states currently ",
+            "selectors": [
+                [
+                    "textarea"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[5]/textarea"
+                ],
+                [
+                    "pierce/textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#captcha_input_form_2"
+                ],
+                [
+                    "xpath///*[@id=\"captcha_input_form_2\"]"
+                ],
+                [
+                    "pierce/#captcha_input_form_2"
+                ],
+                [
+                    "text/Enter Security"
+                ]
+            ],
+            "offsetY": 3.265625,
+            "offsetX": 119.59375
+        },
+        {
+            "type": "change",
+            "value": "debeEnter Security Key",
+            "selectors": [
+                [
+                    "#captcha_input_form_2"
+                ],
+                [
+                    "xpath///*[@id=\"captcha_input_form_2\"]"
+                ],
+                [
+                    "pierce/#captcha_input_form_2"
+                ],
+                [
+                    "text/Enter Security"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "#captcha_input_form_2"
+                ],
+                [
+                    "xpath///*[@id=\"captcha_input_form_2\"]"
+                ],
+                [
+                    "pierce/#captcha_input_form_2"
+                ],
+                [
+                    "text/Enter Security"
+                ]
+            ],
+            "offsetY": 11.265625,
+            "offsetX": 145.59375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#captcha_input_form_2"
+                ],
+                [
+                    "xpath///*[@id=\"captcha_input_form_2\"]"
+                ],
+                [
+                    "pierce/#captcha_input_form_2"
+                ],
+                [
+                    "text/Enter Security"
+                ]
+            ],
+            "offsetY": 11.265625,
+            "offsetX": 145.59375
+        },
+        {
+            "type": "change",
+            "value": "debezavi",
+            "selectors": [
+                [
+                    "#captcha_input_form_2"
+                ],
+                [
+                    "xpath///*[@id=\"captcha_input_form_2\"]"
+                ],
+                [
+                    "pierce/#captcha_input_form_2"
+                ],
+                [
+                    "text/Enter Security"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.captcha-wrapper"
+                ],
+                [
+                    "xpath///*[@id=\"form_2\"]/div[6]"
+                ],
+                [
+                    "pierce/div.captcha-wrapper"
+                ]
+            ],
+            "offsetY": 20.265625,
+            "offsetX": 56.59375,
+            "duration": 1067.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#captcha_input_form_2"
+                ],
+                [
+                    "xpath///*[@id=\"captcha_input_form_2\"]"
+                ],
+                [
+                    "pierce/#captcha_input_form_2"
+                ],
+                [
+                    "text/debezavi"
+                ]
+            ],
+            "offsetY": 22.265625,
+            "offsetX": 148.59375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Submit Form"
+                ],
+                [
+                    "#submit_form_2"
+                ],
+                [
+                    "xpath///*[@id=\"submit_form_2\"]"
+                ],
+                [
+                    "pierce/#submit_form_2"
+                ],
+                [
+                    "text/Submit Form"
+                ]
+            ],
+            "offsetY": 30.890625,
+            "offsetX": 71.59375,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.rflawgroup.com/thank-you/",
+                    "title": "Thank You | Ratzan & Faccidomo LLC"
+                }
+            ]
+        }
+    ]
+}
+
+
+cmpare all the codes
+
+this isnt me filling this is me searching see how i go through all the pages the bot should be able to as welll im coming ill add me filling the forms soonish dont code yet oo just note
+
+{
+    "title": "c4",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.google.com/search?q=lawyers+texas+%2Fcontact+us&oq=lawyers+texas+%2Fcontact+us&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORigATIHCAEQIRigATIHCAIQIRigATIHCAMQIRiPAjIHCAQQIRiPAtIBCDkwNjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+texas+%2Fcontact+us&oq=lawyers+texas+%2Fcontact+us&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORigATIHCAEQIRigATIHCAIQIRigATIHCAMQIRiPAjIHCAQQIRiPAtIBCDkwNjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+                    "title": "lawyers texas /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Search[role=\"combobox\"]"
+                ],
+                [
+                    "#APjFqb"
+                ],
+                [
+                    "xpath///*[@id=\"APjFqb\"]"
+                ],
+                [
+                    "pierce/#APjFqb"
+                ]
+            ],
+            "offsetY": 22,
+            "offsetX": 84
+        },
+        {
+            "type": "change",
+            "value": "lawyers dubai /contact us",
+            "selectors": [
+                [
+                    "aria/Search[role=\"combobox\"]"
+                ],
+                [
+                    "#APjFqb"
+                ],
+                [
+                    "xpath///*[@id=\"APjFqb\"]"
+                ],
+                [
+                    "pierce/#APjFqb"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Enter"
+        },
+        {
+            "type": "keyUp",
+            "key": "Enter",
+            "target": "main",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+%2Fcontact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifPQEMhKdheXELl3AIJUBzITi3BD6Q%3A1754190792886&ei=yNOOaN7zNbj87_UPv5booAU&ved=0ahUKEwje98_41e2OAxU4_rsIHT8LGlQQ4dUDCBA&uact=5&oq=lawyers+dubai+%2Fcontact+us&gs_lp=Egxnd3Mtd2l6LXNlcnAiGWxhd3llcnMgZHViYWkgL2NvbnRhY3QgdXMyChAhGKABGMMEGAoyChAhGKABGMMEGApIvipQighY4idwAXgBkAEAmAGXBaABliCqAQczLTMuNC4yuAEDyAEA-AEBmAIEoAK_CcICChAAGLADGNYEGEfCAgUQABjvBcICCBAAGKIEGIkFwgIIEAAYgAQYogTCAgYQABgFGB7CAgYQABgIGB6YAwCIBgGQBgiSBwcxLjMtMi4xoAeKI7IHBTMtMi4xuAe2CcIHBTAuMS4zyAcV&sclient=gws-wiz-serp",
+                    "title": "lawyers dubai /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(5) div.CCgQ5 > span"
+                ],
+                [
+                    "xpath///*[@id=\"tads\"]/div[5]/div/div/div/div/div[1]/a/div[1]/span"
+                ],
+                [
+                    "pierce/div:nth-of-type(5) div.CCgQ5 > span"
+                ]
+            ],
+            "offsetY": 20.890625,
+            "offsetX": 157,
+            "button": "secondary"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#tads > div:nth-of-type(3) > div > div > div > div"
+                ],
+                [
+                    "xpath///*[@id=\"tads\"]/div[3]/div/div/div/div"
+                ],
+                [
+                    "pierce/#tads > div:nth-of-type(3) > div > div > div > div"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 2,
+            "duration": 1477.8999999985099
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Page 2"
+                ],
+                [
+                    "td:nth-of-type(3) > a"
+                ],
+                [
+                    "xpath///*[@id=\"botstuff\"]/div/div[3]/table/tbody/tr/td[3]/a"
+                ],
+                [
+                    "pierce/td:nth-of-type(3) > a"
+                ]
+            ],
+            "offsetY": 48.140625,
+            "offsetX": 11,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+/contact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifNJOR620uzaMVuPM__G8A64AGWQkw:1754237679582&ei=74qPaJqPI_2di-gP27zdgQw&start=10&sa=N&sstk=Ac65TH5IH6bi6Qui4ZNIH_hZSDzfeV0OwUgaerYzyDESUerHejTwJiUteVUXVEjwylBX7YBt9RUIbSzObVMx3FQvPl5hZEwMbhz-8A&ved=2ahUKEwjawvjNhO-OAxX9zgIHHVteN8AQ8tMDegQIDRAE&biw=1365&bih=992&dpr=1",
+                    "title": "lawyers dubai /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Page 3"
+                ],
+                [
+                    "td:nth-of-type(4) > a"
+                ],
+                [
+                    "xpath///*[@id=\"botstuff\"]/div/div[3]/table/tbody/tr/td[4]/a"
+                ],
+                [
+                    "pierce/td:nth-of-type(4) > a"
+                ]
+            ],
+            "offsetY": 50.03125,
+            "offsetX": 8.265625,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+/contact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifMMmZhhE1TsmaWXAxKKo70niGnp8Q:1754237701839&ei=BYuPaJWCM6n4i-gPm7DtwAw&start=20&sa=N&sstk=Ac65TH6I0spb7-yNoHA55RmDzn-cA_2F87WUoEVL8IpZ6wmgyAcmg-bn7RzXxCYHsVahIWRQ4UcwOvOAk-Lt4j12pibUb7pwWblyWH_ia6si83ZyKua9iXWlI_LTJJ7bwijY&ved=2ahUKEwjVmMfYhO-OAxUp_AIHHRtYG8g4ChDy0wN6BAgJEAc&biw=1365&bih=992&dpr=1",
+                    "title": ""
+                }
+            ]
+        }
+    ]
+}
+
+
+{
+    "title": "c5",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.bryanfagan.com/contact-us/?_gl=1*l89q33*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw7rbEBhB5EiwA1V49nenXDJx4NauOp1XUmYEOrHjKqUiPNzVXTSap9EOl2aXI7iXg_cIItRoCVP4QAvD_BwE&gbraid=0AAAAAqOIGpx-b6bVNXMlFdONKXbd3sPox",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.bryanfagan.com/contact-us/?_gl=1*l89q33*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw7rbEBhB5EiwA1V49nenXDJx4NauOp1XUmYEOrHjKqUiPNzVXTSap9EOl2aXI7iXg_cIItRoCVP4QAvD_BwE&gbraid=0AAAAAqOIGpx-b6bVNXMlFdONKXbd3sPox",
+                    "title": "Contact Us At The Law Office Of Bryan Fagan, PLLC"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 49,
+            "offsetX": 117.5
+        },
+        {
+            "type": "change",
+            "value": "kh",
+            "selectors": [
+                [
+                    "#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 24,
+            "offsetX": 133.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 24,
+            "offsetX": 133.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#firstname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 128.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 34,
+            "offsetX": 98
+        },
+        {
+            "type": "change",
+            "value": "kwe",
+            "selectors": [
+                [
+                    "#lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#lastname-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#email-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"email-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#email-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 17,
+            "offsetX": 165.5
+        },
+        {
+            "type": "change",
+            "value": "lolaissah@gmail.com",
+            "selectors": [
+                [
+                    "#email-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"email-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#email-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 138
+        },
+        {
+            "type": "change",
+            "value": "1722397162",
+            "selectors": [
+                [
+                    "#phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#phone-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 38,
+            "offsetX": 379.5
+        },
+        {
+            "type": "change",
+            "value": "Criminal Law",
+            "selectors": [
+                [
+                    "#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#what_criminal_law_matter_can_we_assist_you_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"what_criminal_law_matter_can_we_assist_you_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#what_criminal_law_matter_can_we_assist_you_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 38,
+            "offsetX": 227.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 18.40625,
+            "offsetX": 219.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 10.40625,
+            "offsetX": 229.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#what_practice_area_do_you_need_assistance_with_-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 59,
+            "offsetX": 253.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "[data-test-id='hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6']"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/[data-test-id='hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6']"
+                ]
+            ],
+            "offsetY": 335,
+            "offsetX": 253.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 36.40625,
+            "offsetX": 327.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 34.40625,
+            "offsetX": 452.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/[role=\"alert\"]",
+                    "aria/[role=\"none\"]"
+                ],
+                [
+                    "fieldset:nth-of-type(4) li"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]/fieldset[4]/div/div[2]/ul/li"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(4) li"
+                ]
+            ],
+            "offsetY": 21,
+            "offsetX": 532.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 21.40625,
+            "offsetX": 437.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 26.40625,
+            "offsetX": 163.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/[role=\"alert\"]",
+                    "aria/[role=\"none\"]"
+                ],
+                [
+                    "fieldset:nth-of-type(4) li"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]/fieldset[4]/div/div[2]/ul/li"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(4) li"
+                ]
+            ],
+            "offsetY": 12,
+            "offsetX": 336.5
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "u"
+        },
+        {
+            "type": "keyUp",
+            "key": "u",
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "e"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "j"
+        },
+        {
+            "type": "keyUp",
+            "key": "e",
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "j",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#agreed_for_marketing_updates0-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"agreed_for_marketing_updates0-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#agreed_for_marketing_updates0-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 12.765625,
+            "offsetX": 9.75
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Send Information"
+                ],
+                [
+                    "[data-test-id='hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6'] > div input"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]/div/div[2]/input"
+                ],
+                [
+                    "pierce/[data-test-id='hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6'] > div input"
+                ],
+                [
+                    "text/Send Information"
+                ]
+            ],
+            "offsetY": 36.8125,
+            "offsetX": 40.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 44.40625,
+            "offsetX": 265.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.elementor-element-642ebbc9 > div"
+                ],
+                [
+                    "xpath///*[@id=\"content\"]/div/div/div[2]/div/div/div[1]/div"
+                ],
+                [
+                    "pierce/div.elementor-element-642ebbc9 > div"
+                ]
+            ],
+            "offsetY": 624,
+            "offsetX": 663.5,
+            "duration": 1039.3999999985099
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "offsetY": 72.40625,
+            "offsetX": 167.5
+        },
+        {
+            "type": "change",
+            "value": "vugsduew",
+            "selectors": [
+                [
+                    "#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ],
+                [
+                    "xpath///*[@id=\"message-5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]"
+                ],
+                [
+                    "pierce/#message-5b4fec97-97bd-4c0d-8f75-a7c204193af6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Send Information"
+                ],
+                [
+                    "div.hs_submit input"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]/div[2]/div[2]/input"
+                ],
+                [
+                    "pierce/div.hs_submit input"
+                ],
+                [
+                    "text/Send Information"
+                ]
+            ],
+            "offsetY": 44.8125,
+            "offsetX": 39.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Send Information"
+                ],
+                [
+                    "div.hs_submit input"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_5b4fec97-97bd-4c0d-8f75-a7c204193af6\"]/div[2]/div[2]/input"
+                ],
+                [
+                    "pierce/div.hs_submit input"
+                ],
+                [
+                    "text/Send Information"
+                ]
+            ],
+            "offsetY": 31.8125,
+            "offsetX": 131.5
+        }
+    ]
+
+
+
+this isnt me filling this is me searching see how i go through all the pages the bot should be able to as welll im coming ill add me filling the forms soonish dont code yet oo just note
+
+{
+    "title": "c4",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.google.com/search?q=lawyers+texas+%2Fcontact+us&oq=lawyers+texas+%2Fcontact+us&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORigATIHCAEQIRigATIHCAIQIRigATIHCAMQIRiPAjIHCAQQIRiPAtIBCDkwNjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+texas+%2Fcontact+us&oq=lawyers+texas+%2Fcontact+us&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORigATIHCAEQIRigATIHCAIQIRigATIHCAMQIRiPAjIHCAQQIRiPAtIBCDkwNjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+                    "title": "lawyers texas /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Search[role=\"combobox\"]"
+                ],
+                [
+                    "#APjFqb"
+                ],
+                [
+                    "xpath///*[@id=\"APjFqb\"]"
+                ],
+                [
+                    "pierce/#APjFqb"
+                ]
+            ],
+            "offsetY": 22,
+            "offsetX": 84
+        },
+        {
+            "type": "change",
+            "value": "lawyers dubai /contact us",
+            "selectors": [
+                [
+                    "aria/Search[role=\"combobox\"]"
+                ],
+                [
+                    "#APjFqb"
+                ],
+                [
+                    "xpath///*[@id=\"APjFqb\"]"
+                ],
+                [
+                    "pierce/#APjFqb"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Enter"
+        },
+        {
+            "type": "keyUp",
+            "key": "Enter",
+            "target": "main",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+%2Fcontact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifPQEMhKdheXELl3AIJUBzITi3BD6Q%3A1754190792886&ei=yNOOaN7zNbj87_UPv5booAU&ved=0ahUKEwje98_41e2OAxU4_rsIHT8LGlQQ4dUDCBA&uact=5&oq=lawyers+dubai+%2Fcontact+us&gs_lp=Egxnd3Mtd2l6LXNlcnAiGWxhd3llcnMgZHViYWkgL2NvbnRhY3QgdXMyChAhGKABGMMEGAoyChAhGKABGMMEGApIvipQighY4idwAXgBkAEAmAGXBaABliCqAQczLTMuNC4yuAEDyAEA-AEBmAIEoAK_CcICChAAGLADGNYEGEfCAgUQABjvBcICCBAAGKIEGIkFwgIIEAAYgAQYogTCAgYQABgFGB7CAgYQABgIGB6YAwCIBgGQBgiSBwcxLjMtMi4xoAeKI7IHBTMtMi4xuAe2CcIHBTAuMS4zyAcV&sclient=gws-wiz-serp",
+                    "title": "lawyers dubai /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(5) div.CCgQ5 > span"
+                ],
+                [
+                    "xpath///*[@id=\"tads\"]/div[5]/div/div/div/div/div[1]/a/div[1]/span"
+                ],
+                [
+                    "pierce/div:nth-of-type(5) div.CCgQ5 > span"
+                ]
+            ],
+            "offsetY": 20.890625,
+            "offsetX": 157,
+            "button": "secondary"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#tads > div:nth-of-type(3) > div > div > div > div"
+                ],
+                [
+                    "xpath///*[@id=\"tads\"]/div[3]/div/div/div/div"
+                ],
+                [
+                    "pierce/#tads > div:nth-of-type(3) > div > div > div > div"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 2,
+            "duration": 1477.8999999985099
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Page 2"
+                ],
+                [
+                    "td:nth-of-type(3) > a"
+                ],
+                [
+                    "xpath///*[@id=\"botstuff\"]/div/div[3]/table/tbody/tr/td[3]/a"
+                ],
+                [
+                    "pierce/td:nth-of-type(3) > a"
+                ]
+            ],
+            "offsetY": 48.140625,
+            "offsetX": 11,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+/contact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifNJOR620uzaMVuPM__G8A64AGWQkw:1754237679582&ei=74qPaJqPI_2di-gP27zdgQw&start=10&sa=N&sstk=Ac65TH5IH6bi6Qui4ZNIH_hZSDzfeV0OwUgaerYzyDESUerHejTwJiUteVUXVEjwylBX7YBt9RUIbSzObVMx3FQvPl5hZEwMbhz-8A&ved=2ahUKEwjawvjNhO-OAxX9zgIHHVteN8AQ8tMDegQIDRAE&biw=1365&bih=992&dpr=1",
+                    "title": "lawyers dubai /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Page 3"
+                ],
+                [
+                    "td:nth-of-type(4) > a"
+                ],
+                [
+                    "xpath///*[@id=\"botstuff\"]/div/div[3]/table/tbody/tr/td[4]/a"
+                ],
+                [
+                    "pierce/td:nth-of-type(4) > a"
+                ]
+            ],
+            "offsetY": 50.03125,
+            "offsetX": 8.265625,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+/contact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifMMmZhhE1TsmaWXAxKKo70niGnp8Q:1754237701839&ei=BYuPaJWCM6n4i-gPm7DtwAw&start=20&sa=N&sstk=Ac65TH6I0spb7-yNoHA55RmDzn-cA_2F87WUoEVL8IpZ6wmgyAcmg-bn7RzXxCYHsVahIWRQ4UcwOvOAk-Lt4j12pibUb7pwWblyWH_ia6si83ZyKua9iXWlI_LTJJ7bwijY&ved=2ahUKEwjVmMfYhO-OAxUp_AIHHRtYG8g4ChDy0wN6BAgJEAc&biw=1365&bih=992&dpr=1",
+                    "title": ""
+                }
+            ]
+        }
+    ]
+}
