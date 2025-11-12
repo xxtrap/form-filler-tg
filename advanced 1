@@ -1,0 +1,583 @@
+import asyncio
+import random
+from playwright.async_api import async_playwright
+import requests
+import io
+from urllib.parse import urlparse, unquote
+import json
+from datetime import datetime
+
+# === ULTRA ADVANCED CONFIG ===
+BOT_TOKEN = "7619040891:AAF9pfQQme32XvhTfUb97jzky5w4ZEaBzwc"
+CHAT_ID = "5172045930"
+
+# TEST DATA ONLY
+TEST_NAMES = ["Alex Johnson", "Sarah Wilson", "Mike Chen", "Lisa Rodriguez", "David Kim"]
+TEST_EMAILS = ["testuser123@mail.com", "demo456@example.com", "temp789@test.org"] 
+TEST_PHONES = ["+1555123456", "+1555987654", "+1555567890"]
+TEST_MESSAGE = "Hello, I need legal consultation regarding a business matter. Please contact me at your earliest convenience."
+
+KEYWORDS = ["lawyers dubai contact"]
+
+# ADVANCED TRACKING
+visited_domains = set()
+skipped_sites = set()
+captcha_sites = set()
+successful_submissions = set()
+failed_sites = set()
+
+# PERFORMANCE CONFIG
+MAX_TABS = 15
+REQUEST_DELAY = (1, 3)
+PAGES_TO_SCAN = 10
+
+def send_to_telegram(image_bytes, caption):
+    try:
+        files = {"photo": ("alert.png", image_bytes, 'image/png')}
+        data = {"chat_id": CHAT_ID, "caption": caption}
+        response = requests.post(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto",
+            files=files, data=data, timeout=10
+        )
+        return response.status_code == 200
+    except:
+        return False
+
+def get_test_data():
+    return {
+        'name': random.choice(TEST_NAMES),
+        'email': random.choice(TEST_EMAILS), 
+        'phone': random.choice(TEST_PHONES),
+        'message': TEST_MESSAGE
+    }
+
+class UltraFormDetector:
+    """ULTRA ADVANCED FORM DETECTION ENGINE"""
+    
+    def __init__(self):
+        self.field_patterns = {
+            'name': [
+                # ID Patterns
+                '*first*name*', '*last*name*', '*full*name*', '*fname*', '*lname*', '*name*',
+                '*your*name*', '*client*name*', '*contact*name*',
+                # Name Patterns  
+                '*Name*', '*FirstName*', '*LastName*', '*FullName*',
+                # Semantic
+                '*nombre*', '*naam*', '*nom*', '*ism*'
+            ],
+            'email': [
+                '*email*', '*e-mail*', '*mail*', '*your*email*', '*contact*email*',
+                '*Email*', '*EmailAddress*', '*e_mail*', '*user*email*',
+                '*correo*', '*email*address*', '*electronic*mail*'
+            ],
+            'phone': [
+                '*phone*', '*tel*', '*telephone*', '*mobile*', '*cell*', '*contact*number*',
+                '*Phone*', '*Telephone*', '*Mobile*', '*Cell*',
+                '*phonenumber*', '*phone*number*', '*contact*phone*',
+                '*telefono*', '*mobil*', '*handphone*'
+            ],
+            'message': [
+                '*message*', '*comment*', '*details*', '*description*', '*inquiry*', '*enquiry*',
+                '*how*help*', '*your*message*', '*additional*info*', '*questions*',
+                '*Message*', '*Comment*', '*Description*', '*Inquiry*',
+                '*mensaje*', '*comentario*', '*nachricht*', '*bericht*'
+            ]
+        }
+        
+        self.placeholder_keywords = {
+            'name': ['your name', 'full name', 'first name', 'last name', 'name', 'fullname'],
+            'email': ['email', 'e-mail', 'your email', 'email address', 'mail'],
+            'phone': ['phone', 'telephone', 'mobile', 'cell', 'phone number'],
+            'message': ['message', 'comment', 'how can we help', 'your message', 'details']
+        }
+        
+        self.submit_selectors = [
+            "button[type='submit']", "input[type='submit']",
+            "button:has-text('Send')", "button:has-text('Submit')", 
+            "button:has-text('Contact')", "button:has-text('Message')",
+            "button:has-text('Get in Touch')", "button:has-text('Reach Out')",
+            "button:has-text('Submit Form')", "button:has-text('Send Message')",
+            "*[type='submit']", ".submit-btn", ".contact-btn"
+        ]
+
+    async def detect_fields(self, page):
+        """ULTRA ADVANCED FIELD DETECTION WITH CONFIDENCE SCORING"""
+        print("🔍 ULTRA ADVANCED FIELD DETECTION...")
+        
+        all_elements = await page.query_selector_all('input, textarea, select')
+        detected_fields = {'name': None, 'email': None, 'phone': None, 'message': None}
+        confidence_scores = {'name': 0, 'email': 0, 'phone': 0, 'message': 0}
+        
+        for element in all_elements:
+            if not await self.is_fillable(element):
+                continue
+                
+            element_data = await self.get_element_data(element)
+            field_type, confidence = await self.analyze_element(element_data)
+            
+            if field_type and confidence > confidence_scores[field_type]:
+                detected_fields[field_type] = element
+                confidence_scores[field_type] = confidence
+                print(f"✅ {field_type.upper()} detected (confidence: {confidence})")
+        
+        return detected_fields
+
+    async def is_fillable(self, element):
+        """Check if element is fillable"""
+        try:
+            if not await element.is_visible():
+                return False
+                
+            element_type = (await element.get_attribute('type') or '').lower()
+            if element_type in ['hidden', 'submit', 'button', 'checkbox', 'radio', 'file']:
+                return False
+                
+            return True
+        except:
+            return False
+
+    async def get_element_data(self, element):
+        """Get all element data for analysis"""
+        tag_name = await element.evaluate('el => el.tagName.toLowerCase()')
+        
+        return {
+            'id': (await element.get_attribute('id') or '').lower(),
+            'name': (await element.get_attribute('name') or '').lower(),
+            'type': (await element.get_attribute('type') or '').lower(),
+            'placeholder': (await element.get_attribute('placeholder') or '').lower(),
+            'class': (await element.get_attribute('class') or '').lower(),
+            'tag': tag_name
+        }
+
+    async def analyze_element(self, element_data):
+        """Analyze element with confidence scoring"""
+        best_field = None
+        best_confidence = 0
+        
+        for field_type, patterns in self.field_patterns.items():
+            confidence = await self.calculate_confidence(element_data, patterns, field_type)
+            if confidence > best_confidence:
+                best_field = field_type
+                best_confidence = confidence
+        
+        return best_field, best_confidence
+
+    async def calculate_confidence(self, element_data, patterns, field_type):
+        """Calculate confidence score for field detection"""
+        confidence = 0
+        
+        # Method 1: ID Pattern Matching (Highest Confidence)
+        for pattern in patterns:
+            if pattern.replace('*', '') in element_data['id']:
+                confidence = max(confidence, 90)
+                break
+        
+        # Method 2: Name Attribute Matching
+        for pattern in patterns:
+            if pattern.replace('*', '') in element_data['name']:
+                confidence = max(confidence, 80)
+                break
+        
+        # Method 3: Placeholder Text Matching
+        for keyword in self.placeholder_keywords[field_type]:
+            if keyword in element_data['placeholder']:
+                confidence = max(confidence, 70)
+                break
+        
+        # Method 4: Input Type Detection
+        if field_type == 'email' and element_data['type'] == 'email':
+            confidence = max(confidence, 85)
+        elif field_type == 'phone' and element_data['type'] == 'tel':
+            confidence = max(confidence, 85)
+        
+        # Method 5: Tag-based Detection
+        if field_type == 'message' and element_data['tag'] == 'textarea':
+            confidence = max(confidence, 60)
+        
+        # Method 6: Class Name Detection
+        for pattern in patterns:
+            if pattern.replace('*', '') in element_data['class']:
+                confidence = max(confidence, 50)
+                break
+        
+        return confidence
+
+class AdvancedBot:
+    """ULTRA ADVANCED BOT ENGINE"""
+    
+    def __init__(self):
+        self.form_detector = UltraFormDetector()
+        self.browser = None
+        self.main_page = None
+        
+    async def initialize(self):
+        """Initialize the advanced bot"""
+        playwright = await async_playwright().start()
+        self.browser = await playwright.chromium.launch(headless=False)
+        self.main_page = await self.browser.new_page(viewport={'width': 1365, 'height': 901})
+        
+    async def ultra_debug_extract_results(self, page):
+        """ULTRA DEBUG: Extract and analyze ALL results"""
+        print("🔍 ULTRA DEBUG EXTRACTION...")
+        
+        # Take screenshot for analysis
+        screenshot = await page.screenshot(full_page=True)
+        send_to_telegram(screenshot, "🔍 ULTRA DEBUG: Google Search Results")
+        
+        results = []
+        all_links = await page.query_selector_all('a')
+        print(f"🔗 Found {len(all_links)} total links")
+        
+        for i, link in enumerate(all_links):
+            try:
+                href = await link.get_attribute('href')
+                text = await link.text_content() or ""
+                text = text.strip()[:50]
+                
+                if href:
+                    # ULTRA URL EXTRACTION
+                    if '/url?q=' in href:
+                        actual_url = href.split('/url?q=')[1].split('&')[0]
+                        actual_url = unquote(actual_url)
+                        
+                        if actual_url.startswith('http') and 'google.com' not in actual_url:
+                            results.append(actual_url)
+                            print(f"✅ SEARCH RESULT: {actual_url}")
+                            
+                    elif href.startswith('http') and 'google.com' not in href:
+                        results.append(href)
+                        print(f"✅ DIRECT LINK: {href}")
+                        
+            except Exception as e:
+                continue
+        
+        unique_results = list(set(results))
+        print(f"🎯 ULTRA EXTRACTION: {len(unique_results)} unique websites")
+        
+        # Send detailed report
+        if unique_results:
+            results_text = "\n".join([f"{i+1}. {url}" for i, url in enumerate(unique_results[:10])])
+            send_to_telegram(screenshot, f"🔍 ULTRA EXTRACTION RESULTS\nFound {len(unique_results)} websites\n\nTop 10:\n{results_text}")
+        
+        return unique_results
+
+    async def handle_captcha(self, page, context=""):
+        """ULTRA CAPTCHA HANDLING"""
+        print(f"🚨 ULTRA CAPTCHA DETECTED: {context}")
+        screenshot = await page.screenshot(full_page=True)
+        send_to_telegram(screenshot, f"🚨 ULTRA CAPTCHA - {context}\nSOLVE MANUALLY - TAB LEFT OPEN")
+        
+        # Wait for manual solution with Enter key
+        print("⏳ ULTRA WAITING - Press Enter after solving CAPTCHA...")
+        input(">>> PRESS ENTER AFTER SOLVING CAPTCHA <<< ")
+        
+        print("✅ ULTRA CAPTCHA SOLVED - Continuing...")
+        return True
+
+    async def find_contact_page_ultra(self, page, website_url):
+        """ULTRA CONTACT PAGE DETECTION"""
+        print(f"🌐 ULTRA CONTACT DETECTION: {website_url}")
+        
+        domain = urlparse(website_url).netloc
+        
+        # ULTRA STRATEGY 1: Direct URL attempts
+        contact_paths = [
+            '/contact', '/contact-us', '/contactus', '/get-in-touch', 
+            '/en/contact', '/contact.html', '/contact.php', '/contact.aspx',
+            '/contact-form', '/reach-out', '/connect', '/contacto', '/kontakt'
+        ]
+        
+        for path in contact_paths:
+            contact_url = f"{website_url.rstrip('/')}{path}"
+            try:
+                await page.goto(contact_url, timeout=15000, wait_until='domcontentloaded')
+                if await self.has_contact_form(page):
+                    print(f"✅ ULTRA CONTACT FOUND: {contact_url}")
+                    return contact_url
+            except:
+                continue
+        
+        # ULTRA STRATEGY 2: Navigate and search
+        try:
+            await page.goto(website_url, timeout=20000, wait_until='domcontentloaded')
+            await asyncio.sleep(2)
+            
+            # ULTRA LINK DETECTION
+            contact_selectors = [
+                "a[href*='contact']", "a:has-text('Contact')", "a:has-text('contact')",
+                "a:has-text('Get in Touch')", "a:has-text('Reach Out')", "a:has-text('Connect')",
+                "a:has-text('Message')", "a:has-text('Enquire')", "a:has-text('Inquiry')",
+                "nav a[href*='contact']", ".menu a[href*='contact']", ".navigation a[href*='contact']",
+                "footer a[href*='contact']", ".header a[href*='contact']"
+            ]
+            
+            for selector in contact_selectors:
+                try:
+                    links = await page.query_selector_all(selector)
+                    for link in links:
+                        href = await link.get_attribute('href')
+                        if href and not href.startswith(('javascript:', 'mailto:', 'tel:')):
+                            if href.startswith('/'):
+                                contact_url = f"{website_url.rstrip('/')}{href}"
+                            else:
+                                contact_url = href
+                            
+                            try:
+                                await page.goto(contact_url, timeout=15000)
+                                if await self.has_contact_form(page):
+                                    print(f"✅ ULTRA CONTACT VIA LINK: {contact_url}")
+                                    return contact_url
+                            except:
+                                continue
+                except:
+                    continue
+        except Exception as e:
+            print(f"❌ ULTRA CONTACT ERROR: {e}")
+        
+        print("❌ ULTRA: No contact page found")
+        return None
+
+    async def has_contact_form(self, page):
+        """Check if page has a contact form"""
+        forms = await page.query_selector_all('form, .contact-form, #contactForm, .wpcf7-form')
+        return len(forms) > 0
+
+    async def fill_form_ultra(self, page, contact_url):
+        """ULTRA FORM FILLING WITH ADVANCED DETECTION"""
+        print(f"🔄 ULTRA FORM FILLING: {contact_url}")
+        
+        test_data = get_test_data()
+        
+        try:
+            await page.goto(contact_url, timeout=25000, wait_until='domcontentloaded')
+            await asyncio.sleep(2)
+            
+            # ULTRA FORM DETECTION
+            detected_fields = await self.form_detector.detect_fields(page)
+            
+            # Check if we found any fields
+            if not any(detected_fields.values()):
+                print("❌ ULTRA: No form fields detected")
+                return False
+            
+            # ULTRA FIELD FILLING
+            fields_filled = 0
+            for field_type, element in detected_fields.items():
+                if element:
+                    try:
+                        value = test_data[field_type]
+                        await element.fill(value)
+                        fields_filled += 1
+                        print(f"✅ ULTRA FILLED: {field_type}")
+                        await asyncio.sleep(0.3)
+                    except Exception as e:
+                        print(f"❌ ULTRA FILL ERROR {field_type}: {e}")
+            
+            print(f"✅ ULTRA FILLED {fields_filled} FIELDS")
+            
+            if fields_filled == 0:
+                return False
+            
+            # ULTRA FORM SUBMISSION
+            for selector in self.form_detector.submit_selectors:
+                submit_btn = await page.query_selector(selector)
+                if submit_btn and await submit_btn.is_visible():
+                    try:
+                        print(f"✅ ULTRA SUBMITTING: {selector}")
+                        await submit_btn.click()
+                        await asyncio.sleep(4)
+                        
+                        # ULTRA SUCCESS DETECTION
+                        screenshot = await page.screenshot(full_page=True)
+                        current_url = page.url
+                        page_content = (await page.content()).lower()
+                        
+                        success_indicators = [
+                            'thank you', 'success', 'submitted', 'message sent', 
+                            'received', 'confirmation', 'successfully', 'enquiry received'
+                        ]
+                        
+                        if any(indicator in page_content for indicator in success_indicators):
+                            send_to_telegram(screenshot, f"🎉 ULTRA SUCCESS\n{contact_url}\nFields: {fields_filled}")
+                            print("🎉 ULTRA FORM SUBMITTED SUCCESSFULLY!")
+                            return True
+                        else:
+                            send_to_telegram(screenshot, f"⚠️ ULTRA SUBMITTED\n{contact_url}\nFields: {fields_filled}")
+                            print("⚠️ ULTRA FORM SUBMITTED (success unconfirmed)")
+                            return True
+                            
+                    except Exception as e:
+                        print(f"❌ ULTRA SUBMIT ERROR: {e}")
+            
+            print("❌ ULTRA: No submit button found")
+            return False
+            
+        except Exception as e:
+            print(f"❌ ULTRA FORM ERROR: {e}")
+            return False
+
+    async def process_website_ultra(self, website_url):
+        """ULTRA WEBSITE PROCESSING"""
+        domain = urlparse(website_url).netloc
+        
+        if domain in visited_domains or domain in skipped_sites:
+            return "skip"
+        
+        print(f"🌐 ULTRA PROCESSING: {domain}")
+        
+        # Create new tab for this website
+        context = await self.browser.new_context(viewport={'width': 1365, 'height': 901})
+        page = await context.new_page()
+        
+        try:
+            # ULTRA CONTACT PAGE DETECTION
+            contact_url = await self.find_contact_page_ultra(page, website_url)
+            if not contact_url:
+                print(f"❌ ULTRA: No contact page - skipping {domain}")
+                skipped_sites.add(domain)
+                return "skip"
+            
+            # ULTRA FORM FILLING
+            result = await self.fill_form_ultra(page, contact_url)
+            
+            if result:
+                visited_domains.add(domain)
+                successful_submissions.add(domain)
+                return "success"
+            else:
+                failed_sites.add(domain)
+                return "fail"
+                
+        except Exception as e:
+            print(f"❌ ULTRA PROCESSING ERROR {domain}: {e}")
+            return "error"
+        finally:
+            # Only close non-CAPTCHA tabs
+            if domain not in captcha_sites:
+                await page.close()
+                await context.close()
+
+    async def scan_google_pages_ultra(self, keyword):
+        """ULTRA GOOGLE SCANNING - PAGES 1-10"""
+        print(f"🔍 ULTRA SCANNING: {keyword}")
+        
+        search_url = f"https://www.google.com/search?q={keyword.replace(' ', '+')}"
+        await self.main_page.goto(search_url)
+        await asyncio.sleep(3)
+        
+        # ULTRA CAPTCHA HANDLING
+        if "google.com/sorry" in self.main_page.url:
+            await self.handle_captcha(self.main_page, "Google Search")
+            await self.main_page.reload()
+            await asyncio.sleep(3)
+        
+        total_success = 0
+        
+        # ULTRA PAGE CYCLING 1-10
+        for page_num in range(1, PAGES_TO_SCAN + 1):
+            print(f"📄 ULTRA PAGE {page_num}/{PAGES_TO_SCAN}")
+            
+            # ULTRA RESULT EXTRACTION
+            search_results = await self.ultra_debug_extract_results(self.main_page)
+            
+            if not search_results:
+                print(f"❌ ULTRA: No results page {page_num}")
+                continue
+            
+            print(f"🎯 ULTRA PROCESSING {len(search_results)} WEBSITES")
+            
+            # ULTRA PARALLEL PROCESSING
+            page_success = 0
+            for i, website in enumerate(search_results):
+                result = await self.process_website_ultra(website)
+                
+                if result == "success":
+                    page_success += 1
+                    total_success += 1
+                
+                # ULTRA DELAY MANAGEMENT
+                await asyncio.sleep(random.uniform(*REQUEST_DELAY))
+            
+            print(f"📊 ULTRA PAGE {page_num} RESULTS: {page_success} successes")
+            
+            # ULTRA PAGINATION
+            if page_num < PAGES_TO_SCAN:
+                next_success = await self.go_to_next_page_ultra(page_num + 1)
+                if not next_success:
+                    break
+        
+        print(f"🎊 ULTRA SCAN COMPLETE: {total_success} total successes")
+        return total_success
+
+    async def go_to_next_page_ultra(self, next_page_num):
+        """ULTRA PAGINATION"""
+        try:
+            next_selectors = [
+                f"a[aria-label='Page {next_page_num}']",
+                f"td:nth-of-type({next_page_num + 1}) > a",
+                f"a:has-text('{next_page_num}')",
+                f"a[aria-label*='Page {next_page_num}']"
+            ]
+            
+            for selector in next_selectors:
+                next_btn = await self.main_page.query_selector(selector)
+                if next_btn:
+                    print(f"✅ ULTRA NEXT PAGE: {selector}")
+                    await next_btn.click()
+                    await asyncio.sleep(3)
+                    return True
+            
+            print("❌ ULTRA: No next page button")
+            return False
+        except Exception as e:
+            print(f"❌ ULTRA PAGINATION ERROR: {e}")
+            return False
+
+    async def run_ultra_bot(self):
+        """ULTRA BOT MAIN LOOP - NEVER STOPS"""
+        print("🚀 ULTRA ADVANCED BOT ACTIVATED")
+        print("🎯 FEATURES: Multi-tab, Continuous, Advanced Detection, Never Stops")
+        
+        await self.initialize()
+        
+        cycle_count = 0
+        while True:  # ULTRA NEVER STOPS
+            cycle_count += 1
+            print(f"\n🔄 ULTRA CYCLE {cycle_count} STARTING...")
+            
+            try:
+                for keyword in KEYWORDS:
+                    success_count = await self.scan_google_pages_ultra(keyword)
+                    print(f"🎯 ULTRA CYCLE {cycle_count} COMPLETE: {success_count} successes")
+                
+                # ULTRA STATUS REPORT
+                status_msg = f"🔄 ULTRA STATUS - Cycle {cycle_count}\n"
+                status_msg += f"✅ Successful: {len(successful_submissions)}\n"
+                status_msg += f"❌ Failed: {len(failed_sites)}\n" 
+                status_msg += f"⏩ Skipped: {len(skipped_sites)}\n"
+                status_msg += f"🚨 CAPTCHA: {len(captcha_sites)}\n"
+                status_msg += f"🌐 Total Processed: {len(visited_domains)}"
+                
+                print(status_msg)
+                
+                # ULTRA CONTINUOUS OPERATION
+                print("♾️ ULTRA CONTINUING - NEXT CYCLE IN 10 SECONDS...")
+                await asyncio.sleep(10)
+                
+            except Exception as e:
+                print(f"💥 ULTRA CYCLE ERROR: {e}")
+                print("🔄 ULTRA RESTARTING...")
+                await asyncio.sleep(5)
+
+# ULTRA BOT EXECUTION
+async def main():
+    ultra_bot = AdvancedBot()
+    await ultra_bot.run_ultra_bot()
+
+if __name__ == "__main__":
+    print("=" * 50)
+    print("🚀 ULTRA ADVANCED LAWYER CONTACT BOT")
+    print("🎯 NEVER STOPS - MULTI-TAB - CONTINUOUS")
+    print("🔧 ADVANCED DETECTION - TEST DATA ONLY")
+    print("=" * 50)
+    asyncio.run(main())
