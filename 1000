@@ -1,0 +1,1092 @@
+import asyncio
+import random
+from playwright.async_api import async_playwright
+import requests
+from urllib.parse import urlparse, unquote
+import os
+from datetime import datetime
+
+# === CONFIGURATION ===
+BOT_TOKEN = "7619040891:AAF9pfQQme32XvhTfUb97jzky5w4ZEaBzwc"
+CHAT_ID = "5172045930"
+
+# REAL CONTACT DETAILS - Kevin Fang, CEO of Kevand Co
+CONTACT_INFO = {
+    'first_name': 'Kevin',
+    'last_name': 'Fang',
+    'full_name': 'Kevin Fang',
+    'email': 'kevin.fang@kevandco.com',
+    'phone': '+1-555-0198',
+    'company': 'Kevand Co',
+    'job_title': 'CEO',
+    'website': 'www.kevandco.com',
+    'message': (
+        'Good day,\n\n'
+        'My name is Kevin Fang, and I serve as CEO of Kevand Co. '
+        'We are currently exploring legal partnerships and would greatly appreciate '
+        'the opportunity to discuss how your firm\'s expertise could support our business objectives. '
+        'I would be grateful for a consultation at your earliest convenience to explore potential collaboration.\n\n'
+        'Looking forward to connecting with you.\n\n'
+        'Best regards,\n'
+        'Kevin Fang\n'
+        'CEO, Kevand Co'
+    ),
+    'subject': 'Partnership Inquiry - Kevand Co',
+    
+    # Optional fields
+    'address': '789 Executive Plaza',
+    'city': 'New York',
+    'state': 'NY',
+    'zip': '10001',
+    'country': 'United States'
+}
+
+# BOT CONFIGURATION
+MAX_MANUAL_TABS_PER_BROWSER = 25
+MAX_PARALLEL_SITES = 15
+PAGES_TO_SCAN = 10
+REQUEST_DELAY = (1, 3)
+KEYWORDS_FILE = 'keywords.txt'
+
+# GLOBAL TRACKING
+visited_domains = set()
+skipped_sites = set()
+successful_submissions = set()
+failed_sites = set()
+total_browsers_created = 0
+total_manual_tabs = 0
+total_forms_filled = 0
+session_start_time = datetime.now()
+
+def load_keywords():
+    """Load keywords from keywords.txt file"""
+    try:
+        if not os.path.exists(KEYWORDS_FILE):
+            # Create default file
+            with open(KEYWORDS_FILE, 'w') as f:
+                f.write('escrow lawyers\n')
+            print(f"✅ Created default {KEYWORDS_FILE}")
+            return ['escrow lawyers']
+        
+        with open(KEYWORDS_FILE, 'r') as f:
+            keywords = [line.strip() for line in f if line.strip()]
+        
+        if not keywords:
+            print(f"⚠️ {KEYWORDS_FILE} is empty, using default")
+            return ['escrow lawyers']
+        
+        print(f"✅ Loaded {len(keywords)} keywords from {KEYWORDS_FILE}")
+        return keywords
+    except Exception as e:
+        print(f"❌ Error loading keywords: {e}")
+        return ['escrow lawyers']
+
+def send_to_telegram(image_bytes, caption):
+    """Send screenshot to Telegram"""
+    try:
+        files = {"photo": ("screenshot.png", image_bytes, 'image/png')}
+        data = {"chat_id": CHAT_ID, "caption": caption[:1024]}
+        response = requests.post(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto",
+            files=files, data=data, timeout=10
+        )
+        return response.status_code == 200
+    except Exception as e:
+        print(f"Telegram error: {e}")
+        return False
+
+def send_text_to_telegram(message):
+    """Send text message to Telegram"""
+    try:
+        data = {
+            "chat_id": CHAT_ID,
+            "text": message[:4096],
+            "parse_mode": "HTML"
+        }
+        response = requests.post(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+            json=data, timeout=10
+        )
+        return response.status_code == 200
+    except Exception as e:
+        print(f"Telegram error: {e}")
+        return False
+
+def get_session_stats():
+    """Get current session statistics"""
+    elapsed = datetime.now() - session_start_time
+    hours = elapsed.total_seconds() / 3600
+    
+    stats = {
+        'elapsed': str(elapsed).split('.')[0],
+        'browsers': total_browsers_created,
+        'success': len(successful_submissions),
+        'manual': total_manual_tabs,
+        'failed': len(failed_sites),
+        'skipped': len(skipped_sites),
+        'total': len(visited_domains),
+        'forms_filled': total_forms_filled,
+        'success_rate': f"{(len(successful_submissions) / max(len(visited_domains), 1) * 100):.1f}%"
+    }
+    return stats
+
+def get_field_value(field_type):
+    """Get appropriate value for field type"""
+    field_mapping = {
+        'first_name': CONTACT_INFO['first_name'],
+        'fname': CONTACT_INFO['first_name'],
+        'firstname': CONTACT_INFO['first_name'],
+        'given_name': CONTACT_INFO['first_name'],
+        'last_name': CONTACT_INFO['last_name'],
+        'lname': CONTACT_INFO['last_name'],
+        'lastname': CONTACT_INFO['last_name'],
+        'surname': CONTACT_INFO['last_name'],
+        'family_name': CONTACT_INFO['last_name'],
+        'name': CONTACT_INFO['full_name'],
+        'full_name': CONTACT_INFO['full_name'],
+        'fullname': CONTACT_INFO['full_name'],
+        'your_name': CONTACT_INFO['full_name'],
+        'contact_name': CONTACT_INFO['full_name'],
+        'email': CONTACT_INFO['email'],
+        'mail': CONTACT_INFO['email'],
+        'email_address': CONTACT_INFO['email'],
+        'e_mail': CONTACT_INFO['email'],
+        'phone': CONTACT_INFO['phone'],
+        'telephone': CONTACT_INFO['phone'],
+        'mobile': CONTACT_INFO['phone'],
+        'cell': CONTACT_INFO['phone'],
+        'tel': CONTACT_INFO['phone'],
+        'phone_number': CONTACT_INFO['phone'],
+        'contact_number': CONTACT_INFO['phone'],
+        'company': CONTACT_INFO['company'],
+        'business': CONTACT_INFO['company'],
+        'organization': CONTACT_INFO['company'],
+        'organisation': CONTACT_INFO['company'],
+        'corporation': CONTACT_INFO['company'],
+        'firm': CONTACT_INFO['company'],
+        'company_name': CONTACT_INFO['company'],
+        'business_name': CONTACT_INFO['company'],
+        'job_title': CONTACT_INFO['job_title'],
+        'title': CONTACT_INFO['job_title'],
+        'position': CONTACT_INFO['job_title'],
+        'role': CONTACT_INFO['job_title'],
+        'occupation': CONTACT_INFO['job_title'],
+        'website': CONTACT_INFO['website'],
+        'url': CONTACT_INFO['website'],
+        'web': CONTACT_INFO['website'],
+        'site': CONTACT_INFO['website'],
+        'message': CONTACT_INFO['message'],
+        'comment': CONTACT_INFO['message'],
+        'comments': CONTACT_INFO['message'],
+        'details': CONTACT_INFO['message'],
+        'description': CONTACT_INFO['message'],
+        'inquiry': CONTACT_INFO['message'],
+        'enquiry': CONTACT_INFO['message'],
+        'question': CONTACT_INFO['message'],
+        'questions': CONTACT_INFO['message'],
+        'how_can_we_help': CONTACT_INFO['message'],
+        'your_message': CONTACT_INFO['message'],
+        'tell_us': CONTACT_INFO['message'],
+        'subject': CONTACT_INFO['subject'],
+        'topic': CONTACT_INFO['subject'],
+        'regarding': CONTACT_INFO['subject'],
+        'reason': CONTACT_INFO['subject'],
+        'address': CONTACT_INFO['address'],
+        'street': CONTACT_INFO['address'],
+        'street_address': CONTACT_INFO['address'],
+        'address_line_1': CONTACT_INFO['address'],
+        'city': CONTACT_INFO['city'],
+        'town': CONTACT_INFO['city'],
+        'locality': CONTACT_INFO['city'],
+        'state': CONTACT_INFO['state'],
+        'province': CONTACT_INFO['state'],
+        'region': CONTACT_INFO['state'],
+        'zip': CONTACT_INFO['zip'],
+        'zipcode': CONTACT_INFO['zip'],
+        'postal': CONTACT_INFO['zip'],
+        'postal_code': CONTACT_INFO['zip'],
+        'postcode': CONTACT_INFO['zip'],
+        'country': CONTACT_INFO['country'],
+        'nation': CONTACT_INFO['country']
+    }
+    
+    return field_mapping.get(field_type, '')
+
+class ProFormDetector:
+    """Professional form field detection with comprehensive pattern matching"""
+    
+    def __init__(self):
+        self.field_patterns = {
+            'first_name': [
+                'first*name', 'fname', 'f*name', 'forename', 'given*name',
+                'firstname', 'first_name', 'field*first', 'name*first', 'your*first',
+                'givenname', 'given_name'
+            ],
+            'last_name': [
+                'last*name', 'lname', 'l*name', 'surname', 'family*name',
+                'lastname', 'last_name', 'field*last', 'name*last', 'your*last',
+                'familyname', 'family_name'
+            ],
+            'name': [
+                'full*name', '*name*', 'your*name', 'contact*name', 
+                'client*name', 'person*name', 'fullname', 'full_name',
+                'display*name', 'real*name'
+            ],
+            'email': [
+                '*email*', '*e-mail*', '*mail*', 'e_mail', 'electronic*mail',
+                'email*address', 'mail*address', 'contact*email', 'your*email',
+                'user*email'
+            ],
+            'phone': [
+                '*phone*', '*tel*', 'telephone', '*mobile*', '*cell*',
+                'phone*number', 'contact*number', 'phonenumber', 'tel*number',
+                'phone_number', 'telephone*number', 'mobile*number'
+            ],
+            'company': [
+                '*company*', '*business*', '*organization*', '*organisation*',
+                '*firm*', '*corporation*', 'employer', 'company*name', 'org*',
+                'business*name', 'corporate*', 'firm*name', 'corp*'
+            ],
+            'job_title': [
+                '*job*', '*title*', '*position*', '*role*', 'occupation',
+                'job*title', 'work*title', 'your*title', 'your*position',
+                'job_title', 'work*position'
+            ],
+            'address': [
+                '*address*', '*street*', '*addr*', 'location',
+                'street*address', 'address*line', 'address1', 'address_1',
+                'address_line_1', 'line1'
+            ],
+            'city': [
+                '*city*', '*town*', 'locality', 'municipality', 'urban'
+            ],
+            'state': [
+                '*state*', '*province*', '*region*', 'county', 'territory'
+            ],
+            'zip': [
+                '*zip*', '*postal*', 'postcode', 'zipcode', 'zip*code',
+                'postal*code', 'post*code', 'post_code'
+            ],
+            'country': [
+                '*country*', '*nation*', 'nationality', 'country*name'
+            ],
+            'website': [
+                '*website*', '*url*', '*web*', 'site', 'homepage',
+                'web*address', 'web*site', 'your*website', 'your*site'
+            ],
+            'subject': [
+                '*subject*', '*topic*', '*regarding*', 'about', 'reason',
+                're:', 'inquiry*type', 'service*needed'
+            ],
+            'message': [
+                '*message*', '*comment*', '*details*', '*description*', 
+                '*inquiry*', '*enquiry*', '*question*', 'how*help',
+                'additional*info', 'more*info', 'tell*us', 'your*message',
+                'your*comment', 'your*inquiry', 'your*question'
+            ]
+        }
+        
+        self.submit_selectors = [
+            "button[type='submit']", 
+            "input[type='submit']",
+            "button:has-text('Send')", 
+            "button:has-text('Submit')", 
+            "button:has-text('Contact')",
+            "button:has-text('Submit Now')",
+            "button:has-text('Send Message')",
+            "button:has-text('Get in Touch')",
+            "button:has-text('Send Now')",
+            "button:has-text('Reach Out')",
+            "button:has-text('Submit Form')",
+            "button:has-text('Contact Us')",
+            "button:has-text('Request')",
+            "button:has-text('Inquire')",
+            "button:has-text('Send Inquiry')",
+            "button:has-text('Get Started')",
+            "*[type='submit']", 
+            ".submit-btn", 
+            ".contact-btn", 
+            ".send-btn",
+            ".btn-submit",
+            "input[value*='Submit']", 
+            "input[value*='Send']",
+            "button[class*='submit']", 
+            "button[class*='send']",
+            "button[class*='contact']",
+            "form button:not([type='button']):not([type='reset'])"
+        ]
+        
+        self.popup_selectors = [
+            ".close", ".dismiss", ".btn-close", ".popup-close",
+            ".modal-close", ".close-button", ".close-icon",
+            "[aria-label='Close']", "[aria-label='Dismiss']",
+            "[title='Close']", "[title='Dismiss']",
+            "button:has-text('Close')", "button:has-text('Dismiss')",
+            "button:has-text('No thanks')", "button:has-text('Maybe later')",
+            "button:has-text('Not now')", "button:has-text('Decline')",
+            "button:has-text('No Thank You')", "button:has-text('Skip')",
+            ".cookie-accept", ".cookie-dismiss", ".cookie-close",
+            "#cookie-notice button", ".gdpr-dismiss", ".accept-cookies",
+            "button:has-text('Accept')", "button:has-text('Got it')",
+            ".notification-close", ".alert-dismiss"
+        ]
+
+    async def close_popups(self, page):
+        """Intelligently close popups and overlays"""
+        try:
+            await asyncio.sleep(1)
+            
+            for selector in self.popup_selectors:
+                try:
+                    buttons = await page.query_selector_all(selector)
+                    for button in buttons[:3]:
+                        if await button.is_visible():
+                            try:
+                                await button.click(timeout=2000)
+                                print(f"  ✅ Closed popup")
+                                await asyncio.sleep(0.5)
+                            except:
+                                pass
+                except:
+                    continue
+        except:
+            pass
+
+    async def detect_all_fields(self, page):
+        """Detect all fillable form fields with advanced pattern matching"""
+        print("🔍 SCANNING FORM FIELDS...")
+        
+        await self.close_popups(page)
+        
+        all_elements = await page.query_selector_all('input, textarea, select')
+        detected_fields = {}
+        confidence_scores = {}
+        field_elements = {}
+        
+        for element in all_elements:
+            if not await self.is_fillable(element):
+                continue
+                
+            element_data = await self.get_element_data(element)
+            field_type, confidence = await self.analyze_element(element_data)
+            
+            if field_type and confidence > 10:
+                if field_type not in confidence_scores or confidence > confidence_scores[field_type]:
+                    detected_fields[field_type] = element
+                    confidence_scores[field_type] = confidence
+                    field_elements[field_type] = element_data
+                    print(f"  ✅ {field_type}: {confidence}% (via {element_data['name'] or element_data['id'] or 'class'})")
+        
+        print(f"📊 DETECTED {len(detected_fields)} FIELDS")
+        return detected_fields
+
+    async def is_fillable(self, element):
+        """Check if element is fillable"""
+        try:
+            if not await element.is_visible():
+                return False
+                
+            element_type = (await element.get_attribute('type') or '').lower()
+            if element_type in ['hidden', 'submit', 'button', 'file', 'image', 'reset', 'checkbox', 'radio']:
+                return False
+                
+            is_disabled = await element.get_attribute('disabled')
+            is_readonly = await element.get_attribute('readonly')
+            if is_disabled or is_readonly:
+                return False
+            
+            try:
+                box = await element.bounding_box()
+                if not box or box['width'] == 0 or box['height'] == 0:
+                    return False
+            except:
+                return False
+                
+            return True
+        except:
+            return False
+
+    async def get_element_data(self, element):
+        """Extract comprehensive element metadata"""
+        tag_name = await element.evaluate('el => el.tagName.toLowerCase()')
+        
+        return {
+            'id': (await element.get_attribute('id') or '').lower(),
+            'name': (await element.get_attribute('name') or '').lower(),
+            'type': (await element.get_attribute('type') or '').lower(),
+            'placeholder': (await element.get_attribute('placeholder') or '').lower(),
+            'class': (await element.get_attribute('class') or '').lower(),
+            'aria_label': (await element.get_attribute('aria-label') or '').lower(),
+            'title': (await element.get_attribute('title') or '').lower(),
+            'data_name': (await element.get_attribute('data-name') or '').lower(),
+            'autocomplete': (await element.get_attribute('autocomplete') or '').lower(),
+            'tag': tag_name
+        }
+
+    async def analyze_element(self, element_data):
+        """Analyze element with comprehensive pattern matching"""
+        best_field = None
+        best_confidence = 0
+        
+        for field_type, patterns in self.field_patterns.items():
+            confidence = self.calculate_confidence(element_data, patterns, field_type)
+            if confidence > best_confidence:
+                best_field = field_type
+                best_confidence = confidence
+        
+        return best_field, best_confidence
+
+    def calculate_confidence(self, element_data, patterns, field_type):
+        """Calculate confidence score using all available signals"""
+        confidence = 0
+        
+        for pattern in patterns:
+            pattern_clean = pattern.replace('*', '')
+            
+            if pattern_clean in element_data['id']:
+                confidence = max(confidence, 95)
+            
+            if pattern_clean in element_data['name']:
+                confidence = max(confidence, 92)
+            
+            if pattern_clean in element_data['autocomplete']:
+                confidence = max(confidence, 88)
+            
+            if pattern_clean in element_data['data_name']:
+                confidence = max(confidence, 85)
+            
+            if pattern_clean in element_data['aria_label']:
+                confidence = max(confidence, 80)
+            
+            if pattern_clean in element_data['placeholder']:
+                confidence = max(confidence, 75)
+            
+            if pattern_clean in element_data['title']:
+                confidence = max(confidence, 70)
+            
+            if pattern_clean in element_data['class']:
+                confidence = max(confidence, 60)
+        
+        # HTML5 input type matching
+        if field_type == 'email' and element_data['type'] == 'email':
+            confidence = max(confidence, 98)
+        elif field_type == 'phone' and element_data['type'] == 'tel':
+            confidence = max(confidence, 98)
+        elif field_type == 'website' and element_data['type'] == 'url':
+            confidence = max(confidence, 98)
+        
+        if field_type == 'message' and element_data['tag'] == 'textarea':
+            confidence = max(confidence, 75)
+        
+        # Autocomplete attribute hints
+        autocomplete_hints = {
+            'email': ['email'],
+            'phone': ['tel', 'tel-national', 'tel-local'],
+            'first_name': ['given-name'],
+            'last_name': ['family-name'],
+            'name': ['name'],
+            'company': ['organization'],
+            'address': ['street-address', 'address-line1'],
+            'city': ['address-level2'],
+            'state': ['address-level1'],
+            'zip': ['postal-code'],
+            'country': ['country', 'country-name']
+        }
+        
+        if field_type in autocomplete_hints:
+            for hint in autocomplete_hints[field_type]:
+                if hint in element_data['autocomplete']:
+                    confidence = max(confidence, 90)
+        
+        return confidence
+
+class SmartBotEngine:
+    """Main bot engine with intelligent multi-site form filling"""
+    
+    def __init__(self):
+        self.form_detector = ProFormDetector()
+        self.playwright = None
+        self.current_browser = None
+        self.current_context = None
+        self.search_page = None
+        self.manual_attention_tabs = []
+        self.keywords = []
+        
+    async def initialize(self):
+        """Initialize browser and load keywords"""
+        global total_browsers_created
+        
+        self.keywords = load_keywords()
+        self.playwright = await async_playwright().start()
+        await self.create_new_browser()
+        
+    async def create_new_browser(self):
+        """Create new browser instance with optimized settings"""
+        global total_browsers_created
+        total_browsers_created += 1
+        
+        print(f"\n{'='*60}")
+        print(f"🪟 BROWSER #{total_browsers_created} INITIALIZING")
+        print(f"{'='*60}")
+        
+        self.current_browser = await self.playwright.chromium.launch(
+            headless=False,
+            args=[
+                '--start-maximized',
+                '--disable-blink-features=AutomationControlled',
+                '--disable-dev-shm-usage',
+                '--no-sandbox'
+            ]
+        )
+        
+        self.current_context = await self.current_browser.new_context(
+            viewport={'width': 1365, 'height': 901},
+            user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        )
+        
+        self.search_page = await self.current_context.new_page()
+        
+        send_text_to_telegram(
+            f"🪟 <b>BROWSER #{total_browsers_created} READY</b>\n"
+            f"📝 Capacity: {MAX_MANUAL_TABS_PER_BROWSER} manual tabs\n"
+            f"🎯 Processing: {MAX_PARALLEL_SITES} sites in parallel"
+        )
+        
+    async def should_create_new_browser(self):
+        """Check if new browser instance needed"""
+        return len(self.manual_attention_tabs) >= MAX_MANUAL_TABS_PER_BROWSER
+    
+    async def create_new_tab(self):
+        """Create new tab in current browser context"""
+        page = await self.current_context.new_page()
+        return page
+    
+    def add_manual_tab(self, page, domain, reason):
+        """Track tab requiring manual attention"""
+        global total_manual_tabs
+        total_manual_tabs += 1
+        
+        self.manual_attention_tabs.append({
+            'page': page,
+            'domain': domain,
+            'reason': reason,
+            'timestamp': datetime.now()
+        })
+        
+        print(f"🚨 MANUAL TAB: {domain} - {reason}")
+        print(f"   📊 {len(self.manual_attention_tabs)}/{MAX_MANUAL_TABS_PER_BROWSER} tabs")
+    
+    async def handle_captcha(self, page, context=""):
+        """Handle CAPTCHA that blocks submission"""
+        print(f"\n🚨 CAPTCHA BLOCKING SUBMISSION")
+        print(f"   🌐 {context}")
+        
+        screenshot = await page.screenshot(full_page=True)
+        send_to_telegram(
+            screenshot, 
+            f"🚨 <b>CAPTCHA DETECTED</b>\n"
+            f"🌐 {context}\n"
+            f"⏸️ Bot paused - solve CAPTCHA and press ENTER"
+        )
+        
+        input("\n>>> PRESS ENTER AFTER SOLVING CAPTCHA <<< ")
+        print("✅ CAPTCHA SOLVED - Continuing...")
+        await asyncio.sleep(2)
+
+    async def extract_google_results(self, page):
+        """Extract search results from Google with robust parsing"""
+        await asyncio.sleep(3)
+        
+        results = []
+        all_links = await page.query_selector_all('a')
+        
+        for link in all_links:
+            try:
+                href = await link.get_attribute('href')
+                if not href:
+                    continue
+                
+                if '/url?q=' in href:
+                    actual_url = href.split('/url?q=')[1].split('&')[0]
+                    actual_url = unquote(actual_url)
+                    if self.is_valid_result(actual_url):
+                        results.append(actual_url)
+                elif href.startswith('http') and self.is_valid_result(href):
+                    results.append(href)
+                    
+            except:
+                continue
+        
+        unique = list(set(results))
+        print(f"✅ EXTRACTED {len(unique)} UNIQUE URLS")
+        return unique
+    
+    def is_valid_result(self, url):
+        """Validate if URL is a legitimate search result"""
+        invalid_domains = [
+            'google.com', 'webcache', 'translate', 'youtube.com',
+            'facebook.com', 'linkedin.com', 'twitter.com', 'instagram.com'
+        ]
+        return (url.startswith('http') and 
+                not any(domain in url for domain in invalid_domains) and
+                not url.startswith('javascript:'))
+
+    async def find_contact_page(self, page, website_url):
+        """Intelligently locate contact page on website"""
+        contact_paths = [
+            '/contact', '/contact-us', '/contactus', '/get-in-touch', '/contact-form',
+            '/en/contact', '/contact.html', '/contact.php', '/reach-out', '/connect',
+            '/contacto', '/kontakt', '/contact-page', '/get-started', '/consultation',
+            '/contact-info', '/inquiry', '/contact-form'
+        ]
+        
+        # Strategy 1: Try direct contact paths
+        for path in contact_paths:
+            try:
+                url = f"{website_url.rstrip('/')}{path}"
+                await page.goto(url, timeout=15000, wait_until='domcontentloaded')
+                await asyncio.sleep(1)
+                if await self.has_contact_form(page):
+                    print(f"✅ FOUND: {url}")
+                    return url
+            except:
+                continue
+        
+        # Strategy 2: Navigate to homepage and find contact link
+        try:
+            await page.goto(website_url, timeout=20000, wait_until='domcontentloaded')
+            await asyncio.sleep(2)
+            
+            # Close any popups that might block navigation
+            await self.form_detector.close_popups(page)
+            
+            contact_link_selectors = [
+                "a[href*='contact']", 
+                "a:has-text('Contact')", 
+                "a:has-text('Get in Touch')",
+                "a:has-text('Reach Out')",
+                "a:has-text('Contact Us')",
+                "nav a[href*='contact']",
+                "header a[href*='contact']",
+                "footer a[href*='contact']"
+            ]
+            
+            for selector in contact_link_selectors:
+                try:
+                    links = await page.query_selector_all(selector)
+                    for link in links[:5]:
+                        href = await link.get_attribute('href')
+                        if href and not href.startswith(('javascript:', 'mailto:', 'tel:', '#')):
+                            url = href if href.startswith('http') else f"{website_url.rstrip('/')}{href}"
+                            await page.goto(url, timeout=15000, wait_until='domcontentloaded')
+                            await asyncio.sleep(1)
+                            if await self.has_contact_form(page):
+                                print(f"✅ FOUND VIA LINK: {url}")
+                                return url
+                except:
+                    continue
+        except:
+            pass
+        
+        print("❌ NO CONTACT PAGE FOUND")
+        return None
+
+    async def has_contact_form(self, page):
+        """Check if page contains a contact form"""
+        form_selectors = [
+            'form', '.contact-form', '#contactForm', '.wpcf7-form',
+            '.elementor-form', '.wpforms-form', '.gform_wrapper',
+            '.ninja-forms-form', '[class*="contact"]form', '#contact-form',
+            '.form-container', '.contact-section form'
+        ]
+        
+        for selector in form_selectors:
+            forms = await page.query_selector_all(selector)
+            if len(forms) > 0:
+                return True
+        
+        return False
+
+    async def fill_and_submit_form(self, page, contact_url):
+        """Fill and submit form with Kevin Fang's contact information"""
+        global total_forms_filled
+        
+        print(f"📝 PROCESSING FORM: {contact_url}")
+        
+        try:
+            await page.goto(contact_url, timeout=25000, wait_until='domcontentloaded')
+            await asyncio.sleep(2)
+            
+            await self.form_detector.close_popups(page)
+            
+            detected_fields = await self.form_detector.detect_all_fields(page)
+            
+            if not detected_fields:
+                print("❌ NO FILLABLE FIELDS DETECTED")
+                return 'no_fields', 0, 0
+            
+            # Fill all detected fields
+            fields_filled = 0
+            total_fields = len(detected_fields)
+            
+            for field_type, element in detected_fields.items():
+                try:
+                    value = get_field_value(field_type)
+                    if value:
+                        await element.click()
+                        await asyncio.sleep(0.1)
+                        await element.fill('')
+                        await asyncio.sleep(0.1)
+                        await element.fill(str(value))
+                        fields_filled += 1
+                        print(f"  ✅ {field_type} = {str(value)[:50]}")
+                        await asyncio.sleep(0.2)
+                except Exception as e:
+                    print(f"  ⚠️ {field_type} error: {e}")
+            
+            if fields_filled == 0:
+                print("❌ NO FIELDS FILLED")
+                return 'fill_failed', 0, total_fields
+            
+            total_forms_filled += 1
+            print(f"✅ FILLED {fields_filled}/{total_fields} FIELDS")
+            await asyncio.sleep(1)
+            
+            # Attempt form submission
+            for selector in self.form_detector.submit_selectors:
+                try:
+                    btn = await page.query_selector(selector)
+                    if btn and await btn.is_visible():
+                        print(f"🚀 SUBMITTING FORM...")
+                        
+                        await btn.scroll_into_view_if_needed()
+                        await asyncio.sleep(0.5)
+                        
+                        await btn.click()
+                        await asyncio.sleep(6)
+                        
+                        page_content = (await page.content()).lower()
+                        
+                        # Check for CAPTCHA blocking submission
+                        captcha_blocks = [
+                            'please complete the captcha', 
+                            'captcha required',
+                            'verify you are human', 
+                            'complete the verification',
+                            'solve the captcha'
+                        ]
+                        
+                        if any(block in page_content for block in captcha_blocks):
+                            await self.handle_captcha(page, contact_url)
+                            await btn.click()
+                            await asyncio.sleep(6)
+                            page_content = (await page.content()).lower()
+                        
+                        # Check for success indicators
+                        success_indicators = [
+                            'thank you', 'success', 'submitted', 'message sent',
+                            'received', 'confirmation', 'successfully',
+                            'thank you for contacting', 'we will be in touch',
+                            'message has been sent', 'form submitted',
+                            'we received your message', 'your inquiry has been',
+                            'thank you for your inquiry'
+                        ]
+                        
+                        if any(indicator in page_content for indicator in success_indicators):
+                            print("🎉 SUCCESS PAGE DETECTED!")
+                            return 'success', fields_filled, total_fields
+                        
+                        # Check for validation errors
+                        error_indicators = [
+                            'error', 'required', 'invalid', 'please enter',
+                            'must be', 'field is required'
+                        ]
+                        
+                        if any(error in page_content for error in error_indicators):
+                            print("⚠️ VALIDATION ERRORS - Trying next submit button")
+                            continue
+                        
+                        # No clear success/error - needs manual verification
+                        print("⚠️ SUBMISSION UNCLEAR - Needs manual check")
+                        return 'no_success_page', fields_filled, total_fields
+                        
+                except Exception as e:
+                    print(f"  ⚠️ Submit attempt failed: {e}")
+                    continue
+            
+            print("❌ NO SUBMIT BUTTON FOUND")
+            return 'no_submit', fields_filled, total_fields
+            
+        except Exception as e:
+            print(f"❌ FORM PROCESSING ERROR: {e}")
+            return 'error', 0, 0
+
+    async def send_alert(self, page, url, alert_type, filled, total):
+        """Send appropriate notification to Telegram"""
+        try:
+            screenshot = await page.screenshot(full_page=True)
+            
+            if alert_type == 'success':
+                caption = (
+                    f"🎉 <b>AUTO SUCCESS</b>\n"
+                    f"🌐 {url}\n"
+                    f"✅ Filled: {filled}/{total} fields\n"
+                    f"📊 Total successes: {len(successful_submissions)}"
+                )
+                send_to_telegram(screenshot, caption)
+            else:
+                caption = (
+                    f"🚨 <b>MANUAL ATTENTION</b>\n"
+                    f"🌐 {url}\n"
+                    f"📝 Filled: {filled}/{total} fields\n"
+                    f"❓ Reason: {alert_type}\n"
+                    f"🪟 Browser: #{total_browsers_created}\n"
+                    f"📊 Manual tabs: {len(self.manual_attention_tabs)}/{MAX_MANUAL_TABS_PER_BROWSER}"
+                )
+                send_to_telegram(screenshot, caption)
+        except Exception as e:
+            print(f"Alert error: {e}")
+
+    async def process_website(self, website_url):
+        """Process single website with complete workflow"""
+        domain = urlparse(website_url).netloc
+        
+        if domain in visited_domains:
+            return 'skip'
+        
+        print(f"\n{'='*60}")
+        print(f"🌐 PROCESSING: {domain}")
+        print(f"{'='*60}")
+        
+        # Check if need new browser
+        if await self.should_create_new_browser():
+            print(f"🪟 {MAX_MANUAL_TABS_PER_BROWSER} MANUAL TABS REACHED")
+            print(f"   Creating new browser instance...")
+            await self.current_browser.close()
+            await self.create_new_browser()
+            self.manual_attention_tabs = []
+        
+        # Create new tab
+        page = await self.create_new_tab()
+        
+        try:
+            # Find contact page
+            contact_url = await self.find_contact_page(page, website_url)
+            if not contact_url:
+                print("❌ NO CONTACT PAGE - SKIPPING")
+                skipped_sites.add(domain)
+                await page.close()
+                return 'skip'
+            
+            # Fill and submit form
+            result, filled, total = await self.fill_and_submit_form(page, contact_url)
+            
+            if result == 'success':
+                visited_domains.add(domain)
+                successful_submissions.add(domain)
+                await self.send_alert(page, contact_url, 'success', filled, total)
+                await page.close()
+                return 'success'
+            else:
+                # Leave tab open for manual completion
+                visited_domains.add(domain)
+                failed_sites.add(domain)
+                self.add_manual_tab(page, domain, result)
+                await self.send_alert(page, contact_url, result, filled, total)
+                return 'manual'
+                
+        except Exception as e:
+            print(f"❌ PROCESSING ERROR: {e}")
+            await page.close()
+            return 'error'
+
+    async def process_batch(self, websites):
+        """Process multiple websites in parallel"""
+        print(f"\n🔄 PROCESSING BATCH: {len(websites)} sites")
+        
+        tasks = []
+        for website in websites:
+            task = asyncio.create_task(self.process_website(website))
+            tasks.append(task)
+            await asyncio.sleep(random.uniform(*REQUEST_DELAY))
+        
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+        
+        success_count = len([r for r in results if r == 'success'])
+        manual_count = len([r for r in results if r == 'manual'])
+        
+        print(f"✅ Batch complete: {success_count} success, {manual_count} manual")
+        return results
+
+    async def send_status(self):
+        """Send comprehensive status update"""
+        stats = get_session_stats()
+        
+        status = (
+            f"📊 <b>STATUS UPDATE</b>\n"
+            f"⏱️ Runtime: {stats['elapsed']}\n"
+            f"🪟 Browsers: {stats['browsers']}\n"
+            f"📝 Manual tabs: {len(self.manual_attention_tabs)}/{MAX_MANUAL_TABS_PER_BROWSER}\n"
+            f"✅ Success: {stats['success']}\n"
+            f"🚨 Manual total: {stats['manual']}\n"
+            f"❌ Failed: {stats['failed']}\n"
+            f"⏩ Skipped: {stats['skipped']}\n"
+            f"🌐 Total processed: {stats['total']}\n"
+            f"📋 Forms filled: {stats['forms_filled']}\n"
+            f"📈 Success rate: {stats['success_rate']}"
+        )
+        
+        send_text_to_telegram(status)
+        print(f"\n{status}\n")
+
+    async def scan_google(self, keyword):
+        """Scan Google search pages for keyword"""
+        print(f"\n{'='*60}")
+        print(f"🔍 SCANNING KEYWORD: {keyword}")
+        print(f"{'='*60}")
+        
+        search_url = f"https://www.google.com/search?q={keyword.replace(' ', '+')}"
+        await self.search_page.goto(search_url)
+        await asyncio.sleep(3)
+        
+        # Handle Google CAPTCHA if present
+        if "google.com/sorry" in self.search_page.url:
+            await self.handle_captcha(self.search_page, "Google Search CAPTCHA")
+            await self.search_page.reload()
+            await asyncio.sleep(3)
+        
+        # Process each page
+        for page_num in range(1, PAGES_TO_SCAN + 1):
+            print(f"\n📄 GOOGLE PAGE {page_num}/{PAGES_TO_SCAN}")
+            
+            results = await self.extract_google_results(self.search_page)
+            
+            if not results:
+                print("⚠️ NO RESULTS - Moving to next page")
+                if page_num < PAGES_TO_SCAN:
+                    await self.search_page.goto(f"{search_url}&start={page_num * 10}")
+                    await asyncio.sleep(3)
+                continue
+            
+            print(f"✅ FOUND {len(results)} SITES")
+            
+            # Process results in batches
+            for i in range(0, len(results), MAX_PARALLEL_SITES):
+                batch = results[i:i + MAX_PARALLEL_SITES]
+                await self.process_batch(batch)
+                await self.send_status()
+                await asyncio.sleep(2)
+            
+            # Navigate to next page
+            if page_num < PAGES_TO_SCAN:
+                await self.search_page.goto(f"{search_url}&start={page_num * 10}")
+                await asyncio.sleep(3)
+
+    async def run(self):
+        """Main bot loop with persistent browser"""
+        print("\n" + "="*60)
+        print("🚀 ULTRA FORM BOT v4.0 - PRODUCTION")
+        print("="*60)
+        print(f"📊 {MAX_MANUAL_TABS_PER_BROWSER} manual tabs per browser")
+        print(f"📊 {MAX_PARALLEL_SITES} sites processed in parallel")
+        print(f"📊 {PAGES_TO_SCAN} Google pages per keyword")
+        print(f"📊 {len(self.keywords)} keywords loaded")
+        print("="*60)
+        print("⚠️  BROWSER STAYS OPEN EVEN IF SCRIPT STOPS")
+        print("⚠️  Complete manual tabs then restart script")
+        print("="*60 + "\n")
+        
+        await self.initialize()
+        
+        cycle = 0
+        while True:
+            cycle += 1
+            print(f"\n{'='*60}")
+            print(f"🔄 CYCLE {cycle}")
+            print(f"{'='*60}")
+            
+            try:
+                for keyword in self.keywords:
+                    await self.scan_google(keyword)
+                
+                # Cycle complete
+                stats = get_session_stats()
+                final_status = (
+                    f"🎊 <b>CYCLE {cycle} COMPLETE</b>\n"
+                    f"⏱️ Runtime: {stats['elapsed']}\n"
+                    f"🪟 Browsers: {stats['browsers']}\n"
+                    f"✅ Success: {stats['success']}\n"
+                    f"🚨 Manual: {stats['manual']}\n"
+                    f"❌ Failed: {stats['failed']}\n"
+                    f"⏩ Skipped: {stats['skipped']}\n"
+                    f"🌐 Total: {stats['total']}\n"
+                    f"📋 Forms: {stats['forms_filled']}\n"
+                    f"📈 Rate: {stats['success_rate']}"
+                )
+                
+                send_text_to_telegram(final_status)
+                print(f"\n{final_status}\n")
+                
+                print("♾️ NEXT CYCLE IN 30 SECONDS...")
+                await asyncio.sleep(30)
+                
+            except Exception as e:
+                print(f"💥 CYCLE ERROR: {e}")
+                print("🔄 RESTARTING IN 10 SECONDS...")
+                await asyncio.sleep(10)
+
+# MAIN EXECUTION WITH PERSISTENT BROWSER
+async def main():
+    bot = SmartBotEngine()
+    
+    try:
+        await bot.run()
+    except KeyboardInterrupt:
+        print("\n\n" + "="*60)
+        print("⏸️  SCRIPT STOPPED BY USER (Ctrl+C)")
+        print("="*60)
+        print("✅ BROWSER REMAINS OPEN FOR MANUAL COMPLETION")
+        print("📝 Complete manual tabs, then restart script")
+        print("="*60 + "\n")
+        # DON'T close browser - let user complete manual tasks
+        return
+    except Exception as e:
+        print(f"\n\n💥 FATAL ERROR: {e}")
+        print("✅ BROWSER REMAINS OPEN")
+        return
+
+if __name__ == "__main__":
+    print("\n" + "="*60)
+    print("🚀 ULTRA FORM FILLER BOT v4.0")
+    print("="*60)
+    print("✨ FEATURES:")
+    print("  • Smart tab management (not separate windows)")
+    print(f"  • {MAX_MANUAL_TABS_PER_BROWSER} manual tabs before new browser")
+    print(f"  • {MAX_PARALLEL_SITES} sites processed in parallel")
+    print("  • 50+ field types with intelligent detection")
+    print("  • CAPTCHA handling only when blocking submission")
+    print("  • Shared browser session across all tabs")
+    print("  • Real-time Telegram notifications")
+    print("  • Popup/modal auto-closing")
+    print("  • Keywords loaded from keywords.txt")
+    print("  • PERSISTENT BROWSER - stays open on Ctrl+C")
+    print("="*60)
+    print("\n⚠️  IMPORTANT:")
+    print("  • If you Ctrl+C, browser stays open")
+    print("  • Complete manual tabs then restart")
+    print("  • All CAPTCHAs can be solved while bot runs")
+    print("="*60 + "\n")
+    
+    # Create keywords.txt if doesn't exist
+    if not os.path.exists(KEYWORDS_FILE):
+        with open(KEYWORDS_FILE, 'w') as f:
+            f.write('escrow lawyers\n')
+        print(f"✅ Created {KEYWORDS_FILE} with default keyword\n")
+    
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\n⏸️  BOT STOPPED - BROWSER STILL RUNNING")
+    except Exception as e:
+        print(f"\n💥 ERROR: {e}")
+        print("✅ BROWSER STILL RUNNING")
