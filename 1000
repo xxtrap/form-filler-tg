@@ -1,3 +1,12 @@
+improvements to make 
+-gotta add subject line like its being left empty hence making more submissoions fail
+-Continuous operation - Bot runs indefinitely, opening new tabs/browsers as needed without crashing.
+-the form detection is bad seems its scanning like this domain/whatever/whatevr/contact variation when its supposed to be domain/contact variation
+-also lets improve the contact page detection like it should look for "contact us" or contact in homepagfe and also look for url in homepage or something that works 
+
+lets discuss dont code
+
+
 import asyncio
 import random
 from playwright.async_api import async_playwright
