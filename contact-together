@@ -1,4 +1,4582 @@
 {
+    "title": "4",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://pwlcapital.com/contact-us/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://pwlcapital.com/contact-us/",
+                    "title": "Contact Us | PWL Capital"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/First name*"
+                ],
+                [
+                    "#firstname-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-dad409df-096b-4fc2-97c5-d3b7b277acdc\"]"
+                ],
+                [
+                    "pierce/#firstname-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ]
+            ],
+            "offsetY": 16,
+            "offsetX": 148
+        },
+        {
+            "type": "change",
+            "value": "wesley",
+            "selectors": [
+                [
+                    "aria/First name*"
+                ],
+                [
+                    "#firstname-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ],
+                [
+                    "xpath///*[@id=\"firstname-dad409df-096b-4fc2-97c5-d3b7b277acdc\"]"
+                ],
+                [
+                    "pierce/#firstname-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "deleon",
+            "selectors": [
+                [
+                    "aria/Last name*"
+                ],
+                [
+                    "#lastname-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ],
+                [
+                    "xpath///*[@id=\"lastname-dad409df-096b-4fc2-97c5-d3b7b277acdc\"]"
+                ],
+                [
+                    "pierce/#lastname-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "wesleydeleon22@outlook.com",
+            "selectors": [
+                [
+                    "aria/Email*"
+                ],
+                [
+                    "#email-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ],
+                [
+                    "xpath///*[@id=\"email-dad409df-096b-4fc2-97c5-d3b7b277acdc\"]"
+                ],
+                [
+                    "pierce/#email-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "2232289123",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ],
+                [
+                    "xpath///*[@id=\"phone-dad409df-096b-4fc2-97c5-d3b7b277acdc\"]"
+                ],
+                [
+                    "pierce/#phone-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "toronto",
+            "selectors": [
+                [
+                    "aria/City*"
+                ],
+                [
+                    "#city-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ],
+                [
+                    "xpath///*[@id=\"city-dad409df-096b-4fc2-97c5-d3b7b277acdc\"]"
+                ],
+                [
+                    "pierce/#city-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Select Province "
+                ],
+                [
+                    "fieldset:nth-of-type(3) a"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_dad409df-096b-4fc2-97c5-d3b7b277acdc\"]/fieldset[3]/div[2]/div/a"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(3) a"
+                ]
+            ],
+            "offsetY": 14,
+            "offsetX": 278.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "ul.selectBox-options-bottom > li:nth-of-type(11)"
+                ],
+                [
+                    "xpath//html/body/ul[1]/li[11]"
+                ],
+                [
+                    "pierce/ul.selectBox-options-bottom > li:nth-of-type(11)"
+                ]
+            ],
+            "offsetY": 22,
+            "offsetX": 121.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Ontario"
+                ],
+                [
+                    "li.selectBox-hover > a"
+                ],
+                [
+                    "xpath//html/body/ul[1]/li[11]/a"
+                ],
+                [
+                    "pierce/li.selectBox-hover > a"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 20.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "fieldset:nth-of-type(4) a"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_dad409df-096b-4fc2-97c5-d3b7b277acdc\"]/fieldset[4]/div/div/a"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(4) a"
+                ]
+            ],
+            "offsetY": 44,
+            "offsetX": 572
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "ul.selectBox-options-bottom > li:nth-of-type(2)"
+                ],
+                [
+                    "xpath//html/body/ul[2]/li[2]"
+                ],
+                [
+                    "pierce/ul.selectBox-options-bottom > li:nth-of-type(2)"
+                ]
+            ],
+            "offsetY": 14,
+            "offsetX": 313
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Google"
+                ],
+                [
+                    "li.selectBox-hover > a"
+                ],
+                [
+                    "xpath//html/body/ul[2]/li[2]/a"
+                ],
+                [
+                    "pierce/li.selectBox-hover > a"
+                ]
+            ],
+            "offsetY": 12,
+            "offsetX": 48
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "fieldset:nth-of-type(5) span.selectBox-label"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_dad409df-096b-4fc2-97c5-d3b7b277acdc\"]/fieldset[5]/div/div/a/span[1]"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(5) span.selectBox-label"
+                ]
+            ],
+            "offsetY": 11,
+            "offsetX": 499
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Yes, I am looking for a partner that can provide quality advice over time."
+                ],
+                [
+                    "li.selectBox-hover > a"
+                ],
+                [
+                    "xpath//html/body/ul[3]/li[2]/a"
+                ],
+                [
+                    "pierce/li.selectBox-hover > a"
+                ]
+            ],
+            "offsetY": 25,
+            "offsetX": 343
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Please Select "
+                ],
+                [
+                    "fieldset:nth-of-type(6) a"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_dad409df-096b-4fc2-97c5-d3b7b277acdc\"]/fieldset[6]/div/div/div/a"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(6) a"
+                ]
+            ],
+            "offsetY": 39,
+            "offsetX": 483
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "ul.selectBox-options-bottom > li:nth-of-type(4)"
+                ],
+                [
+                    "xpath//html/body/ul[4]/li[4]"
+                ],
+                [
+                    "pierce/ul.selectBox-options-bottom > li:nth-of-type(4)"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 227
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/$500,000 - $1,000,000"
+                ],
+                [
+                    "li.selectBox-hover > a"
+                ],
+                [
+                    "xpath//html/body/ul[4]/li[4]/a"
+                ],
+                [
+                    "pierce/li.selectBox-hover > a"
+                ]
+            ],
+            "offsetY": 12,
+            "offsetX": 88
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/How Can We Help?*"
+                ],
+                [
+                    "#how_can_we_help_-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ],
+                [
+                    "xpath///*[@id=\"how_can_we_help_-dad409df-096b-4fc2-97c5-d3b7b277acdc\"]"
+                ],
+                [
+                    "pierce/#how_can_we_help_-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ]
+            ],
+            "offsetY": 38,
+            "offsetX": 30,
+            "duration": 720.3000000119209
+        },
+        {
+            "type": "change",
+            "value": "need an advisor pls",
+            "selectors": [
+                [
+                    "aria/How Can We Help?*"
+                ],
+                [
+                    "#how_can_we_help_-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ],
+                [
+                    "xpath///*[@id=\"how_can_we_help_-dad409df-096b-4fc2-97c5-d3b7b277acdc\"]"
+                ],
+                [
+                    "pierce/#how_can_we_help_-dad409df-096b-4fc2-97c5-d3b7b277acdc"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Submit"
+                ],
+                [
+                    "div.hs_submit input"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"hsForm_dad409df-096b-4fc2-97c5-d3b7b277acdc\"]/div[2]/div[2]/input"
+                ],
+                [
+                    "pierce/div.hs_submit input"
+                ],
+                [
+                    "text/Submit"
+                ]
+            ],
+            "offsetY": 35,
+            "offsetX": 23
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/enterprise/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Ld_ad8ZAAAAAAqr0ePo1dUfAi0m4KPkCMQYwPPm&bft=0dAFcWeA7mu9Rd11KWspd4t5wCUHi2HAPDKzBLDB5xryPnSKsVC0gLUnMCRtCKHtCm_5McmIcf3hnXg4D4UtIfFo01J_Of2r1peA",
+            "selectors": [
+                [
+                    "#\\38  img"
+                ],
+                [
+                    "xpath///*[@id=\"8\"]/div/div[1]/img"
+                ],
+                [
+                    "pierce/#\\38  img"
+                ]
+            ],
+            "offsetY": 277,
+            "offsetX": 309
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/enterprise/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Ld_ad8ZAAAAAAqr0ePo1dUfAi0m4KPkCMQYwPPm&bft=0dAFcWeA7mu9Rd11KWspd4t5wCUHi2HAPDKzBLDB5xryPnSKsVC0gLUnMCRtCKHtCm_5McmIcf3hnXg4D4UtIfFo01J_Of2r1peA",
+            "selectors": [
+                [
+                    "#\\36  img"
+                ],
+                [
+                    "xpath///*[@id=\"6\"]/div/div[1]/img"
+                ],
+                [
+                    "pierce/#\\36  img"
+                ]
+            ],
+            "offsetY": 264,
+            "offsetX": 73
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/enterprise/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Ld_ad8ZAAAAAAqr0ePo1dUfAi0m4KPkCMQYwPPm&bft=0dAFcWeA7mu9Rd11KWspd4t5wCUHi2HAPDKzBLDB5xryPnSKsVC0gLUnMCRtCKHtCm_5McmIcf3hnXg4D4UtIfFo01J_Of2r1peA",
+            "selectors": [
+                [
+                    "#\\30  img"
+                ],
+                [
+                    "xpath///*[@id=\"0\"]/div/div[1]/img"
+                ],
+                [
+                    "pierce/#\\30  img"
+                ]
+            ],
+            "offsetY": 50,
+            "offsetX": 58
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/enterprise/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Ld_ad8ZAAAAAAqr0ePo1dUfAi0m4KPkCMQYwPPm&bft=0dAFcWeA7mu9Rd11KWspd4t5wCUHi2HAPDKzBLDB5xryPnSKsVC0gLUnMCRtCKHtCm_5McmIcf3hnXg4D4UtIfFo01J_Of2r1peA",
+            "selectors": [
+                [
+                    "#\\38  div.rc-image-tile-wrapper > div"
+                ],
+                [
+                    "xpath///*[@id=\"8\"]/div/div[1]/div"
+                ],
+                [
+                    "pierce/#\\38  div.rc-image-tile-wrapper > div"
+                ]
+            ],
+            "offsetY": 85,
+            "offsetX": 65
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/enterprise/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Ld_ad8ZAAAAAAqr0ePo1dUfAi0m4KPkCMQYwPPm&bft=0dAFcWeA7mu9Rd11KWspd4t5wCUHi2HAPDKzBLDB5xryPnSKsVC0gLUnMCRtCKHtCm_5McmIcf3hnXg4D4UtIfFo01J_Of2r1peA",
+            "selectors": [
+                [
+                    "aria/VERIFY"
+                ],
+                [
+                    "#recaptcha-verify-button"
+                ],
+                [
+                    "xpath///*[@id=\"recaptcha-verify-button\"]"
+                ],
+                [
+                    "pierce/#recaptcha-verify-button"
+                ],
+                [
+                    "text/Verify"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 41,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/recaptcha/enterprise/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Ld_ad8ZAAAAAAqr0ePo1dUfAi0m4KPkCMQYwPPm&bft=0dAFcWeA7mu9Rd11KWspd4t5wCUHi2HAPDKzBLDB5xryPnSKsVC0gLUnMCRtCKHtCm_5McmIcf3hnXg4D4UtIfFo01J_Of2r1peA",
+                    "title": ""
+                }
+            ]
+        }
+    ]
+}
+
+
+{
+    "title": "5",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.canaccord-wealth.com/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.canaccord-wealth.com/",
+                    "title": "Canaccord Wealth | Home | Independent Wealth Manager"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Help and contact"
+                ],
+                [
+                    "#nav-dropdown-Help\\ and\\ contact"
+                ],
+                [
+                    "xpath///*[@id=\"nav-dropdown-Help and contact\"]"
+                ],
+                [
+                    "pierce/#nav-dropdown-Help\\ and\\ contact"
+                ],
+                [
+                    "text/Help and contact"
+                ]
+            ],
+            "offsetY": 33,
+            "offsetX": 167.265625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Contact us[role=\"link\"]"
+                ],
+                [
+                    "div.show div.mb-3 > a"
+                ],
+                [
+                    "xpath//html/body/header/div/nav/div/div/div[2]/div[5]/div/div[2]/div/div[1]/a"
+                ],
+                [
+                    "pierce/div.show div.mb-3 > a"
+                ]
+            ],
+            "offsetY": 24,
+            "offsetX": 56.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Please select"
+                ],
+                [
+                    "#natureOfEnquiry"
+                ],
+                [
+                    "xpath///*[@id=\"natureOfEnquiry\"]"
+                ],
+                [
+                    "pierce/#natureOfEnquiry"
+                ]
+            ],
+            "offsetY": 40.03125,
+            "offsetX": 507.5
+        },
+        {
+            "type": "change",
+            "value": "I am new to Canaccord Wealth",
+            "selectors": [
+                [
+                    "aria/Please select"
+                ],
+                [
+                    "#natureOfEnquiry"
+                ],
+                [
+                    "xpath///*[@id=\"natureOfEnquiry\"]"
+                ],
+                [
+                    "pierce/#natureOfEnquiry"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/First name*"
+                ],
+                [
+                    "#firstname"
+                ],
+                [
+                    "xpath///*[@id=\"firstname\"]"
+                ],
+                [
+                    "pierce/#firstname"
+                ]
+            ],
+            "offsetY": 36.03125,
+            "offsetX": 287.5
+        },
+        {
+            "type": "change",
+            "value": "wesley",
+            "selectors": [
+                [
+                    "aria/First name*"
+                ],
+                [
+                    "#firstname"
+                ],
+                [
+                    "xpath///*[@id=\"firstname\"]"
+                ],
+                [
+                    "pierce/#firstname"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Surname*"
+                ],
+                [
+                    "#surname"
+                ],
+                [
+                    "xpath///*[@id=\"surname\"]"
+                ],
+                [
+                    "pierce/#surname"
+                ]
+            ],
+            "offsetY": 36.03125,
+            "offsetX": 115.5
+        },
+        {
+            "type": "change",
+            "value": "deleon",
+            "selectors": [
+                [
+                    "aria/Surname*"
+                ],
+                [
+                    "#surname"
+                ],
+                [
+                    "xpath///*[@id=\"surname\"]"
+                ],
+                [
+                    "pierce/#surname"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "wesleydeleon22@outlook.cm",
+            "selectors": [
+                [
+                    "aria/Email address*"
+                ],
+                [
+                    "#emailAddress"
+                ],
+                [
+                    "xpath///*[@id=\"emailAddress\"]"
+                ],
+                [
+                    "pierce/#emailAddress"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "wesleydeleon22@outlook.com",
+            "selectors": [
+                [
+                    "aria/Email address*"
+                ],
+                [
+                    "#emailAddress"
+                ],
+                [
+                    "xpath///*[@id=\"emailAddress\"]"
+                ],
+                [
+                    "pierce/#emailAddress"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "ArrowDown"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowDown",
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "2127152718",
+            "selectors": [
+                [
+                    "aria/Phone number"
+                ],
+                [
+                    "#phoneNumber"
+                ],
+                [
+                    "xpath///*[@id=\"phoneNumber\"]"
+                ],
+                [
+                    "pierce/#phoneNumber"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/I consent to receiving marketing communications from Canaccord Wealth."
+                ],
+                [
+                    "#marketingConsent"
+                ],
+                [
+                    "xpath///*[@id=\"marketingConsent\"]"
+                ],
+                [
+                    "pierce/#marketingConsent"
+                ]
+            ],
+            "offsetY": 8.03125,
+            "offsetX": 6.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/I have read and agree to the privacy policy."
+                ],
+                [
+                    "#dataConsent"
+                ],
+                [
+                    "xpath///*[@id=\"dataConsent\"]"
+                ],
+                [
+                    "pierce/#dataConsent"
+                ]
+            ],
+            "offsetY": 8.03125,
+            "offsetX": 12.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Details of enquiry*"
+                ],
+                [
+                    "#detailsOfEnquiry"
+                ],
+                [
+                    "xpath///*[@id=\"detailsOfEnquiry\"]"
+                ],
+                [
+                    "pierce/#detailsOfEnquiry"
+                ]
+            ],
+            "offsetY": 127.03125,
+            "offsetX": 137.5
+        },
+        {
+            "type": "change",
+            "value": "please reach out",
+            "selectors": [
+                [
+                    "aria/Details of enquiry*"
+                ],
+                [
+                    "#detailsOfEnquiry"
+                ],
+                [
+                    "xpath///*[@id=\"detailsOfEnquiry\"]"
+                ],
+                [
+                    "pierce/#detailsOfEnquiry"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Submit"
+                ],
+                [
+                    "#form-block button"
+                ],
+                [
+                    "xpath///*[@id=\"Contact Form\"]/div/div[2]/div[9]/button"
+                ],
+                [
+                    "pierce/#form-block button"
+                ],
+                [
+                    "text/Submit"
+                ]
+            ],
+            "offsetY": 22.10626220703125,
+            "offsetX": 80.67852783203125
+        }
+    ]
+}
+const puppeteer = require('puppeteer'); // v23.0.0 or later
+
+(async () => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    const timeout = 5000;
+    page.setDefaultTimeout(timeout);
+
+    {
+        const targetPage = page;
+        await targetPage.setViewport({
+            width: 1365,
+            height: 992
+        })
+    }
+    {
+        const targetPage = page;
+        await targetPage.goto('https://www.canaccord-wealth.com/');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Help and contact)'),
+            targetPage.locator('#nav-dropdown-Help\\ and\\ contact'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"nav-dropdown-Help and contact\\"])'),
+            targetPage.locator(':scope >>> #nav-dropdown-Help\\ and\\ contact'),
+            targetPage.locator('::-p-text(Help and contact)')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 167.265625,
+                y: 33,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Contact us[role=\\"link\\"])'),
+            targetPage.locator('div.show div.mb-3 > a'),
+            targetPage.locator('::-p-xpath(/html/body/header/div/nav/div/div/div[2]/div[5]/div/div[2]/div/div[1]/a)'),
+            targetPage.locator(':scope >>> div.show div.mb-3 > a')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 56.5,
+                y: 24,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Please select)'),
+            targetPage.locator('#natureOfEnquiry'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"natureOfEnquiry\\"])'),
+            targetPage.locator(':scope >>> #natureOfEnquiry')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 507.5,
+                y: 40.03125,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Please select)'),
+            targetPage.locator('#natureOfEnquiry'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"natureOfEnquiry\\"])'),
+            targetPage.locator(':scope >>> #natureOfEnquiry')
+        ])
+            .setTimeout(timeout)
+            .fill('I am new to Canaccord Wealth');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(First name*)'),
+            targetPage.locator('#firstname'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"firstname\\"])'),
+            targetPage.locator(':scope >>> #firstname')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 287.5,
+                y: 36.03125,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(First name*)'),
+            targetPage.locator('#firstname'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"firstname\\"])'),
+            targetPage.locator(':scope >>> #firstname')
+        ])
+            .setTimeout(timeout)
+            .fill('wesley');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Surname*)'),
+            targetPage.locator('#surname'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"surname\\"])'),
+            targetPage.locator(':scope >>> #surname')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 115.5,
+                y: 36.03125,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Surname*)'),
+            targetPage.locator('#surname'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"surname\\"])'),
+            targetPage.locator(':scope >>> #surname')
+        ])
+            .setTimeout(timeout)
+            .fill('deleon');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.down('Tab');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.up('Tab');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Email address*)'),
+            targetPage.locator('#emailAddress'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"emailAddress\\"])'),
+            targetPage.locator(':scope >>> #emailAddress')
+        ])
+            .setTimeout(timeout)
+            .fill('wesleydeleon22@outlook.cm');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.down('ArrowLeft');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.up('ArrowLeft');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Email address*)'),
+            targetPage.locator('#emailAddress'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"emailAddress\\"])'),
+            targetPage.locator(':scope >>> #emailAddress')
+        ])
+            .setTimeout(timeout)
+            .fill('wesleydeleon22@outlook.com');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.down('ArrowDown');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.up('ArrowDown');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.down('Tab');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.up('Tab');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Phone number)'),
+            targetPage.locator('#phoneNumber'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"phoneNumber\\"])'),
+            targetPage.locator(':scope >>> #phoneNumber')
+        ])
+            .setTimeout(timeout)
+            .fill('2127152718');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(I consent to receiving marketing communications from Canaccord Wealth.)'),
+            targetPage.locator('#marketingConsent'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"marketingConsent\\"])'),
+            targetPage.locator(':scope >>> #marketingConsent')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 6.5,
+                y: 8.03125,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(I have read and agree to the privacy policy.)'),
+            targetPage.locator('#dataConsent'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"dataConsent\\"])'),
+            targetPage.locator(':scope >>> #dataConsent')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 12.5,
+                y: 8.03125,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Details of enquiry*)'),
+            targetPage.locator('#detailsOfEnquiry'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"detailsOfEnquiry\\"])'),
+            targetPage.locator(':scope >>> #detailsOfEnquiry')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 137.5,
+                y: 127.03125,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Details of enquiry*)'),
+            targetPage.locator('#detailsOfEnquiry'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"detailsOfEnquiry\\"])'),
+            targetPage.locator(':scope >>> #detailsOfEnquiry')
+        ])
+            .setTimeout(timeout)
+            .fill('please reach out');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Submit)'),
+            targetPage.locator('#form-block button'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"Contact Form\\"]/div/div[2]/div[9]/button)'),
+            targetPage.locator(':scope >>> #form-block button'),
+            targetPage.locator('::-p-text(Submit)')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 80.67852783203125,
+                y: 22.10626220703125,
+              },
+            });
+    }
+
+    await browser.close();
+
+})().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
+
+
+
+
+
+
+
+{
+    "title": "3",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://cclprivatecapital.com/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://cclprivatecapital.com/",
+                    "title": "Home | Wealth management | CC&L Private Capital"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Contact us"
+                ],
+                [
+                    "#HighlightButtonEnglishUpper a"
+                ],
+                [
+                    "xpath///*[@id=\"HighlightButtonEnglishUpper\"]/div/div/a"
+                ],
+                [
+                    "pierce/#HighlightButtonEnglishUpper a"
+                ]
+            ],
+            "offsetY": 16,
+            "offsetX": 81.6875,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://cclprivatecapital.com/contact-us",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/First name"
+                ],
+                [
+                    "#Textbox-1"
+                ],
+                [
+                    "xpath///*[@id=\"Textbox-1\"]"
+                ],
+                [
+                    "pierce/#Textbox-1"
+                ]
+            ],
+            "offsetY": 23.5,
+            "offsetX": 374.5
+        },
+        {
+            "type": "change",
+            "value": "kevin",
+            "selectors": [
+                [
+                    "aria/First name"
+                ],
+                [
+                    "#Textbox-1"
+                ],
+                [
+                    "xpath///*[@id=\"Textbox-1\"]"
+                ],
+                [
+                    "pierce/#Textbox-1"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "fang",
+            "selectors": [
+                [
+                    "aria/Last name"
+                ],
+                [
+                    "#Textbox-2"
+                ],
+                [
+                    "xpath///*[@id=\"Textbox-2\"]"
+                ],
+                [
+                    "pierce/#Textbox-2"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kevandcoceo@hotmail.com",
+            "selectors": [
+                [
+                    "aria/Email address"
+                ],
+                [
+                    "#Textbox-3"
+                ],
+                [
+                    "xpath///*[@id=\"Textbox-3\"]"
+                ],
+                [
+                    "pierce/#Textbox-3"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Province"
+                ],
+                [
+                    "#Dropdown-1"
+                ],
+                [
+                    "xpath///*[@id=\"Dropdown-1\"]"
+                ],
+                [
+                    "pierce/#Dropdown-1"
+                ]
+            ],
+            "offsetY": 14.5,
+            "offsetX": 419.5
+        },
+        {
+            "type": "change",
+            "value": "Ontario",
+            "selectors": [
+                [
+                    "aria/Province"
+                ],
+                [
+                    "#Dropdown-1"
+                ],
+                [
+                    "xpath///*[@id=\"Dropdown-1\"]"
+                ],
+                [
+                    "pierce/#Dropdown-1"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/City/Town"
+                ],
+                [
+                    "#Textbox-5"
+                ],
+                [
+                    "xpath///*[@id=\"Textbox-5\"]"
+                ],
+                [
+                    "pierce/#Textbox-5"
+                ]
+            ],
+            "offsetY": 8.5,
+            "offsetX": 264.328125
+        },
+        {
+            "type": "change",
+            "value": "toronto",
+            "selectors": [
+                [
+                    "aria/City/Town"
+                ],
+                [
+                    "#Textbox-5"
+                ],
+                [
+                    "xpath///*[@id=\"Textbox-5\"]"
+                ],
+                [
+                    "pierce/#Textbox-5"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/How did you hear about us?"
+                ],
+                [
+                    "#Dropdown-2"
+                ],
+                [
+                    "xpath///*[@id=\"Dropdown-2\"]"
+                ],
+                [
+                    "pierce/#Dropdown-2"
+                ]
+            ],
+            "offsetY": 42.5,
+            "offsetX": 416.5
+        },
+        {
+            "type": "change",
+            "value": "Google search",
+            "selectors": [
+                [
+                    "aria/How did you hear about us?"
+                ],
+                [
+                    "#Dropdown-2"
+                ],
+                [
+                    "xpath///*[@id=\"Dropdown-2\"]"
+                ],
+                [
+                    "pierce/#Dropdown-2"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Investable assets"
+                ],
+                [
+                    "#Dropdown-3"
+                ],
+                [
+                    "xpath///*[@id=\"Dropdown-3\"]"
+                ],
+                [
+                    "pierce/#Dropdown-3"
+                ]
+            ],
+            "offsetY": 17.5,
+            "offsetX": 265.328125
+        },
+        {
+            "type": "change",
+            "value": "$5,000,000 - $19,999,999",
+            "selectors": [
+                [
+                    "aria/Investable assets"
+                ],
+                [
+                    "#Dropdown-3"
+                ],
+                [
+                    "xpath///*[@id=\"Dropdown-3\"]"
+                ],
+                [
+                    "pierce/#Dropdown-3"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Investable assets"
+                ],
+                [
+                    "#Dropdown-3"
+                ],
+                [
+                    "xpath///*[@id=\"Dropdown-3\"]"
+                ],
+                [
+                    "pierce/#Dropdown-3"
+                ]
+            ],
+            "offsetY": 30.5,
+            "offsetX": 259.328125
+        },
+        {
+            "type": "change",
+            "value": "$1,000,000 - $4,999,999",
+            "selectors": [
+                [
+                    "aria/Investable assets"
+                ],
+                [
+                    "#Dropdown-3"
+                ],
+                [
+                    "xpath///*[@id=\"Dropdown-3\"]"
+                ],
+                [
+                    "pierce/#Dropdown-3"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.services-checkbox-field > div:nth-of-type(1) > label"
+                ],
+                [
+                    "xpath///*[@id=\"C016_Col00\"]/div[3]/div[1]/label"
+                ],
+                [
+                    "pierce/div.services-checkbox-field > div:nth-of-type(1) > label"
+                ],
+                [
+                    "text/Investment management"
+                ]
+            ],
+            "offsetY": 18.5,
+            "offsetX": 45.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Wealth planning"
+                ],
+                [
+                    "div.services-checkbox-field > div:nth-of-type(2) input"
+                ],
+                [
+                    "xpath///*[@id=\"C016_Col00\"]/div[3]/div[2]/label/input"
+                ],
+                [
+                    "pierce/div.services-checkbox-field > div:nth-of-type(2) input"
+                ]
+            ],
+            "offsetY": 29.5,
+            "offsetX": 36.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your message"
+                ],
+                [
+                    "#Textarea-1"
+                ],
+                [
+                    "xpath///*[@id=\"Textarea-1\"]"
+                ],
+                [
+                    "pierce/#Textarea-1"
+                ]
+            ],
+            "offsetY": 54.5,
+            "offsetX": 638.5
+        },
+        {
+            "type": "change",
+            "value": "hi can you please have an advisor reach out looking to nmake some acquisitions this yea",
+            "selectors": [
+                [
+                    "aria/Your message"
+                ],
+                [
+                    "#Textarea-1"
+                ],
+                [
+                    "xpath///*[@id=\"Textarea-1\"]"
+                ],
+                [
+                    "pierce/#Textarea-1"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your message"
+                ],
+                [
+                    "#Textarea-1"
+                ],
+                [
+                    "xpath///*[@id=\"Textarea-1\"]"
+                ],
+                [
+                    "pierce/#Textarea-1"
+                ]
+            ],
+            "offsetY": 54.5,
+            "offsetX": 638.5
+        },
+        {
+            "type": "change",
+            "value": "hi can you please have an advisor reach out looking to nmake some acquisitions this year",
+            "selectors": [
+                [
+                    "aria/Your message"
+                ],
+                [
+                    "#Textarea-1"
+                ],
+                [
+                    "xpath///*[@id=\"Textarea-1\"]"
+                ],
+                [
+                    "pierce/#Textarea-1"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Submit"
+                ],
+                [
+                    "#maincontent button"
+                ],
+                [
+                    "xpath///*[@id=\"C010_Col01\"]/div/button"
+                ],
+                [
+                    "pierce/#maincontent button"
+                ]
+            ],
+            "offsetY": 19,
+            "offsetX": 51.765625
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg",
+            "selectors": [
+                [
+                    "#\\31 0 img"
+                ],
+                [
+                    "xpath///*[@id=\"10\"]/div/div[1]/img"
+                ],
+                [
+                    "pierce/#\\31 0 img"
+                ]
+            ],
+            "offsetY": 227,
+            "offsetX": 234
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg",
+            "selectors": [
+                [
+                    "#\\36  img"
+                ],
+                [
+                    "xpath///*[@id=\"6\"]/div/div[1]/img"
+                ],
+                [
+                    "pierce/#\\36  img"
+                ]
+            ],
+            "offsetY": 173,
+            "offsetX": 259
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg",
+            "selectors": [
+                [
+                    "aria/NEXT"
+                ],
+                [
+                    "#recaptcha-verify-button"
+                ],
+                [
+                    "xpath///*[@id=\"recaptcha-verify-button\"]"
+                ],
+                [
+                    "pierce/#recaptcha-verify-button"
+                ],
+                [
+                    "text/Next"
+                ]
+            ],
+            "offsetY": 25,
+            "offsetX": 67
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg",
+            "selectors": [
+                [
+                    "#\\35  img"
+                ],
+                [
+                    "xpath///*[@id=\"5\"]/div/div[1]/img"
+                ],
+                [
+                    "pierce/#\\35  img"
+                ]
+            ],
+            "offsetY": 133,
+            "offsetX": 150
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg",
+            "selectors": [
+                [
+                    "#\\39  img"
+                ],
+                [
+                    "xpath///*[@id=\"9\"]/div/div[1]/img"
+                ],
+                [
+                    "pierce/#\\39  img"
+                ]
+            ],
+            "offsetY": 262,
+            "offsetX": 158
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg",
+            "selectors": [
+                [
+                    "#\\31 1 img"
+                ],
+                [
+                    "xpath///*[@id=\"11\"]/div/div[1]/img"
+                ],
+                [
+                    "pierce/#\\31 1 img"
+                ]
+            ],
+            "offsetY": 260,
+            "offsetX": 356
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg",
+            "selectors": [
+                [
+                    "#\\37  img"
+                ],
+                [
+                    "xpath///*[@id=\"7\"]/div/div[1]/img"
+                ],
+                [
+                    "pierce/#\\37  img"
+                ]
+            ],
+            "offsetY": 187,
+            "offsetX": 345
+        },
+        {
+            "type": "click",
+            "target": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg",
+            "selectors": [
+                [
+                    "aria/VERIFY"
+                ],
+                [
+                    "#recaptcha-verify-button"
+                ],
+                [
+                    "xpath///*[@id=\"recaptcha-verify-button\"]"
+                ],
+                [
+                    "pierce/#recaptcha-verify-button"
+                ],
+                [
+                    "text/Verify"
+                ]
+            ],
+            "offsetY": 22,
+            "offsetX": 61
+        }
+    ]
+}
+
+
+import url from 'url';
+import { createRunner } from '@puppeteer/replay';
+
+export async function run(extension) {
+    const runner = await createRunner(extension);
+
+    await runner.runBeforeAllSteps();
+
+    await runner.runStep({
+        type: 'setViewport',
+        width: 1365,
+        height: 992,
+        deviceScaleFactor: 1,
+        isMobile: false,
+        hasTouch: false,
+        isLandscape: false
+    });
+    await runner.runStep({
+        type: 'navigate',
+        url: 'https://cclprivatecapital.com/',
+        assertedEvents: [
+            {
+                type: 'navigation',
+                url: 'https://cclprivatecapital.com/',
+                title: 'Home | Wealth management | CC&L Private Capital'
+            }
+        ]
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/Contact us'
+            ],
+            [
+                '#HighlightButtonEnglishUpper a'
+            ],
+            [
+                'xpath///*[@id="HighlightButtonEnglishUpper"]/div/div/a'
+            ],
+            [
+                'pierce/#HighlightButtonEnglishUpper a'
+            ]
+        ],
+        offsetY: 16,
+        offsetX: 81.6875,
+        assertedEvents: [
+            {
+                type: 'navigation',
+                url: 'https://cclprivatecapital.com/contact-us',
+                title: ''
+            }
+        ]
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/First name'
+            ],
+            [
+                '#Textbox-1'
+            ],
+            [
+                'xpath///*[@id="Textbox-1"]'
+            ],
+            [
+                'pierce/#Textbox-1'
+            ]
+        ],
+        offsetY: 23.5,
+        offsetX: 374.5,
+    });
+    await runner.runStep({
+        type: 'change',
+        value: 'kevin',
+        selectors: [
+            [
+                'aria/First name'
+            ],
+            [
+                '#Textbox-1'
+            ],
+            [
+                'xpath///*[@id="Textbox-1"]'
+            ],
+            [
+                'pierce/#Textbox-1'
+            ]
+        ],
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'keyDown',
+        target: 'main',
+        key: 'Tab'
+    });
+    await runner.runStep({
+        type: 'keyUp',
+        key: 'Tab',
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'change',
+        value: 'fang',
+        selectors: [
+            [
+                'aria/Last name'
+            ],
+            [
+                '#Textbox-2'
+            ],
+            [
+                'xpath///*[@id="Textbox-2"]'
+            ],
+            [
+                'pierce/#Textbox-2'
+            ]
+        ],
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'keyDown',
+        target: 'main',
+        key: 'Tab'
+    });
+    await runner.runStep({
+        type: 'keyUp',
+        key: 'Tab',
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'change',
+        value: 'kevandcoceo@hotmail.com',
+        selectors: [
+            [
+                'aria/Email address'
+            ],
+            [
+                '#Textbox-3'
+            ],
+            [
+                'xpath///*[@id="Textbox-3"]'
+            ],
+            [
+                'pierce/#Textbox-3'
+            ]
+        ],
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/Province'
+            ],
+            [
+                '#Dropdown-1'
+            ],
+            [
+                'xpath///*[@id="Dropdown-1"]'
+            ],
+            [
+                'pierce/#Dropdown-1'
+            ]
+        ],
+        offsetY: 14.5,
+        offsetX: 419.5,
+    });
+    await runner.runStep({
+        type: 'change',
+        value: 'Ontario',
+        selectors: [
+            [
+                'aria/Province'
+            ],
+            [
+                '#Dropdown-1'
+            ],
+            [
+                'xpath///*[@id="Dropdown-1"]'
+            ],
+            [
+                'pierce/#Dropdown-1'
+            ]
+        ],
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/City/Town'
+            ],
+            [
+                '#Textbox-5'
+            ],
+            [
+                'xpath///*[@id="Textbox-5"]'
+            ],
+            [
+                'pierce/#Textbox-5'
+            ]
+        ],
+        offsetY: 8.5,
+        offsetX: 264.328125,
+    });
+    await runner.runStep({
+        type: 'change',
+        value: 'toronto',
+        selectors: [
+            [
+                'aria/City/Town'
+            ],
+            [
+                '#Textbox-5'
+            ],
+            [
+                'xpath///*[@id="Textbox-5"]'
+            ],
+            [
+                'pierce/#Textbox-5'
+            ]
+        ],
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/How did you hear about us?'
+            ],
+            [
+                '#Dropdown-2'
+            ],
+            [
+                'xpath///*[@id="Dropdown-2"]'
+            ],
+            [
+                'pierce/#Dropdown-2'
+            ]
+        ],
+        offsetY: 42.5,
+        offsetX: 416.5,
+    });
+    await runner.runStep({
+        type: 'change',
+        value: 'Google search',
+        selectors: [
+            [
+                'aria/How did you hear about us?'
+            ],
+            [
+                '#Dropdown-2'
+            ],
+            [
+                'xpath///*[@id="Dropdown-2"]'
+            ],
+            [
+                'pierce/#Dropdown-2'
+            ]
+        ],
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/Investable assets'
+            ],
+            [
+                '#Dropdown-3'
+            ],
+            [
+                'xpath///*[@id="Dropdown-3"]'
+            ],
+            [
+                'pierce/#Dropdown-3'
+            ]
+        ],
+        offsetY: 17.5,
+        offsetX: 265.328125,
+    });
+    await runner.runStep({
+        type: 'change',
+        value: '$5,000,000 - $19,999,999',
+        selectors: [
+            [
+                'aria/Investable assets'
+            ],
+            [
+                '#Dropdown-3'
+            ],
+            [
+                'xpath///*[@id="Dropdown-3"]'
+            ],
+            [
+                'pierce/#Dropdown-3'
+            ]
+        ],
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/Investable assets'
+            ],
+            [
+                '#Dropdown-3'
+            ],
+            [
+                'xpath///*[@id="Dropdown-3"]'
+            ],
+            [
+                'pierce/#Dropdown-3'
+            ]
+        ],
+        offsetY: 30.5,
+        offsetX: 259.328125,
+    });
+    await runner.runStep({
+        type: 'change',
+        value: '$1,000,000 - $4,999,999',
+        selectors: [
+            [
+                'aria/Investable assets'
+            ],
+            [
+                '#Dropdown-3'
+            ],
+            [
+                'xpath///*[@id="Dropdown-3"]'
+            ],
+            [
+                'pierce/#Dropdown-3'
+            ]
+        ],
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'div.services-checkbox-field > div:nth-of-type(1) > label'
+            ],
+            [
+                'xpath///*[@id="C016_Col00"]/div[3]/div[1]/label'
+            ],
+            [
+                'pierce/div.services-checkbox-field > div:nth-of-type(1) > label'
+            ],
+            [
+                'text/Investment management'
+            ]
+        ],
+        offsetY: 18.5,
+        offsetX: 45.5,
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/Wealth planning'
+            ],
+            [
+                'div.services-checkbox-field > div:nth-of-type(2) input'
+            ],
+            [
+                'xpath///*[@id="C016_Col00"]/div[3]/div[2]/label/input'
+            ],
+            [
+                'pierce/div.services-checkbox-field > div:nth-of-type(2) input'
+            ]
+        ],
+        offsetY: 29.5,
+        offsetX: 36.5,
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/Your message'
+            ],
+            [
+                '#Textarea-1'
+            ],
+            [
+                'xpath///*[@id="Textarea-1"]'
+            ],
+            [
+                'pierce/#Textarea-1'
+            ]
+        ],
+        offsetY: 54.5,
+        offsetX: 638.5,
+    });
+    await runner.runStep({
+        type: 'change',
+        value: 'hi can you please have an advisor reach out looking to nmake some acquisitions this yea',
+        selectors: [
+            [
+                'aria/Your message'
+            ],
+            [
+                '#Textarea-1'
+            ],
+            [
+                'xpath///*[@id="Textarea-1"]'
+            ],
+            [
+                'pierce/#Textarea-1'
+            ]
+        ],
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/Your message'
+            ],
+            [
+                '#Textarea-1'
+            ],
+            [
+                'xpath///*[@id="Textarea-1"]'
+            ],
+            [
+                'pierce/#Textarea-1'
+            ]
+        ],
+        offsetY: 54.5,
+        offsetX: 638.5,
+    });
+    await runner.runStep({
+        type: 'change',
+        value: 'hi can you please have an advisor reach out looking to nmake some acquisitions this year',
+        selectors: [
+            [
+                'aria/Your message'
+            ],
+            [
+                '#Textarea-1'
+            ],
+            [
+                'xpath///*[@id="Textarea-1"]'
+            ],
+            [
+                'pierce/#Textarea-1'
+            ]
+        ],
+        target: 'main'
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'main',
+        selectors: [
+            [
+                'aria/Submit'
+            ],
+            [
+                '#maincontent button'
+            ],
+            [
+                'xpath///*[@id="C010_Col01"]/div/button'
+            ],
+            [
+                'pierce/#maincontent button'
+            ]
+        ],
+        offsetY: 19,
+        offsetX: 51.765625,
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg',
+        selectors: [
+            [
+                '#\\31 0 img'
+            ],
+            [
+                'xpath///*[@id="10"]/div/div[1]/img'
+            ],
+            [
+                'pierce/#\\31 0 img'
+            ]
+        ],
+        offsetY: 227,
+        offsetX: 234,
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg',
+        selectors: [
+            [
+                '#\\36  img'
+            ],
+            [
+                'xpath///*[@id="6"]/div/div[1]/img'
+            ],
+            [
+                'pierce/#\\36  img'
+            ]
+        ],
+        offsetY: 173,
+        offsetX: 259,
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg',
+        selectors: [
+            [
+                'aria/NEXT'
+            ],
+            [
+                '#recaptcha-verify-button'
+            ],
+            [
+                'xpath///*[@id="recaptcha-verify-button"]'
+            ],
+            [
+                'pierce/#recaptcha-verify-button'
+            ],
+            [
+                'text/Next'
+            ]
+        ],
+        offsetY: 25,
+        offsetX: 67,
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg',
+        selectors: [
+            [
+                '#\\35  img'
+            ],
+            [
+                'xpath///*[@id="5"]/div/div[1]/img'
+            ],
+            [
+                'pierce/#\\35  img'
+            ]
+        ],
+        offsetY: 133,
+        offsetX: 150,
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg',
+        selectors: [
+            [
+                '#\\39  img'
+            ],
+            [
+                'xpath///*[@id="9"]/div/div[1]/img'
+            ],
+            [
+                'pierce/#\\39  img'
+            ]
+        ],
+        offsetY: 262,
+        offsetX: 158,
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg',
+        selectors: [
+            [
+                '#\\31 1 img'
+            ],
+            [
+                'xpath///*[@id="11"]/div/div[1]/img'
+            ],
+            [
+                'pierce/#\\31 1 img'
+            ]
+        ],
+        offsetY: 260,
+        offsetX: 356,
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg',
+        selectors: [
+            [
+                '#\\37  img'
+            ],
+            [
+                'xpath///*[@id="7"]/div/div[1]/img'
+            ],
+            [
+                'pierce/#\\37  img'
+            ]
+        ],
+        offsetY: 187,
+        offsetX: 345,
+    });
+    await runner.runStep({
+        type: 'click',
+        target: 'https://www.google.com/recaptcha/api2/bframe?hl=en&v=PoyoqOPhxBO7pBk68S4YbpHZ&k=6Lc90wklAAAAAJmYxR7nJxo0GJHBhBPwYF8_Z47a&bft=0dAFcWeA5PSmhbMg7DX5WD0SVUEwc_ugDWNB8m5ErJTkEYO-qTByZ6LH6ZqB8S7xnQVu2G2D-AmQ0c8-_hUtwIo9BQg-7A-OHLHg',
+        selectors: [
+            [
+                'aria/VERIFY'
+            ],
+            [
+                '#recaptcha-verify-button'
+            ],
+            [
+                'xpath///*[@id="recaptcha-verify-button"]'
+            ],
+            [
+                'pierce/#recaptcha-verify-button'
+            ],
+            [
+                'text/Verify'
+            ]
+        ],
+        offsetY: 22,
+        offsetX: 61,
+    });
+
+    await runner.runAfterAllSteps();
+}
+
+if (process && import.meta.url === url.pathToFileURL(process.argv[1]).href) {
+    run()
+}
+
+
+
+
+const puppeteer = require('puppeteer'); // v23.0.0 or later
+
+(async () => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    const timeout = 5000;
+    page.setDefaultTimeout(timeout);
+
+    {
+        const targetPage = page;
+        await targetPage.setViewport({
+            width: 1365,
+            height: 992
+        })
+    }
+    {
+        const targetPage = page;
+        await targetPage.goto('https://www.odlumbrown.com/');
+    }
+    {
+        const targetPage = page;
+        const promises = [];
+        const startWaitingForEvents = () => {
+            promises.push(targetPage.waitForNavigation());
+        }
+        await puppeteer.Locator.race([
+            targetPage.locator('div.bg-light a:nth-of-type(2)'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/header/div[1]/div/div/a[2])'),
+            targetPage.locator(':scope >>> div.bg-light a:nth-of-type(2)')
+        ])
+            .setTimeout(timeout)
+            .on('action', () => startWaitingForEvents())
+            .click({
+              offset: {
+                x: 50.5,
+                y: 16,
+              },
+            });
+        await Promise.all(promises);
+    }
+    {
+        const targetPage = page;
+        const promises = [];
+        const startWaitingForEvents = () => {
+            promises.push(targetPage.waitForNavigation());
+        }
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Contact us)'),
+            targetPage.locator('body > div:nth-of-type(2) a'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"content-page\\"]/div/div/div/div/div[2]/a)'),
+            targetPage.locator(':scope >>> body > div:nth-of-type(2) a'),
+            targetPage.locator('::-p-text(Contact us)')
+        ])
+            .setTimeout(timeout)
+            .on('action', () => startWaitingForEvents())
+            .click({
+              offset: {
+                x: 69.796875,
+                y: 36.296875,
+              },
+            });
+        await Promise.all(promises);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(First Name*)'),
+            targetPage.locator('#SitefinityTextFieldFormControl'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"SitefinityTextFieldFormControl\\"])'),
+            targetPage.locator(':scope >>> #SitefinityTextFieldFormControl')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 414.5,
+                y: 19.046875,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(First Name*)'),
+            targetPage.locator('#SitefinityTextFieldFormControl'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"SitefinityTextFieldFormControl\\"])'),
+            targetPage.locator(':scope >>> #SitefinityTextFieldFormControl')
+        ])
+            .setTimeout(timeout)
+            .fill('kevin');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.down('Tab');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.up('Tab');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Last Name*)'),
+            targetPage.locator('#SitefinityTextFieldFormControl_0'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"SitefinityTextFieldFormControl_0\\"])'),
+            targetPage.locator(':scope >>> #SitefinityTextFieldFormControl_0')
+        ])
+            .setTimeout(timeout)
+            .fill('fang ');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.down('Tab');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.up('Tab');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(City*)'),
+            targetPage.locator('#SitefinityTextFieldFormControl_1'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"SitefinityTextFieldFormControl_1\\"])'),
+            targetPage.locator(':scope >>> #SitefinityTextFieldFormControl_1')
+        ])
+            .setTimeout(timeout)
+            .fill('toronto');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Province*) >>>> ::-p-aria([role=\\"combobox\\"])'),
+            targetPage.locator('section:nth-of-type(2) select'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/main/div/form/div/div[4]/section[2]/div[2]/fieldset/select)'),
+            targetPage.locator(':scope >>> section:nth-of-type(2) select')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 114.5,
+                y: 19.859375,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Province*) >>>> ::-p-aria([role=\\"combobox\\"])'),
+            targetPage.locator('section:nth-of-type(2) select'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/main/div/form/div/div[4]/section[2]/div[2]/fieldset/select)'),
+            targetPage.locator(':scope >>> section:nth-of-type(2) select')
+        ])
+            .setTimeout(timeout)
+            .fill('Ontario');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('fieldset:nth-of-type(2) div:nth-of-type(1) > label'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/main/div/form/div/div[4]/fieldset[2]/div[1]/div[1]/label)'),
+            targetPage.locator(':scope >>> fieldset:nth-of-type(2) div:nth-of-type(1) > label'),
+            targetPage.locator('::-p-text(No preference)')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 5.5,
+                y: 13.484375,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Would you prefer to work with a specific branch?*) >>>> ::-p-aria([role=\\"combobox\\"])'),
+            targetPage.locator('#SpecificBranchFormControl'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"SpecificBranchFormControl\\"])'),
+            targetPage.locator(':scope >>> #SpecificBranchFormControl')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 150.015625,
+                y: 18.484375,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Your investable assets)'),
+            targetPage.locator('#SitefinityTextFieldFormControl_2'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"SitefinityTextFieldFormControl_2\\"])'),
+            targetPage.locator(':scope >>> #SitefinityTextFieldFormControl_2')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 291.5,
+                y: 22.296875,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Your investable assets)'),
+            targetPage.locator('#SitefinityTextFieldFormControl_2'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"SitefinityTextFieldFormControl_2\\"])'),
+            targetPage.locator(':scope >>> #SitefinityTextFieldFormControl_2')
+        ])
+            .setTimeout(timeout)
+            .fill('$1,000,000');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('fieldset:nth-of-type(3) div:nth-of-type(1) > label'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/main/div/form/div/div[4]/fieldset[3]/div[1]/div[1]/label)'),
+            targetPage.locator(':scope >>> fieldset:nth-of-type(3) div:nth-of-type(1) > label'),
+            targetPage.locator('::-p-text(Start investing)')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 71.5,
+                y: 7.109375,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('fieldset:nth-of-type(3) div:nth-of-type(3) > label'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/main/div/form/div/div[4]/fieldset[3]/div[1]/div[3]/label)'),
+            targetPage.locator(':scope >>> fieldset:nth-of-type(3) div:nth-of-type(3) > label'),
+            targetPage.locator('::-p-text(Ensure my investments)')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 170.5,
+                y: 12.109375,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Email)'),
+            targetPage.locator('#choiceOption-1-SitefinityCheckboxesFormControl_08000'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"choiceOption-1-SitefinityCheckboxesFormControl_08000\\"])'),
+            targetPage.locator(':scope >>> #choiceOption-1-SitefinityCheckboxesFormControl_08000')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 8.5,
+                y: 7.734375,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(How did you hear about us?*) >>>> ::-p-aria([role=\\"combobox\\"])'),
+            targetPage.locator('section:nth-of-type(4) select'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/main/div/form/div/div[4]/section[4]/div[1]/fieldset/select)'),
+            targetPage.locator(':scope >>> section:nth-of-type(4) select')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 132.5,
+                y: 26.546875,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Email Address*)'),
+            targetPage.locator('#SitefinityTextFieldFormControl_5'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"SitefinityTextFieldFormControl_5\\"])'),
+            targetPage.locator(':scope >>> #SitefinityTextFieldFormControl_5')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 57.5,
+                y: 5.734375,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Email Address*)'),
+            targetPage.locator('#SitefinityTextFieldFormControl_5'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"SitefinityTextFieldFormControl_5\\"])'),
+            targetPage.locator(':scope >>> #SitefinityTextFieldFormControl_5')
+        ])
+            .setTimeout(timeout)
+            .fill('kevandcoce');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.down('Shift');
+    }
+    {
+        const targetPage = page;
+        await targetPage.keyboard.up('Shift');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Email Address*)'),
+            targetPage.locator('#SitefinityTextFieldFormControl_5'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"SitefinityTextFieldFormControl_5\\"])'),
+            targetPage.locator(':scope >>> #SitefinityTextFieldFormControl_5')
+        ])
+            .setTimeout(timeout)
+            .fill('kevandcoceo@hotmail.com');
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(How did you hear about us?*) >>>> ::-p-aria([role=\\"combobox\\"])'),
+            targetPage.locator('section:nth-of-type(4) select'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/main/div/form/div/div[4]/section[4]/div[1]/fieldset/select)'),
+            targetPage.locator(':scope >>> section:nth-of-type(4) select')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 306.5,
+                y: 5.546875,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(How did you hear about us?*) >>>> ::-p-aria([role=\\"combobox\\"])'),
+            targetPage.locator('section:nth-of-type(4) select'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/main/div/form/div/div[4]/section[4]/div[1]/fieldset/select)'),
+            targetPage.locator(':scope >>> section:nth-of-type(4) select')
+        ])
+            .setTimeout(timeout)
+            .fill('Online Advertising');
+    }
+    {
+        const targetPage = page;
+        const promises = [];
+        const startWaitingForEvents = () => {
+            promises.push(targetPage.waitForNavigation());
+        }
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(CONSENT AND SUBMIT)'),
+            targetPage.locator('main button'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/main/div/form/div/div[4]/section[5]/div[1]/div/button)'),
+            targetPage.locator(':scope >>> main button'),
+            targetPage.locator('::-p-text(CONSENT AND SUBMIT)')
+        ])
+            .setTimeout(timeout)
+            .on('action', () => startWaitingForEvents())
+            .click({
+              offset: {
+                x: 150.5,
+                y: 30.546875,
+              },
+            });
+        await Promise.all(promises);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('main'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"html\\"]/body/main)'),
+            targetPage.locator(':scope >>> main')
+        ])
+            .setTimeout(timeout)
+            .click({
+              delay: 628.9000000059605,
+              offset: {
+                x: 10,
+                y: 56,
+              },
+            });
+    }
+
+    await browser.close();
+
+})().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
+
+{
+    "title": "2",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.odlumbrown.com/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.odlumbrown.com/",
+                    "title": "Wealth Management and Investment Advisors | Odlum Brown"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.bg-light a:nth-of-type(2)"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/header/div[1]/div/div/a[2]"
+                ],
+                [
+                    "pierce/div.bg-light a:nth-of-type(2)"
+                ]
+            ],
+            "offsetY": 16,
+            "offsetX": 50.5,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.odlumbrown.com/about/contact-us",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Contact us"
+                ],
+                [
+                    "body > div:nth-of-type(2) a"
+                ],
+                [
+                    "xpath///*[@id=\"content-page\"]/div/div/div/div/div[2]/a"
+                ],
+                [
+                    "pierce/body > div:nth-of-type(2) a"
+                ],
+                [
+                    "text/Contact us"
+                ]
+            ],
+            "offsetY": 36.296875,
+            "offsetX": 69.796875,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.odlumbrown.com/advisors/let-us-help-you",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/First Name*"
+                ],
+                [
+                    "#SitefinityTextFieldFormControl"
+                ],
+                [
+                    "xpath///*[@id=\"SitefinityTextFieldFormControl\"]"
+                ],
+                [
+                    "pierce/#SitefinityTextFieldFormControl"
+                ]
+            ],
+            "offsetY": 19.046875,
+            "offsetX": 414.5
+        },
+        {
+            "type": "change",
+            "value": "kevin",
+            "selectors": [
+                [
+                    "aria/First Name*"
+                ],
+                [
+                    "#SitefinityTextFieldFormControl"
+                ],
+                [
+                    "xpath///*[@id=\"SitefinityTextFieldFormControl\"]"
+                ],
+                [
+                    "pierce/#SitefinityTextFieldFormControl"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "fang ",
+            "selectors": [
+                [
+                    "aria/Last Name*"
+                ],
+                [
+                    "#SitefinityTextFieldFormControl_0"
+                ],
+                [
+                    "xpath///*[@id=\"SitefinityTextFieldFormControl_0\"]"
+                ],
+                [
+                    "pierce/#SitefinityTextFieldFormControl_0"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "toronto",
+            "selectors": [
+                [
+                    "aria/City*"
+                ],
+                [
+                    "#SitefinityTextFieldFormControl_1"
+                ],
+                [
+                    "xpath///*[@id=\"SitefinityTextFieldFormControl_1\"]"
+                ],
+                [
+                    "pierce/#SitefinityTextFieldFormControl_1"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Province*",
+                    "aria/[role=\"combobox\"]"
+                ],
+                [
+                    "section:nth-of-type(2) select"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/main/div/form/div/div[4]/section[2]/div[2]/fieldset/select"
+                ],
+                [
+                    "pierce/section:nth-of-type(2) select"
+                ]
+            ],
+            "offsetY": 19.859375,
+            "offsetX": 114.5
+        },
+        {
+            "type": "change",
+            "value": "Ontario",
+            "selectors": [
+                [
+                    "aria/Province*",
+                    "aria/[role=\"combobox\"]"
+                ],
+                [
+                    "section:nth-of-type(2) select"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/main/div/form/div/div[4]/section[2]/div[2]/fieldset/select"
+                ],
+                [
+                    "pierce/section:nth-of-type(2) select"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "fieldset:nth-of-type(2) div:nth-of-type(1) > label"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/main/div/form/div/div[4]/fieldset[2]/div[1]/div[1]/label"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(2) div:nth-of-type(1) > label"
+                ],
+                [
+                    "text/No preference"
+                ]
+            ],
+            "offsetY": 13.484375,
+            "offsetX": 5.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Would you prefer to work with a specific branch?*",
+                    "aria/[role=\"combobox\"]"
+                ],
+                [
+                    "#SpecificBranchFormControl"
+                ],
+                [
+                    "xpath///*[@id=\"SpecificBranchFormControl\"]"
+                ],
+                [
+                    "pierce/#SpecificBranchFormControl"
+                ]
+            ],
+            "offsetY": 18.484375,
+            "offsetX": 150.015625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your investable assets"
+                ],
+                [
+                    "#SitefinityTextFieldFormControl_2"
+                ],
+                [
+                    "xpath///*[@id=\"SitefinityTextFieldFormControl_2\"]"
+                ],
+                [
+                    "pierce/#SitefinityTextFieldFormControl_2"
+                ]
+            ],
+            "offsetY": 22.296875,
+            "offsetX": 291.5
+        },
+        {
+            "type": "change",
+            "value": "$1,000,000",
+            "selectors": [
+                [
+                    "aria/Your investable assets"
+                ],
+                [
+                    "#SitefinityTextFieldFormControl_2"
+                ],
+                [
+                    "xpath///*[@id=\"SitefinityTextFieldFormControl_2\"]"
+                ],
+                [
+                    "pierce/#SitefinityTextFieldFormControl_2"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "fieldset:nth-of-type(3) div:nth-of-type(1) > label"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/main/div/form/div/div[4]/fieldset[3]/div[1]/div[1]/label"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(3) div:nth-of-type(1) > label"
+                ],
+                [
+                    "text/Start investing"
+                ]
+            ],
+            "offsetY": 7.109375,
+            "offsetX": 71.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "fieldset:nth-of-type(3) div:nth-of-type(3) > label"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/main/div/form/div/div[4]/fieldset[3]/div[1]/div[3]/label"
+                ],
+                [
+                    "pierce/fieldset:nth-of-type(3) div:nth-of-type(3) > label"
+                ],
+                [
+                    "text/Ensure my investments"
+                ]
+            ],
+            "offsetY": 12.109375,
+            "offsetX": 170.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Email"
+                ],
+                [
+                    "#choiceOption-1-SitefinityCheckboxesFormControl_08000"
+                ],
+                [
+                    "xpath///*[@id=\"choiceOption-1-SitefinityCheckboxesFormControl_08000\"]"
+                ],
+                [
+                    "pierce/#choiceOption-1-SitefinityCheckboxesFormControl_08000"
+                ]
+            ],
+            "offsetY": 7.734375,
+            "offsetX": 8.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/How did you hear about us?*",
+                    "aria/[role=\"combobox\"]"
+                ],
+                [
+                    "section:nth-of-type(4) select"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/main/div/form/div/div[4]/section[4]/div[1]/fieldset/select"
+                ],
+                [
+                    "pierce/section:nth-of-type(4) select"
+                ]
+            ],
+            "offsetY": 26.546875,
+            "offsetX": 132.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Email Address*"
+                ],
+                [
+                    "#SitefinityTextFieldFormControl_5"
+                ],
+                [
+                    "xpath///*[@id=\"SitefinityTextFieldFormControl_5\"]"
+                ],
+                [
+                    "pierce/#SitefinityTextFieldFormControl_5"
+                ]
+            ],
+            "offsetY": 5.734375,
+            "offsetX": 57.5
+        },
+        {
+            "type": "change",
+            "value": "kevandcoce",
+            "selectors": [
+                [
+                    "aria/Email Address*"
+                ],
+                [
+                    "#SitefinityTextFieldFormControl_5"
+                ],
+                [
+                    "xpath///*[@id=\"SitefinityTextFieldFormControl_5\"]"
+                ],
+                [
+                    "pierce/#SitefinityTextFieldFormControl_5"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Shift"
+        },
+        {
+            "type": "keyUp",
+            "key": "Shift",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kevandcoceo@hotmail.com",
+            "selectors": [
+                [
+                    "aria/Email Address*"
+                ],
+                [
+                    "#SitefinityTextFieldFormControl_5"
+                ],
+                [
+                    "xpath///*[@id=\"SitefinityTextFieldFormControl_5\"]"
+                ],
+                [
+                    "pierce/#SitefinityTextFieldFormControl_5"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/How did you hear about us?*",
+                    "aria/[role=\"combobox\"]"
+                ],
+                [
+                    "section:nth-of-type(4) select"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/main/div/form/div/div[4]/section[4]/div[1]/fieldset/select"
+                ],
+                [
+                    "pierce/section:nth-of-type(4) select"
+                ]
+            ],
+            "offsetY": 5.546875,
+            "offsetX": 306.5
+        },
+        {
+            "type": "change",
+            "value": "Online Advertising",
+            "selectors": [
+                [
+                    "aria/How did you hear about us?*",
+                    "aria/[role=\"combobox\"]"
+                ],
+                [
+                    "section:nth-of-type(4) select"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/main/div/form/div/div[4]/section[4]/div[1]/fieldset/select"
+                ],
+                [
+                    "pierce/section:nth-of-type(4) select"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/CONSENT AND SUBMIT"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/main/div/form/div/div[4]/section[5]/div[1]/div/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/CONSENT AND SUBMIT"
+                ]
+            ],
+            "offsetY": 30.546875,
+            "offsetX": 150.5,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.odlumbrown.com/thank-you",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "main"
+                ],
+                [
+                    "xpath///*[@id=\"html\"]/body/main"
+                ],
+                [
+                    "pierce/main"
+                ]
+            ],
+            "offsetY": 56,
+            "offsetX": 10,
+            "duration": 628.9000000059605
+        }
+    ]
+}
+
+
+{
+    "title": "1",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://richardsonwealth.com/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://richardsonwealth.com/",
+                    "title": "Richardson Wealth"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/[role=\"banner\"]",
+                    "aria/Contact us"
+                ],
+                [
+                    "#wrapper-navbar > div li.gtm-contact-us-nav > a"
+                ],
+                [
+                    "xpath///*[@id=\"menu-item-1223\"]/a"
+                ],
+                [
+                    "pierce/#wrapper-navbar > div li.gtm-contact-us-nav > a"
+                ]
+            ],
+            "offsetY": 23,
+            "offsetX": 22.015625,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://richardsonwealth.com/contact-us/",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/First name"
+                ],
+                [
+                    "form > div.row > div:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/div[1]/div[1]/p/span/input"
+                ],
+                [
+                    "pierce/form > div.row > div:nth-of-type(1) input"
+                ]
+            ],
+            "offsetY": 21.234375,
+            "offsetX": 73.5
+        },
+        {
+            "type": "change",
+            "value": "kevin",
+            "selectors": [
+                [
+                    "aria/First name"
+                ],
+                [
+                    "form > div.row > div:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/div[1]/div[1]/p/span/input"
+                ],
+                [
+                    "pierce/form > div.row > div:nth-of-type(1) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "fang",
+            "selectors": [
+                [
+                    "aria/Last name"
+                ],
+                [
+                    "#page-wrapper div.row > div:nth-of-type(2) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/div[1]/div[2]/p/span/input"
+                ],
+                [
+                    "pierce/#page-wrapper div.row > div:nth-of-type(2) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kevandcce@hotmail.cm",
+            "selectors": [
+                [
+                    "aria/Email*"
+                ],
+                [
+                    "form > p:nth-of-type(1) > span:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/p[1]/span[1]/input"
+                ],
+                [
+                    "pierce/form > p:nth-of-type(1) > span:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kevandcce@hotmail.com",
+            "selectors": [
+                [
+                    "aria/Email*"
+                ],
+                [
+                    "form > p:nth-of-type(1) > span:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/p[1]/span[1]/input"
+                ],
+                [
+                    "pierce/form > p:nth-of-type(1) > span:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "2127315141",
+            "selectors": [
+                [
+                    "aria/Phone"
+                ],
+                [
+                    "span:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/p[1]/span[2]/input"
+                ],
+                [
+                    "pierce/span:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Location (City)"
+                ],
+                [
+                    "span:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/p[1]/span[3]/input"
+                ],
+                [
+                    "pierce/span:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 14.453125,
+            "offsetX": 183.5
+        },
+        {
+            "type": "change",
+            "value": "toronto",
+            "selectors": [
+                [
+                    "aria/Location (City)"
+                ],
+                [
+                    "span:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/p[1]/span[3]/input"
+                ],
+                [
+                    "pierce/span:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "p:nth-of-type(1) textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/p[1]/label/span/textarea"
+                ],
+                [
+                    "pierce/p:nth-of-type(1) textarea"
+                ]
+            ],
+            "offsetY": 7.671875,
+            "offsetX": 198.5
+        },
+        {
+            "type": "change",
+            "value": "hi please i need sme wealth advse loking to make some buig aquisitions this year",
+            "selectors": [
+                [
+                    "p:nth-of-type(1) textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/p[1]/label/span/textarea"
+                ],
+                [
+                    "pierce/p:nth-of-type(1) textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Submit"
+                ],
+                [
+                    "#page-wrapper form > input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f5-p130-o1\"]/form/input"
+                ],
+                [
+                    "pierce/#page-wrapper form > input"
+                ],
+                [
+                    "text/Submit"
+                ]
+            ],
+            "offsetY": 31.9375,
+            "offsetX": 89.6875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#page-wrapper"
+                ],
+                [
+                    "xpath///*[@id=\"page-wrapper\"]"
+                ],
+                [
+                    "pierce/#page-wrapper"
+                ]
+            ],
+            "offsetY": 797,
+            "offsetX": 10,
+            "duration": 677.5999999940395
+        }
+    ]
+}
+
+{
+    "title": "c4",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.google.com/search?q=lawyers+texas+%2Fcontact+us&oq=lawyers+texas+%2Fcontact+us&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORigATIHCAEQIRigATIHCAIQIRigATIHCAMQIRiPAjIHCAQQIRiPAtIBCDkwNjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+texas+%2Fcontact+us&oq=lawyers+texas+%2Fcontact+us&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORigATIHCAEQIRigATIHCAIQIRigATIHCAMQIRiPAjIHCAQQIRiPAtIBCDkwNjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+                    "title": "lawyers texas /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Search[role=\"combobox\"]"
+                ],
+                [
+                    "#APjFqb"
+                ],
+                [
+                    "xpath///*[@id=\"APjFqb\"]"
+                ],
+                [
+                    "pierce/#APjFqb"
+                ]
+            ],
+            "offsetY": 22,
+            "offsetX": 84
+        },
+        {
+            "type": "change",
+            "value": "lawyers dubai /contact us",
+            "selectors": [
+                [
+                    "aria/Search[role=\"combobox\"]"
+                ],
+                [
+                    "#APjFqb"
+                ],
+                [
+                    "xpath///*[@id=\"APjFqb\"]"
+                ],
+                [
+                    "pierce/#APjFqb"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Enter"
+        },
+        {
+            "type": "keyUp",
+            "key": "Enter",
+            "target": "main",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+%2Fcontact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifPQEMhKdheXELl3AIJUBzITi3BD6Q%3A1754190792886&ei=yNOOaN7zNbj87_UPv5booAU&ved=0ahUKEwje98_41e2OAxU4_rsIHT8LGlQQ4dUDCBA&uact=5&oq=lawyers+dubai+%2Fcontact+us&gs_lp=Egxnd3Mtd2l6LXNlcnAiGWxhd3llcnMgZHViYWkgL2NvbnRhY3QgdXMyChAhGKABGMMEGAoyChAhGKABGMMEGApIvipQighY4idwAXgBkAEAmAGXBaABliCqAQczLTMuNC4yuAEDyAEA-AEBmAIEoAK_CcICChAAGLADGNYEGEfCAgUQABjvBcICCBAAGKIEGIkFwgIIEAAYgAQYogTCAgYQABgFGB7CAgYQABgIGB6YAwCIBgGQBgiSBwcxLjMtMi4xoAeKI7IHBTMtMi4xuAe2CcIHBTAuMS4zyAcV&sclient=gws-wiz-serp",
+                    "title": "lawyers dubai /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(5) div.CCgQ5 > span"
+                ],
+                [
+                    "xpath///*[@id=\"tads\"]/div[5]/div/div/div/div/div[1]/a/div[1]/span"
+                ],
+                [
+                    "pierce/div:nth-of-type(5) div.CCgQ5 > span"
+                ]
+            ],
+            "offsetY": 20.890625,
+            "offsetX": 157,
+            "button": "secondary"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#tads > div:nth-of-type(3) > div > div > div > div"
+                ],
+                [
+                    "xpath///*[@id=\"tads\"]/div[3]/div/div/div/div"
+                ],
+                [
+                    "pierce/#tads > div:nth-of-type(3) > div > div > div > div"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 2,
+            "duration": 1477.8999999985099
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Page 2"
+                ],
+                [
+                    "td:nth-of-type(3) > a"
+                ],
+                [
+                    "xpath///*[@id=\"botstuff\"]/div/div[3]/table/tbody/tr/td[3]/a"
+                ],
+                [
+                    "pierce/td:nth-of-type(3) > a"
+                ]
+            ],
+            "offsetY": 48.140625,
+            "offsetX": 11,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+/contact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifNJOR620uzaMVuPM__G8A64AGWQkw:1754237679582&ei=74qPaJqPI_2di-gP27zdgQw&start=10&sa=N&sstk=Ac65TH5IH6bi6Qui4ZNIH_hZSDzfeV0OwUgaerYzyDESUerHejTwJiUteVUXVEjwylBX7YBt9RUIbSzObVMx3FQvPl5hZEwMbhz-8A&ved=2ahUKEwjawvjNhO-OAxX9zgIHHVteN8AQ8tMDegQIDRAE&biw=1365&bih=992&dpr=1",
+                    "title": "lawyers dubai /contact us - Google Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Page 3"
+                ],
+                [
+                    "td:nth-of-type(4) > a"
+                ],
+                [
+                    "xpath///*[@id=\"botstuff\"]/div/div[3]/table/tbody/tr/td[4]/a"
+                ],
+                [
+                    "pierce/td:nth-of-type(4) > a"
+                ]
+            ],
+            "offsetY": 50.03125,
+            "offsetX": 8.265625,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.google.com/search?q=lawyers+dubai+/contact+us&sca_esv=ce62fa40dfb3de79&sxsrf=AE3TifMMmZhhE1TsmaWXAxKKo70niGnp8Q:1754237701839&ei=BYuPaJWCM6n4i-gPm7DtwAw&start=20&sa=N&sstk=Ac65TH6I0spb7-yNoHA55RmDzn-cA_2F87WUoEVL8IpZ6wmgyAcmg-bn7RzXxCYHsVahIWRQ4UcwOvOAk-Lt4j12pibUb7pwWblyWH_ia6si83ZyKua9iXWlI_LTJJ7bwijY&ved=2ahUKEwjVmMfYhO-OAxUp_AIHHRtYG8g4ChDy0wN6BAgJEAc&biw=1365&bih=992&dpr=1",
+                    "title": ""
+                }
+            ]
+        }
+    ]
+}
+
+{
+    "title": "c6",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://davidsoncolaw.com/services/commercial/?utm_source=Google+ads&utm_medium=CPC&utm_campaign=Commercial+services&utm_term=business%20lawyer%20in%20dubai&utm_campaign=Davidson+co+law+%7C+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=4221611439&hsa_cam=1438703999&hsa_grp=168264626282&hsa_ad=711572697019&hsa_src=g&hsa_tgt=kwd-377044815999&hsa_kw=business%20lawyer%20in%20dubai&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=1438703999&gbraid=0AAAAADFkUPKNvgDwoUpn8359ygWXx3jo-&gclid=CjwKCAjwkbzEBhAVEiwA4V-yqkMVa8cORkDS3oKl6YF7DdHguzEpyqsetFya7z8LAVj_bUTVw7sufxoCk_wQAvD_BwE",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://davidsoncolaw.com/services/commercial/?utm_source=Google+ads&utm_medium=CPC&utm_campaign=Commercial+services&utm_term=business%20lawyer%20in%20dubai&utm_campaign=Davidson+co+law+%7C+Brand&utm_source=adwords&utm_medium=ppc&hsa_acc=4221611439&hsa_cam=1438703999&hsa_grp=168264626282&hsa_ad=711572697019&hsa_src=g&hsa_tgt=kwd-377044815999&hsa_kw=business%20lawyer%20in%20dubai&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=1438703999&gbraid=0AAAAADFkUPKNvgDwoUpn8359ygWXx3jo-&gclid=CjwKCAjwkbzEBhAVEiwA4V-yqkMVa8cORkDS3oKl6YF7DdHguzEpyqsetFya7z8LAVj_bUTVw7sufxoCk_wQAvD_BwE",
+                    "title": "Commercial Litigation and Business Dispute Lawyers in Dubai"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/[role=\"banner\"]",
+                    "aria/Enquire Now"
+                ],
+                [
+                    "div.col-sm-9 > a"
+                ],
+                [
+                    "xpath//html/body/header/div[1]/div/div/div[2]/a"
+                ],
+                [
+                    "pierce/div.col-sm-9 > a"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 18.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Full Name*"
+                ],
+                [
+                    "#EnqFormPop1 div.enq-formWrap > div:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[1]/div/p/span/input"
+                ],
+                [
+                    "pierce/#EnqFormPop1 div.enq-formWrap > div:nth-of-type(1) input"
+                ]
+            ],
+            "offsetY": 52,
+            "offsetX": 357.625
+        },
+        {
+            "type": "change",
+            "value": "kevin fang",
+            "selectors": [
+                [
+                    "aria/Full Name*"
+                ],
+                [
+                    "#EnqFormPop1 div.enq-formWrap > div:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[1]/div/p/span/input"
+                ],
+                [
+                    "pierce/#EnqFormPop1 div.enq-formWrap > div:nth-of-type(1) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kevandcoceo@hotmail.com",
+            "selectors": [
+                [
+                    "aria/Email Address*"
+                ],
+                [
+                    "#EnqFormPop1 div.enq-formWrap > div:nth-of-type(2) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[2]/div/p/span/input"
+                ],
+                [
+                    "pierce/#EnqFormPop1 div.enq-formWrap > div:nth-of-type(2) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/What's your challenge?"
+                ],
+                [
+                    "#EnqFormPop1 textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[3]/div/p/span/textarea"
+                ],
+                [
+                    "pierce/#EnqFormPop1 textarea"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 329.625
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Shift"
+        },
+        {
+            "type": "keyUp",
+            "key": "Shift",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "im being sued by a client im 100% innocent can u have someone reachout its a slight business dispute asap ",
+            "selectors": [
+                [
+                    "aria/What's your challenge?"
+                ],
+                [
+                    "#EnqFormPop1 textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[3]/div/p/span/textarea"
+                ],
+                [
+                    "pierce/#EnqFormPop1 textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/What's your challenge?"
+                ],
+                [
+                    "#EnqFormPop1 textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[3]/div/p/span/textarea"
+                ],
+                [
+                    "pierce/#EnqFormPop1 textarea"
+                ]
+            ],
+            "offsetY": 42,
+            "offsetX": 278.625
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "ArrowRight"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowRight",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "im being sued by a client im 100% innocent can u have someone reachout its a slight business dispute.... kindly reach out asap ",
+            "selectors": [
+                [
+                    "aria/What's your challenge?"
+                ],
+                [
+                    "#EnqFormPop1 textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[3]/div/p/span/textarea"
+                ],
+                [
+                    "pierce/#EnqFormPop1 textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(4) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f425-o1\"]/form/div[2]/div[4]/div/p/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) input"
+                ]
+            ],
+            "offsetY": 36,
+            "offsetX": 140.625,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://td.doubleclick.net/td/rul/828657906?random=1754238625578&cv=11&fst=1754238625578&fmt=3&bg=ffffff&guid=ON&async=1&en=conversion&gcl_ctr=1&gtm=45be57u1v9102618535za200zd9102618535&gcd=13l3l3l3l1l1&dma=0&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813~105087538~105087540~105103161~105103163&u_w=1920&u_h=1080&url=https%3A%2F%2Fdavidsoncolaw.com%2Fservices%2Fcommercial%2F%3Futm_source%3DGoogle%2Bads%26utm_medium%3DCPC%26utm_campaign%3DCommercial%2Bservices%26utm_term%3Dbusiness%2520lawyer%2520in%2520dubai%26utm_campaign%3DDavidson%2Bco%2Blaw%2B%257C%2BBrand%26utm_source%3Dadwords%26utm_medium%3Dppc%26hsa_acc%3D4221611439%26hsa_cam%3D1438703999%26hsa_grp%3D168264626282%26hsa_ad%3D711572697019%26hsa_src%3Dg%26hsa_tgt%3Dkwd-377044815999%26hsa_kw%3Dbusiness%2520lawyer%2520in%2520dubai%26hsa_mt%3Db%26hsa_net%3Dadwords%26hsa_ver%3D3%26gad_source%3D1%26gad_campaignid%3D1438703999%26gbraid%3D0AAAAADFkUPKNvgDwoUpn8359ygWXx3jo-%26gclid%3DCjwKCAjw&ref=https%3A%2F%2Fwww.google.com%2F&gclaw_src=2_3&label=zo9rCKDLt3gQ8qGRiwM&hn=www.googleadservices.com&frm=0&tiba=Commercial%20Litigation%20and%20Business%20Dispute%20Lawyers%20in%20Dubai&gtm_ee=1&npa=0&gclgs=1&gclst=941579&gcllp=164241194&gac=UA-65303564-1%3ACjwKCAjwkbzEBhAVEiwA4V-yqkMVa8cORkDS3oKl6YF7DdHguzEpyqsetFya7z8LAVj_bUTVw7sufxoCk_wQAvD_BwE&gclaw=CjwKCAjwkbzEBhAVEiwA4V-yqkMVa8cORkDS3oKl6YF7DdHguzEpyqsetFya7z8LAVj_bUTVw7sufxoCk_wQAvD_BwE&pscdl=noapi&auid=34279722.1754237690&uaa=arm&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.184%7CGoogle%2520Chrome%3B138.0.7204.184&uamb=0&uam=&uap=macOS&uapv=14.5.0&uaw=0&ec_m=%23wpcf7-f425-o1%3E%3Anth-child(2)%3E%3Anth-child(2)%3E%3Anth-child(3)%3E%3Anth-child(1)%3E%3Anth-child(1)%3E%3Anth-child(1)%3E%3Anth-child(1)*INPUT%3Atrue%3A23%3Afalse*1&ec_sel=%23wpcf7-f425-o1%3E%3Anth-child(2)%3E%3Anth-child(2)%3E%3Anth-child(3)%3E%3Anth-child(1)%3E%3Anth-child(1)%3E%3Anth-child(1)%3E%3Anth-child(1)&ec_meta=INPUT%3Atrue%3A23%3Afalse&ec_lat=0&ec_s=1&ec_mode=a&oid=790411825.1754238626&ecsid=1364599244.1754238618&fledge=1&capi=1&_tu=ABA&data=event%3Dconversion&em=tv.1~em.c9YmX5m-8YM3gDPPP8iDGwOLYnqKOZ8fBtgTbST1Lsc&ct_cookie_present=0",
+                    "title": "Thank you - Davidson & Co"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.PageWrap"
+                ],
+                [
+                    "xpath//html/body/div[1]"
+                ],
+                [
+                    "pierce/div.PageWrap"
+                ]
+            ],
+            "offsetY": 180,
+            "offsetX": 338,
+            "duration": 761.2999999970198
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Thank you for getting in touch!"
+                ],
+                [
+                    "h1"
+                ],
+                [
+                    "xpath//html/body/div[1]/div/div/section/div/div/div/div[1]/div/h1"
+                ],
+                [
+                    "pierce/h1"
+                ],
+                [
+                    "text/Thank you for"
+                ]
+            ],
+            "offsetY": 13,
+            "offsetX": 201.5
+        }
+    ]
+}
+
+
+dont be this slow oo
+
+{
+    "title": "c7",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://dubai.lawyer/contact/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://dubai.lawyer/contact/",
+                    "title": "Contact our Lawyers in Dubai"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/CONTACT[role=\"link\"]"
+                ],
+                [
+                    "#menu-item-991 > a"
+                ],
+                [
+                    "xpath///*[@id=\"menu-item-991\"]/a"
+                ],
+                [
+                    "pierce/#menu-item-991 > a"
+                ]
+            ],
+            "offsetY": 34.390625,
+            "offsetX": 38.703125,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://dubai.lawyer/contact/",
+                    "title": "One moment, please..."
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/OK, I AGREE"
+                ],
+                [
+                    "#total-plus-confirm"
+                ],
+                [
+                    "xpath///*[@id=\"total-plus-confirm\"]"
+                ],
+                [
+                    "pierce/#total-plus-confirm"
+                ],
+                [
+                    "text/Ok, I Agree"
+                ]
+            ],
+            "offsetY": 8.09375,
+            "offsetX": 82
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Full Name (required)"
+                ],
+                [
+                    "p:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[1]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(1) input"
+                ]
+            ],
+            "offsetY": 20.15625,
+            "offsetX": 247.5
+        },
+        {
+            "type": "change",
+            "value": "kev",
+            "selectors": [
+                [
+                    "aria/Full Name (required)"
+                ],
+                [
+                    "p:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[1]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(1) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "kevandcoceo@hotmail.com",
+            "selectors": [
+                [
+                    "aria/Your Email (required)"
+                ],
+                [
+                    "p:nth-of-type(2) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[2]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(2) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "2415371627",
+            "selectors": [
+                [
+                    "aria/Your Phone"
+                ],
+                [
+                    "p:nth-of-type(3) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[3]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(3) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Subject"
+                ],
+                [
+                    "p:nth-of-type(4) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[4]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(4) input"
+                ]
+            ],
+            "offsetY": 22.984375,
+            "offsetX": 167.5
+        },
+        {
+            "type": "change",
+            "value": "need representaion",
+            "selectors": [
+                [
+                    "aria/Subject"
+                ],
+                [
+                    "p:nth-of-type(4) input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[4]/label/span/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(4) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "offsetY": 37.59375,
+            "offsetX": 138.5
+        },
+        {
+            "type": "change",
+            "value": "has a business dispute with my client i runa concierge ",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "offsetY": 30.59375,
+            "offsetX": 331.5
+        },
+        {
+            "type": "change",
+            "value": "has a business dispute with my client i run a concierge ",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "offsetY": 51.59375,
+            "offsetX": 530.5
+        },
+        {
+            "type": "change",
+            "value": "has a business dispute with my client i run a concierge, ",
+            "selectors": [
+                [
+                    "aria/Your Message"
+                ],
+                [
+                    "#ht-page textarea"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[5]/label/span/textarea"
+                ],
+                [
+                    "pierce/#ht-page textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Send"
+                ],
+                [
+                    "p:nth-of-type(6) > input"
+                ],
+                [
+                    "xpath///*[@id=\"wpcf7-f12-p545-o1\"]/form/p[6]/input"
+                ],
+                [
+                    "pierce/p:nth-of-type(6) > input"
+                ],
+                [
+                    "text/Send"
+                ]
+            ],
+            "offsetY": 9.6875,
+            "offsetX": 54.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.swal2-container > div"
+                ],
+                [
+                    "xpath//html/body/div[5]/div"
+                ],
+                [
+                    "pierce/div.swal2-container > div"
+                ],
+                [
+                    "text/×Thank you for"
+                ]
+            ],
+            "offsetY": 102.171875,
+            "offsetX": 186.5,
+            "duration": 1149.5
+        }
+    ]
+}
+🏢 Company: Page Not Found
+🌐 Domain: lawmedia.us
+🔎 Keyword: new york law firms
+🔍 MX Record: lawmedia.us.
+📝 Contact Pages:
+  - https://lawmedia.us/contact-form: No fillable fields
+  - https://lawmedia.us/reach-out: No fillable fields
+  - https://lawmedia.us/contact/: Form submitted successfully
+
+
+{
     "title": "cont3",
     "steps": [
         {
