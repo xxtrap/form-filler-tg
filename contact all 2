@@ -1,0 +1,616 @@
+{
+    "title": "6",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 885,
+            "height": 812,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://lawyersescrow.com/contact/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://lawyersescrow.com/contact/",
+                    "title": "Contact - Nashville, TN | Lawyer's Escrow Services"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your Name *"
+                ],
+                [
+                    "#forminator-field-name-1_696cbf64b6ea4"
+                ],
+                [
+                    "xpath///*[@id=\"forminator-field-name-1_696cbf64b6ea4\"]"
+                ],
+                [
+                    "pierce/#forminator-field-name-1_696cbf64b6ea4"
+                ]
+            ],
+            "offsetY": 27.3984375,
+            "offsetX": 308.5
+        },
+        {
+            "type": "change",
+            "value": "wesley deleon",
+            "selectors": [
+                [
+                    "aria/Your Name *"
+                ],
+                [
+                    "#forminator-field-name-1_696cbf64b6ea4"
+                ],
+                [
+                    "xpath///*[@id=\"forminator-field-name-1_696cbf64b6ea4\"]"
+                ],
+                [
+                    "pierce/#forminator-field-name-1_696cbf64b6ea4"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your Email *"
+                ],
+                [
+                    "#forminator-field-email-1_696cbf64b6ea4"
+                ],
+                [
+                    "xpath///*[@id=\"forminator-field-email-1_696cbf64b6ea4\"]"
+                ],
+                [
+                    "pierce/#forminator-field-email-1_696cbf64b6ea4"
+                ]
+            ],
+            "offsetY": 9.3984375,
+            "offsetX": 248.5
+        },
+        {
+            "type": "change",
+            "value": "wesleydeleon22@outlook.com",
+            "selectors": [
+                [
+                    "aria/Your Email *"
+                ],
+                [
+                    "#forminator-field-email-1_696cbf64b6ea4"
+                ],
+                [
+                    "xpath///*[@id=\"forminator-field-email-1_696cbf64b6ea4\"]"
+                ],
+                [
+                    "pierce/#forminator-field-email-1_696cbf64b6ea4"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Subject *"
+                ],
+                [
+                    "#forminator-field-text-1_696cbf64b6ea4"
+                ],
+                [
+                    "xpath///*[@id=\"forminator-field-text-1_696cbf64b6ea4\"]"
+                ],
+                [
+                    "pierce/#forminator-field-text-1_696cbf64b6ea4"
+                ]
+            ],
+            "offsetY": 26.3984375,
+            "offsetX": 171.5
+        },
+        {
+            "type": "change",
+            "value": "need assiatnce ",
+            "selectors": [
+                [
+                    "aria/Subject *"
+                ],
+                [
+                    "#forminator-field-text-1_696cbf64b6ea4"
+                ],
+                [
+                    "xpath///*[@id=\"forminator-field-text-1_696cbf64b6ea4\"]"
+                ],
+                [
+                    "pierce/#forminator-field-text-1_696cbf64b6ea4"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Your Message *"
+                ],
+                [
+                    "#forminator-field-textarea-1_696cbf64b6ea4"
+                ],
+                [
+                    "xpath///*[@id=\"forminator-field-textarea-1_696cbf64b6ea4\"]"
+                ],
+                [
+                    "pierce/#forminator-field-textarea-1_696cbf64b6ea4"
+                ]
+            ],
+            "offsetY": 29.3984375,
+            "offsetX": 162.5
+        },
+        {
+            "type": "change",
+            "value": "hi can you please have an escrow lawyer reach out im looking to make some acquissitions thanks",
+            "selectors": [
+                [
+                    "aria/Your Message *"
+                ],
+                [
+                    "#forminator-field-textarea-1_696cbf64b6ea4"
+                ],
+                [
+                    "xpath///*[@id=\"forminator-field-textarea-1_696cbf64b6ea4\"]"
+                ],
+                [
+                    "pierce/#forminator-field-textarea-1_696cbf64b6ea4"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/SEND"
+                ],
+                [
+                    "div.et_pb_column_2_3 button"
+                ],
+                [
+                    "xpath///*[@id=\"forminator-module-13771\"]/div[7]/div/div/button"
+                ],
+                [
+                    "pierce/div.et_pb_column_2_3 button"
+                ]
+            ],
+            "offsetY": 17.3984375,
+            "offsetX": 69.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.et_pb_column_2_3 > div > div"
+                ],
+                [
+                    "xpath///*[@id=\"post-13712\"]/div/div/div/div[2]/div/div[1]/div/div"
+                ],
+                [
+                    "pierce/div.et_pb_column_2_3 > div > div"
+                ]
+            ],
+            "offsetY": 57.5,
+            "offsetX": 51.5,
+            "duration": 991.9000000059605
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Meta"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "c"
+        },
+        {
+            "type": "keyUp",
+            "key": "Meta",
+            "target": "main"
+        }
+    ]
+}
+{
+    "title": "7",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 885,
+            "height": 812,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.leveylaw.com/contact/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.leveylaw.com/contact/",
+                    "title": "Contact | Lewis J Levey | Miami, Florida | The Levey Law Firm, P. A."
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/NAME"
+                ],
+                [
+                    "#nf-field-2"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-2\"]"
+                ],
+                [
+                    "pierce/#nf-field-2"
+                ]
+            ],
+            "offsetY": 43.1875,
+            "offsetX": 722.75
+        },
+        {
+            "type": "change",
+            "value": "",
+            "selectors": [
+                [
+                    "aria/NAME"
+                ],
+                [
+                    "#nf-field-2"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-2\"]"
+                ],
+                [
+                    "pierce/#nf-field-2"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/EMAIL *"
+                ],
+                [
+                    "#nf-field-3"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-3\"]"
+                ],
+                [
+                    "pierce/#nf-field-3"
+                ]
+            ],
+            "offsetY": 27.2890625,
+            "offsetX": 543.75
+        },
+        {
+            "type": "change",
+            "value": "wesleydeleon22@outlook.com",
+            "selectors": [
+                [
+                    "aria/EMAIL *"
+                ],
+                [
+                    "#nf-field-3"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-3\"]"
+                ],
+                [
+                    "pierce/#nf-field-3"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/NAME"
+                ],
+                [
+                    "#nf-field-2"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-2\"]"
+                ],
+                [
+                    "pierce/#nf-field-2"
+                ]
+            ],
+            "offsetY": 44.1875,
+            "offsetX": 476.75
+        },
+        {
+            "type": "change",
+            "value": "wesley",
+            "selectors": [
+                [
+                    "aria/NAME"
+                ],
+                [
+                    "#nf-field-2"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-2\"]"
+                ],
+                [
+                    "pierce/#nf-field-2"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/PHONE"
+                ],
+                [
+                    "#nf-field-4"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-4\"]"
+                ],
+                [
+                    "pierce/#nf-field-4"
+                ]
+            ],
+            "offsetY": 44.390625,
+            "offsetX": 379.75
+        },
+        {
+            "type": "change",
+            "value": "2232289123",
+            "selectors": [
+                [
+                    "aria/PHONE"
+                ],
+                [
+                    "#nf-field-4"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-4\"]"
+                ],
+                [
+                    "pierce/#nf-field-4"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ZIP"
+                ],
+                [
+                    "#nf-field-5"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-5\"]"
+                ],
+                [
+                    "pierce/#nf-field-5"
+                ]
+            ],
+            "offsetY": 11.4921875,
+            "offsetX": 153.75
+        },
+        {
+            "type": "change",
+            "value": "30127",
+            "selectors": [
+                [
+                    "aria/ZIP"
+                ],
+                [
+                    "#nf-field-5"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-5\"]"
+                ],
+                [
+                    "pierce/#nf-field-5"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/US STATES"
+                ],
+                [
+                    "#nf-field-6"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-6\"]"
+                ],
+                [
+                    "pierce/#nf-field-6"
+                ],
+                [
+                    "text/AL"
+                ]
+            ],
+            "offsetY": 39.59375,
+            "offsetX": 222.75
+        },
+        {
+            "type": "change",
+            "value": "GA",
+            "selectors": [
+                [
+                    "aria/US STATES"
+                ],
+                [
+                    "#nf-field-6"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-6\"]"
+                ],
+                [
+                    "pierce/#nf-field-6"
+                ],
+                [
+                    "text/AL"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/BRIEF DESCRIPTION OF YOUR LEGAL ISSUE"
+                ],
+                [
+                    "#nf-field-10"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-10\"]"
+                ],
+                [
+                    "pierce/#nf-field-10"
+                ]
+            ],
+            "offsetY": 95.8984375,
+            "offsetX": 110.75
+        },
+        {
+            "type": "change",
+            "value": "Hi please i need a lawyer for a purschase thanks",
+            "selectors": [
+                [
+                    "aria/BRIEF DESCRIPTION OF YOUR LEGAL ISSUE"
+                ],
+                [
+                    "#nf-field-10"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-10\"]"
+                ],
+                [
+                    "pierce/#nf-field-10"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Send Your Request"
+                ],
+                [
+                    "#nf-field-13"
+                ],
+                [
+                    "xpath///*[@id=\"nf-field-13\"]"
+                ],
+                [
+                    "pierce/#nf-field-13"
+                ]
+            ],
+            "offsetY": 23.1015625,
+            "offsetX": 63.75,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.leveylaw.com/thank-you/",
+                    "title": "Thank You | Lewis J Levey | Miami, Florida | The Levey Law Firm, P. A."
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.et_pb_section_4_tb_body"
+                ],
+                [
+                    "xpath///*[@id=\"main-content\"]/div/div/div[3]"
+                ],
+                [
+                    "pierce/div.et_pb_section_4_tb_body"
+                ]
+            ],
+            "offsetY": 70.2734375,
+            "offsetX": 0,
+            "duration": 509.30000001192093
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.et_pb_section_4_tb_body"
+                ],
+                [
+                    "xpath///*[@id=\"main-content\"]/div/div/div[3]"
+                ],
+                [
+                    "pierce/div.et_pb_section_4_tb_body"
+                ]
+            ],
+            "offsetY": 67.2734375,
+            "offsetX": 0,
+            "duration": 709.0999999940395
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Meta"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "c"
+        },
+        {
+            "type": "keyUp",
+            "key": "Meta",
+            "target": "main"
+        }
+    ]
+}
