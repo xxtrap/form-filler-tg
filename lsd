@@ -1,3 +1,6 @@
+
+
+
 import asyncio
 import random
 from playwright.async_api import async_playwright
@@ -17,7 +20,7 @@ CONTACT_INFO = {
     'last_name': 'Fang',
     'full_name': 'Kevin Fang',
     'email': 'kevandcoceo@hotmail.com',
-    'phone': '+1-555-0198',
+    'phone': '7432593319'
     'company': 'Kevand Co',
     'job_title': 'CEO',
     'website': 'www.kevandco.com',
