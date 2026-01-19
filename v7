@@ -1,3 +1,55 @@
+many 404 errors i told u what causes it why u so dumb 
+
+
+
+Company: [page title] Domain: domain Keyword: keyword searched MX: domain mx rec Emails:  Phones:  Addresses:  URL: https://domain.com/contact Status: submitted 7/7
+
+Keep all tabs open (you review manually)
+
+but save ram still
+
+
+
+basically version 8 should be fixed improved version of v7
+
+but like it opens 100 unique searches 25 per browser tries to fills and submits them but no closing of tabs id come close em myself
+
+but try as much as possible to detect and fill all sites
+
+also add a the sites u fill to blacklist so u dont fill em again ygm
+
+
+
+
+
+
+
+
+
+When you say "try as much as possible to detect and fill" - should it try like 5-10 contact URL variations per site, or just 3-4? yea 10 but make sure domain/contact path variation
+
+
+
+For contact detection - should it ONLY look at homepage for "contact us" link, or should it also try /contact and /contact-us? make sure domain/contact path variation
+
+
+
+
+
+
+
+For closing tabs - should it close after EVERY form submission, or batch close (like every 5 forms)?no leave all open id comereview resubkit if errors and close myself
+
+
+
+
+
+Company: [page title] Domain: domain Keyword: keyword searched MX: domain mx rec Emails: Phones: Addresses: URL: https://domain.com/contact Status: submitted 7/7
+
+Keep all tabs open (you review manually)
+
+
+
 improvements to make 
 -gotta add subject line like its being left empty hence making more submissoions fail
 -Continuous operation - Bot runs indefinitely, opening new tabs/browsers as needed without crashing.
@@ -654,3 +706,5 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         print("\n⏸️ STOPPED\n")
+
+dont code yet lets discuss
