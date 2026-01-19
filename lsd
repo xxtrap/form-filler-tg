@@ -1,6 +1,43 @@
 
 
 
+
+Do you have a source of domains/emails to process? (or are you discovering fresh via Google each time?) fresh each time id giev keywords to search like i always do and id solve the cpatcha n other shit
+Do you want multi-contact retry or single attempt? multiple variation retry 
+
+like domain/contact variation
+How to track successes - Telegram only or also CSV file? tele only
+Max tabs open at once - 50? 100? 25 per browser then open another bropwser continue there
+Should we use headless mode or keep visual browser?
+keep visual so i an solve captcha in the beginning and fix error
+What's an acceptable success rate? (2% seems low—are forms hard to detect, or is CAPTCHA blocking most?) forms are hard, seraching and detction is slow
+What's the goal time per site? (should it be <10 seconds? <5 seconds?) 5 seff
+
+
+
+How many sites total should run per cycle? (100? 1000?) 1k but if its 26 tabs per browser thatll be 40 browsers so instead of 1k like 500 sites u digg
+
+
+
+Is the Telegram stream important? (or just final stats?)
+
+ yeaa and screenshots for debiugging use same format i sent u
+
+
+
+many isuues see the format it came in
+
+and not in this format
+
+Company: Home - Wade Litigation - Attorneys You Trust Domain: wadelitigation.com Keyword: litigation attorneys CA MX: aspmx.l.google.com., alt1.aspmx.l.google.com., alt2.aspmx.l.google.com., aspmx2.googlemail.com., aspmx3.googlemail.com. Emails: Phones: Addresses: URL: https://wadelitigation.com/contact.aspx Status: No forms found
+
+fillers5bot, [18/01/2026 8:18 PM] 🚨 CAPTCHA www.ggslawyers.com https://www.ggslawyers.com/#:~:text=Experts%20in%20the%20field%20of,when%20our%20clients%20need%20it./contact fillers5bot, [18/01/2026 8:19 PM] ✅ SUBMITTED www.soochlaw.com https://www.soochlaw.com/contact fillers5bot, [18/01/2026 8:22 PM] 🎊 Cycle 1 ⏱️ 396s ✅ 1 📊 1.1% fillers5bot, [18/01/2026 8:26 PM] 🎊 Cycle 2 ⏱️ 169s ✅ 1 📊 1.0% fillers5bot, [18/01/2026 8:27 PM] 🎊 Cycle 3 ⏱️ 42s ✅ 1 📊 1.0%
+
+and its tsill too slow lets discusas dont code yet
+
+lets compare noth scripts discuss and msake improvemnets plss. dont code yet
+
+
 import asyncio
 import random
 from playwright.async_api import async_playwright
