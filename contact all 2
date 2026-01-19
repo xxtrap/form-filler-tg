@@ -1,4 +1,1319 @@
 {
+    "title": "2",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1365,
+            "height": 992,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://canadabusinesslawyers.com/contact/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://canadabusinesslawyers.com/contact/",
+                    "title": "Contact Us – Canada Business Lawyers | Legal Services"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/First Name *"
+                ],
+                [
+                    "#first_name"
+                ],
+                [
+                    "xpath///*[@id=\"first_name\"]"
+                ],
+                [
+                    "pierce/#first_name"
+                ]
+            ],
+            "offsetY": 24.8125,
+            "offsetX": 78
+        },
+        {
+            "type": "change",
+            "value": "wesey",
+            "selectors": [
+                [
+                    "aria/First Name *"
+                ],
+                [
+                    "#first_name"
+                ],
+                [
+                    "xpath///*[@id=\"first_name\"]"
+                ],
+                [
+                    "pierce/#first_name"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Last Name *"
+                ],
+                [
+                    "#last_name"
+                ],
+                [
+                    "xpath///*[@id=\"last_name\"]"
+                ],
+                [
+                    "pierce/#last_name"
+                ]
+            ],
+            "offsetY": 32.8125,
+            "offsetX": 32
+        },
+        {
+            "type": "change",
+            "value": "deleon",
+            "selectors": [
+                [
+                    "aria/Last Name *"
+                ],
+                [
+                    "#last_name"
+                ],
+                [
+                    "xpath///*[@id=\"last_name\"]"
+                ],
+                [
+                    "pierce/#last_name"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ]
+            ],
+            "offsetY": 33.625,
+            "offsetX": 187
+        },
+        {
+            "type": "change",
+            "value": "0212 652321",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "change",
+            "value": "212 652321",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Email *"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ]
+            ],
+            "offsetY": 31.625,
+            "offsetX": 124
+        },
+        {
+            "type": "change",
+            "value": "wesleydeleon22@outlook.com",
+            "selectors": [
+                [
+                    "aria/Email *"
+                ],
+                [
+                    "#email"
+                ],
+                [
+                    "xpath///*[@id=\"email\"]"
+                ],
+                [
+                    "pierce/#email"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/How can we help? *"
+                ],
+                [
+                    "#lUhvcfMaX4tThksXDneL"
+                ],
+                [
+                    "xpath///*[@id=\"lUhvcfMaX4tThksXDneL\"]"
+                ],
+                [
+                    "pierce/#lUhvcfMaX4tThksXDneL"
+                ]
+            ],
+            "offsetY": 23.375,
+            "offsetX": 364
+        },
+        {
+            "type": "change",
+            "value": "please i need a lawyer to assist with an acquisition",
+            "selectors": [
+                [
+                    "aria/How can we help? *"
+                ],
+                [
+                    "#lUhvcfMaX4tThksXDneL"
+                ],
+                [
+                    "xpath///*[@id=\"lUhvcfMaX4tThksXDneL\"]"
+                ],
+                [
+                    "pierce/#lUhvcfMaX4tThksXDneL"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/I agree to Canada Business Lawyers terms & conditions. Terms of Service"
+                ],
+                [
+                    "#terms_and_conditions_1_etjlg4dlr8e"
+                ],
+                [
+                    "xpath///*[@id=\"terms_and_conditions_1_etjlg4dlr8e\"]"
+                ],
+                [
+                    "pierce/#terms_and_conditions_1_etjlg4dlr8e"
+                ]
+            ],
+            "offsetY": 6.375,
+            "offsetX": 7
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request",
+                    "aria/[role=\"paragraph\"]"
+                ],
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button/div/div/div/p"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "text/Request"
+                ]
+            ],
+            "offsetY": 22.375,
+            "offsetX": 70
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_bnsToQwlnrTsnr9yGItC_4 div.error"
+                ],
+                [
+                    "xpath///*[@id=\"error-container\"]"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_bnsToQwlnrTsnr9yGItC_4 div.error"
+                ],
+                [
+                    "text/Choose Your Province is"
+                ]
+            ],
+            "offsetY": 12.375,
+            "offsetX": 142,
+            "duration": 2086.099999964237
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_bnsToQwlnrTsnr9yGItC_4 div.error"
+                ],
+                [
+                    "xpath///*[@id=\"error-container\"]"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_bnsToQwlnrTsnr9yGItC_4 div.error"
+                ],
+                [
+                    "text/Choose Your Province is"
+                ]
+            ],
+            "offsetY": 12.375,
+            "offsetX": 236
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_bnsToQwlnrTsnr9yGItC_4 div.error"
+                ],
+                [
+                    "xpath///*[@id=\"error-container\"]"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_bnsToQwlnrTsnr9yGItC_4 div.error"
+                ],
+                [
+                    "text/Choose Your Province is"
+                ]
+            ],
+            "offsetY": 12.375,
+            "offsetX": 235
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_phone_2"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_phone_2\"]"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_phone_2"
+                ]
+            ],
+            "offsetY": 95.8125,
+            "offsetX": 53,
+            "duration": 1854.5
+        },
+        {
+            "type": "doubleClick",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_bnsToQwlnrTsnr9yGItC_4 div.error"
+                ],
+                [
+                    "xpath///*[@id=\"error-container\"]"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_bnsToQwlnrTsnr9yGItC_4 div.error"
+                ],
+                [
+                    "text/Choose Your Province is"
+                ]
+            ],
+            "offsetY": 586,
+            "offsetX": 54
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Ontario"
+                ],
+                [
+                    "#Ontario_bnsToQwlnrTsnr9yGItC_4_etjlg4dlr8e"
+                ],
+                [
+                    "xpath///*[@id=\"Ontario_bnsToQwlnrTsnr9yGItC_4_etjlg4dlr8e\"]"
+                ],
+                [
+                    "pierce/#Ontario_bnsToQwlnrTsnr9yGItC_4_etjlg4dlr8e"
+                ]
+            ],
+            "offsetY": 5.40625,
+            "offsetX": 14
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/212 652321"
+                ]
+            ],
+            "offsetY": 21.625,
+            "offsetX": 26
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "change",
+            "value": "2212 652321",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/212 652321"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 39.375,
+            "offsetX": 138
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request",
+                    "aria/[role=\"paragraph\"]"
+                ],
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button/div/div/div/p"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "text/Request"
+                ]
+            ],
+            "offsetY": 12.1875,
+            "offsetX": 73
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/2212 652321"
+                ]
+            ],
+            "offsetY": 23.625,
+            "offsetX": 99
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "change",
+            "value": "2212652321",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/212 652321"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request",
+                    "aria/[role=\"paragraph\"]"
+                ],
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button/div/div/div/p"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "text/Request"
+                ]
+            ],
+            "offsetY": 21.375,
+            "offsetX": 10
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "change",
+            "value": "212652321",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/212 652321"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request",
+                    "aria/[role=\"paragraph\"]"
+                ],
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button/div/div/div/p"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "text/Request"
+                ]
+            ],
+            "offsetY": 16.375,
+            "offsetX": 53
+        },
+        {
+            "type": "change",
+            "value": "1212652321",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/212 652321"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/1212652321"
+                ]
+            ],
+            "offsetY": 15.625,
+            "offsetX": 97
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_button_7"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_button_7"
+                ]
+            ],
+            "offsetY": 12.375,
+            "offsetX": 67
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 15.375,
+            "offsetX": 46
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 5.1875,
+            "offsetX": 97
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 36.1875,
+            "offsetX": 149
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "ArrowLeft"
+        },
+        {
+            "type": "keyUp",
+            "key": "ArrowLeft",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "change",
+            "value": "12652321",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/212 652321"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "keyDown",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "key": "Backspace"
+        },
+        {
+            "type": "keyUp",
+            "key": "Backspace",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request",
+                    "aria/[role=\"paragraph\"]"
+                ],
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button/div/div/div/p"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "text/Request"
+                ]
+            ],
+            "offsetY": 1.375,
+            "offsetX": 136
+        },
+        {
+            "type": "doubleClick",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/12652321"
+                ]
+            ],
+            "offsetY": 24.625,
+            "offsetX": 171
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/12652321"
+                ]
+            ],
+            "offsetY": 24.625,
+            "offsetX": 171
+        },
+        {
+            "type": "change",
+            "value": "0810 22918",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/212 652321"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/12652321"
+                ]
+            ],
+            "offsetY": 16.625,
+            "offsetX": 49
+        },
+        {
+            "type": "change",
+            "value": "0212 9081723",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/212 652321"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request",
+                    "aria/[role=\"paragraph\"]"
+                ],
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button/div/div/div/p"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "text/Request"
+                ]
+            ],
+            "offsetY": 18.375,
+            "offsetX": 53
+        },
+        {
+            "type": "doubleClick",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/0212 9081723"
+                ]
+            ],
+            "offsetY": 12.625,
+            "offsetX": 89
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/0212 9081723"
+                ]
+            ],
+            "offsetY": 12.625,
+            "offsetX": 89
+        },
+        {
+            "type": "change",
+            "value": "(212) 382-18291",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/212 652321"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request",
+                    "aria/[role=\"paragraph\"]"
+                ],
+                [
+                    "#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button/div/div/div/p"
+                ],
+                [
+                    "pierce/#el_XSe7wFfl5AO3xnY0UpWa_button_7 p"
+                ],
+                [
+                    "text/Request"
+                ]
+            ],
+            "offsetY": 5.375,
+            "offsetX": 64
+        },
+        {
+            "type": "change",
+            "value": "(212) 382-1829",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#phone"
+                ],
+                [
+                    "xpath///*[@id=\"phone\"]"
+                ],
+                [
+                    "pierce/#phone"
+                ],
+                [
+                    "text/212 652321"
+                ]
+            ],
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa"
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "aria/Request"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"el_XSe7wFfl5AO3xnY0UpWa_button_7\"]/div/div/div/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 7.375,
+            "offsetX": 124
+        },
+        {
+            "type": "click",
+            "target": "https://api.leadconnectorhq.com/widget/form/XSe7wFfl5AO3xnY0UpWa",
+            "selectors": [
+                [
+                    "p"
+                ],
+                [
+                    "xpath///*[@id=\"_builder-form\"]/div/div/div/p"
+                ],
+                [
+                    "pierce/p"
+                ]
+            ],
+            "offsetY": 27,
+            "offsetX": 363,
+            "duration": 1708.5
+        }
+    ]
+}
+
+
+{
     "title": "6",
     "steps": [
         {
