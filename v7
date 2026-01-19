@@ -1,0 +1,656 @@
+improvements to make 
+-gotta add subject line like its being left empty hence making more submissoions fail
+-Continuous operation - Bot runs indefinitely, opening new tabs/browsers as needed without crashing.
+-the form detection is bad seems its scanning like this domain/whatever/whatevr/contact variation when its supposed to be domain/contact variation this (domain/whatever/whatevr/contact) causes error 404 
+-also lets improve the contact page detection like it should look for "contact us" or contact in homepagfe and also look for url in homepage or something that works 
+-Expand subject/topic field patterns to catch ALL variations
+- fix the telegra, delivery format 
+
+dont code lets disucss
+    
+Company: 
+Domain: wadelitigation.com
+Keyword: litigation attorneys CA
+MX: aspmx.l.google.com., alt1.aspmx.l.google.com., alt2.aspmx.l.google.com., aspmx2.googlemail.com., aspmx3.googlemail.com.
+Emails: 
+Phones: 
+Addresses: 
+URL: 
+Status:
+
+    
+this script the best so a far 
+
+
+lets discuss dont code
+
+import asyncio
+import random
+from playwright.async_api import async_playwright
+import requests
+from urllib.parse import urlparse, unquote
+import os
+from datetime import datetime
+
+# ===== CONFIGURATION =====
+BOT_TOKEN = "7619040891:AAF9pfQQme32XvhTfUb97jzky5w4ZEaBzwc"
+CHAT_ID = "5172045930"
+
+# Contact variations to try
+CONTACT_VARIATIONS = [
+    {
+        'first_name': 'Kevin',
+        'last_name': 'Fang',
+        'full_name': 'Kevin Fang',
+        'email': 'kevin@kevandco.com',
+        'phone': '+1-743-259-3319',
+        'phone_formatted': '743-259-3319',
+        'company': 'Kevand Co',
+        'job_title': 'Chief Executive Officer',
+        'website': 'kevandco.com',
+        'message': 'Hello,\n\nI am Kevin Fang, CEO of Kevand Co. We are seeking legal partnership opportunities and would appreciate discussing potential collaboration with your firm.\n\nThank you.\n\nKevin Fang\nCEO, Kevand Co',
+        'subject': 'Legal Partnership Inquiry',
+        'address': '789 Executive Plaza, New York, NY 10001',
+        'city': 'New York',
+        'state': 'NY',
+        'zip': '10001',
+        'country': 'USA'
+    }
+]
+
+# Contact page URL variations
+CONTACT_PATHS = [
+    '/contact',
+    '/contact-us',
+    '/contact-form',
+    '/get-in-touch',
+    '/inquiry',
+     '/enquiry',
+    '/reach-out',
+    '/contact-us/',
+    '/contact/'
+]
+
+# Bot configuration
+MAX_TABS_PER_BROWSER = 25
+MAX_PARALLEL_SITES = 10
+PAGES_TO_SCAN = 5
+REQUEST_DELAY = (0.5, 1.5)
+KEYWORDS_FILE = 'keywords.txt'
+BLACKLIST_FILE = 'blacklist.txt'
+SITE_TIMEOUT = 8
+FORM_FILL_TIMEOUT = 5
+
+# Global tracking
+visited_domains = set()
+blacklist_domains = set()
+total_browsers = 0
+total_submissions = 0
+session_start = datetime.now()
+
+# ===== UTILITY FUNCTIONS =====
+
+def load_blacklist():
+    """Load previously processed domains"""
+    try:
+        if os.path.exists(BLACKLIST_FILE):
+            with open(BLACKLIST_FILE, 'r') as f:
+                return {line.strip() for line in f if line.strip()}
+    except:
+        pass
+    return set()
+
+def add_to_blacklist(domain):
+    """Add domain to blacklist (already submitted)"""
+    try:
+        blacklist_domains.add(domain)
+        with open(BLACKLIST_FILE, 'a') as f:
+            f.write(f"{domain}\n")
+    except:
+        pass
+
+def load_keywords():
+    """Load search keywords"""
+    try:
+        if os.path.exists(KEYWORDS_FILE):
+            with open(KEYWORDS_FILE, 'r') as f:
+                keywords = [line.strip() for line in f if line.strip()]
+                if keywords:
+                    return keywords
+    except:
+        pass
+    return ['escrow lawyers']
+
+def send_telegram(image_bytes, caption):
+    """Send screenshot to Telegram"""
+    try:
+        files = {"photo": ("screenshot.png", image_bytes, 'image/png')}
+        data = {"chat_id": CHAT_ID, "caption": caption[:1024]}
+        requests.post(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto",
+            files=files, data=data, timeout=5
+        )
+        return True
+    except:
+        return False
+
+def send_text_telegram(message):
+    """Send text message to Telegram"""
+    try:
+        data = {
+            "chat_id": CHAT_ID,
+            "text": message[:4096],
+            "parse_mode": "HTML"
+        }
+        requests.post(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+            json=data, timeout=5
+        )
+        return True
+    except:
+        return False
+
+def get_stats():
+    """Get session statistics"""
+    elapsed = (datetime.now() - session_start).total_seconds()
+    return {
+        'elapsed': f"{int(elapsed)}s",
+        'browsers': total_browsers,
+        'submissions': total_submissions,
+        'domains_visited': len(visited_domains),
+        'rate': f"{(total_submissions / max(len(visited_domains), 1) * 100):.1f}%"
+    }
+
+# ===== MAIN BOT CLASS =====
+
+class FormBot:
+    def __init__(self):
+        self.playwright = None
+        self.browser = None
+        self.context = None
+        self.search_page = None
+        self.open_tabs = 0
+        self.keywords = []
+
+    async def initialize(self):
+        """Start browser and load keywords"""
+        global total_browsers
+        self.keywords = load_keywords()
+        self.playwright = await async_playwright().start()
+        await self.create_browser()
+
+    async def create_browser(self):
+        """Create new browser instance"""
+        global total_browsers
+        total_browsers += 1
+        
+        print(f"\n{'='*60}")
+        print(f"🪟 BROWSER #{total_browsers} STARTING")
+        print(f"{'='*60}")
+        
+        self.browser = await self.playwright.chromium.launch(
+            headless=False,
+            args=['--start-maximized', '--disable-blink-features=AutomationControlled']
+        )
+        
+        self.context = await self.browser.new_context(
+            viewport={'width': 1365, 'height': 901}
+        )
+        
+        self.search_page = await self.context.new_page()
+        self.open_tabs = 1
+        
+        send_text_telegram(f"🪟 BROWSER #{total_browsers} READY\n📝 Max: {MAX_TABS_PER_BROWSER} tabs\n🔍 Scanning: {', '.join(self.keywords[:3])}")
+
+    async def create_tab(self):
+        """Create new tab"""
+        self.open_tabs += 1
+        if self.open_tabs > MAX_TABS_PER_BROWSER:
+            print(f"🪟 Max tabs reached - creating new browser")
+            await self.browser.close()
+            await self.create_browser()
+        return await self.context.new_page()
+
+    async def close_popups(self, page):
+        """Quick popup closing"""
+        try:
+            selectors = [
+                "button.close", ".close", "[aria-label*='close' i]",
+                "button:has-text('Close')", "button:has-text('X')"
+            ]
+            for selector in selectors[:3]:
+                try:
+                    btns = await page.query_selector_all(selector)
+                    for btn in btns[:2]:
+                        if await btn.is_visible():
+                            await btn.click(timeout=1000)
+                            await asyncio.sleep(0.1)
+                except:
+                    pass
+        except:
+            pass
+
+    async def find_contact_page(self, page, base_url):
+        """Try to find contact page"""
+        domain = urlparse(base_url).netloc
+        
+        # Try direct /contact paths
+        for path in CONTACT_PATHS[:3]:
+            try:
+                url = f"{base_url.rstrip('/')}{path}"
+                await asyncio.wait_for(
+                    page.goto(url, wait_until='domcontentloaded'),
+                    timeout=SITE_TIMEOUT
+                )
+                await asyncio.sleep(0.3)
+                
+                # Check if has form
+                forms = await page.query_selector_all('input, textarea, form')
+                if len(forms) >= 2:
+                    return url
+            except:
+                pass
+        
+        # Try homepage and search for contact link
+        try:
+            await asyncio.wait_for(
+                page.goto(base_url, wait_until='domcontentloaded'),
+                timeout=SITE_TIMEOUT
+            )
+            await asyncio.sleep(0.3)
+            await self.close_popups(page)
+            
+            links = await page.query_selector_all('a')
+            for link in links:
+                try:
+                    href = await link.get_attribute('href')
+                    text = (await link.text_content() or '').lower()
+                    
+                    if not href:
+                        continue
+                    
+                    if 'contact' in href.lower() or 'contact' in text:
+                        full_url = href if href.startswith('http') else f"{base_url.rstrip('/')}{href}"
+                        
+                        try:
+                            await asyncio.wait_for(
+                                page.goto(full_url, wait_until='domcontentloaded'),
+                                timeout=SITE_TIMEOUT
+                            )
+                            await asyncio.sleep(0.3)
+                            forms = await page.query_selector_all('input, textarea, form')
+                            if len(forms) >= 2:
+                                return full_url
+                        except:
+                            pass
+                except:
+                    pass
+        except:
+            pass
+        
+        return None
+
+    async def fill_and_submit(self, page, contact_url, contact_info):
+        """Fill form with contact info and submit"""
+        global total_submissions
+        
+        try:
+            await asyncio.wait_for(
+                page.goto(contact_url, wait_until='domcontentloaded'),
+                timeout=SITE_TIMEOUT
+            )
+            await asyncio.sleep(0.5)
+            await self.close_popups(page)
+            
+            # Get all fillable inputs
+            inputs = await page.query_selector_all('input[type="text"], input[type="email"], input[type="tel"], textarea')
+            
+            filled_count = 0
+            
+            # Simple strategy: just fill everything we can match
+            for inp in inputs:
+                try:
+                    # Get field identifier
+                    name = (await inp.get_attribute('name') or '').lower()
+                    field_id = (await inp.get_attribute('id') or '').lower()
+                    placeholder = (await inp.get_attribute('placeholder') or '').lower()
+                    
+                    identifier = f"{name} {field_id} {placeholder}".lower()
+                    
+                    # Try to match and fill
+                    value = None
+                    
+                    if 'first' in identifier:
+                        value = contact_info['first_name']
+                    elif 'last' in identifier:
+                        value = contact_info['last_name']
+                    elif 'name' in identifier:
+                        value = contact_info['full_name']
+                    elif 'email' in identifier:
+                        value = contact_info['email']
+                    elif 'phone' in identifier or 'tel' in identifier or 'mobile' in identifier:
+                        value = contact_info['phone_formatted']
+                    elif 'company' in identifier or 'business' in identifier or 'firm' in identifier:
+                        value = contact_info['company']
+                    elif 'title' in identifier or 'position' in identifier:
+                        value = contact_info['job_title']
+                    elif 'message' in identifier or 'comment' in identifier or 'inquiry' in identifier:
+                        value = contact_info['message']
+                    elif 'subject' in identifier:
+                        value = contact_info['subject']
+                    elif 'address' in identifier or 'street' in identifier:
+                        value = contact_info['address']
+                    elif 'city' in identifier:
+                        value = contact_info['city']
+                    elif 'state' in identifier:
+                        value = contact_info['state']
+                    elif 'zip' in identifier or 'postal' in identifier:
+                        value = contact_info['zip']
+                    elif 'country' in identifier:
+                        value = contact_info['country']
+                    
+                    if value:
+                        await inp.fill(value)
+                        filled_count += 1
+                        await asyncio.sleep(0.05)
+                except:
+                    pass
+            
+            if filled_count == 0:
+                return 'no_fill', 0
+            
+            # Check and click checkboxes (especially terms/agreements)
+            checkboxes = await page.query_selector_all('input[type="checkbox"]')
+            for checkbox in checkboxes:
+                try:
+                    if await checkbox.is_visible():
+                        label_text = ""
+                        try:
+                            checkbox_id = await checkbox.get_attribute('id')
+                            if checkbox_id:
+                                label = await page.query_selector(f'label[for="{checkbox_id}"]')
+                                if label:
+                                    label_text = (await label.text_content()).lower()
+                        except:
+                            pass
+                        
+                        # Check boxes related to terms, agreement, etc
+                        if any(x in label_text for x in ['terms', 'agree', 'accept', 'consent', 'privacy']):
+                            if not await checkbox.is_checked():
+                                await checkbox.check()
+                                await asyncio.sleep(0.1)
+                except:
+                    pass
+            
+            # Find and click submit button
+            submit_selectors = [
+                "button[type='submit']",
+                "input[type='submit']",
+                "button:has-text('Send')",
+                "button:has-text('Submit')",
+                "button:has-text('Contact')",
+                "button:has-text('Request')",
+                "form button:not([type='button'])"
+            ]
+            
+            submitted = False
+            for selector in submit_selectors:
+                try:
+                    btn = await page.query_selector(selector)
+                    if btn and await btn.is_visible():
+                        await btn.click(timeout=2000)
+                        submitted = True
+                        break
+                except:
+                    pass
+            
+            if not submitted:
+                return 'no_submit', filled_count
+            
+            # Wait a bit for submission to process
+            await asyncio.sleep(2)
+            
+            # Take screenshot of result page
+            screenshot = await page.screenshot(full_page=False)
+            total_submissions += 1
+            
+            return 'submitted', filled_count, screenshot
+            
+        except Exception as e:
+            return 'error', 0, str(e)
+
+    async def process_site(self, website_url, keyword):
+        """Process single website"""
+        domain = urlparse(website_url).netloc
+        
+        if domain in blacklist_domains or domain in visited_domains:
+            return
+        
+        visited_domains.add(domain)
+        print(f"🌐 {domain}")
+        
+        page = await self.create_tab()
+        
+        try:
+            # Find contact page
+            contact_url = await self.find_contact_page(page, website_url)
+            if not contact_url:
+                await page.close()
+                add_to_blacklist(domain)
+                return
+            
+            # Try each contact variation
+            for variation_idx, contact_info in enumerate(CONTACT_VARIATIONS):
+                try:
+                    result = await self.fill_and_submit(page, contact_url, contact_info)
+                    
+                    if result[0] == 'submitted':
+                        # Form submitted - send notification
+                        filled = result[1]
+                        screenshot = result[2]
+                        
+                        caption = (
+                            f"✅ SUBMITTED (Variation {variation_idx + 1})\n"
+                            f"🌐 {domain}\n"
+                            f"🔗 {contact_url}\n"
+                            f"📝 Filled: {filled} fields\n"
+                            f"🔑 Keyword: {keyword}"
+                        )
+                        
+                        send_telegram(screenshot, caption)
+                        print(f"  ✅ SUBMITTED ({filled} fields)")
+                        
+                        add_to_blacklist(domain)
+                        await page.close()
+                        return
+                    
+                    elif result[0] in ['no_submit', 'no_fill']:
+                        # Try next variation
+                        if variation_idx < len(CONTACT_VARIATIONS) - 1:
+                            await asyncio.sleep(0.5)
+                            continue
+                        else:
+                            # Last variation failed
+                            await page.close()
+                            add_to_blacklist(domain)
+                            return
+                    
+                    elif result[0] == 'error':
+                        if variation_idx < len(CONTACT_VARIATIONS) - 1:
+                            await asyncio.sleep(0.5)
+                            continue
+                        else:
+                            await page.close()
+                            add_to_blacklist(domain)
+                            return
+                    
+                except asyncio.TimeoutError:
+                    if variation_idx >= len(CONTACT_VARIATIONS) - 1:
+                        await page.close()
+                        add_to_blacklist(domain)
+                    continue
+                
+            # If we get here, all variations failed
+            await page.close()
+            add_to_blacklist(domain)
+            
+        except Exception as e:
+            print(f"  ❌ Error: {str(e)[:40]}")
+            try:
+                await page.close()
+            except:
+                pass
+            add_to_blacklist(domain)
+
+    async def extract_google_results(self):
+        """Extract URLs from current Google search page"""
+        await asyncio.sleep(1)
+        
+        results = []
+        links = await self.search_page.query_selector_all('a')
+        
+        for link in links:
+            try:
+                href = await link.get_attribute('href')
+                if not href:
+                    continue
+                
+                if '/url?q=' in href:
+                    url = href.split('/url?q=')[1].split('&')[0]
+                    url = unquote(url)
+                elif href.startswith('http'):
+                    url = href
+                else:
+                    continue
+                
+                # Filter out social/tracking
+                if any(x in url.lower() for x in ['google.com', 'youtube', 'facebook', 'linkedin', 'twitter', 'javascript:']):
+                    continue
+                
+                results.append(url)
+            except:
+                pass
+        
+        return list(set(results))
+
+    async def process_batch(self, websites, keyword):
+        """Process sites in parallel"""
+        tasks = [
+            asyncio.create_task(self.process_site(website, keyword))
+            for website in websites
+        ]
+        await asyncio.gather(*tasks, return_exceptions=True)
+
+    async def scan_keyword(self, keyword):
+        """Scan Google for keyword and process results"""
+        print(f"\n{'='*60}")
+        print(f"🔍 KEYWORD: {keyword}")
+        print(f"{'='*60}")
+        
+        search_url = f"https://www.google.com/search?q={keyword.replace(' ', '+')}"
+        
+        try:
+            await asyncio.wait_for(
+                self.search_page.goto(search_url, wait_until='domcontentloaded'),
+                timeout=10
+            )
+            await asyncio.sleep(2)
+        except:
+            print("⚠️ Google timeout")
+            return
+        
+        # Handle Google CAPTCHA
+        if "google.com/sorry" in self.search_page.url:
+            print("🚨 GOOGLE CAPTCHA - Please solve manually")
+            input(">>> Press ENTER after solving <<<")
+            try:
+                await self.search_page.reload()
+                await asyncio.sleep(2)
+            except:
+                pass
+        
+        # Process pages
+        for page_num in range(1, PAGES_TO_SCAN + 1):
+            print(f"\n📄 Page {page_num}")
+            
+            results = await self.extract_google_results()
+            print(f"  📌 Found {len(results)} URLs")
+            
+            if results:
+                # Process in batches
+                for i in range(0, len(results), MAX_PARALLEL_SITES):
+                    batch = results[i:i + MAX_PARALLEL_SITES]
+                    await self.process_batch(batch, keyword)
+                    
+                    stats = get_stats()
+                    print(f"  ⏱️ {stats['elapsed']} | ✅ {stats['submissions']} | 📊 {stats['rate']}")
+                    await asyncio.sleep(0.5)
+            
+            # Next page
+            if page_num < PAGES_TO_SCAN:
+                try:
+                    next_url = f"{search_url}&start={page_num * 10}"
+                    await asyncio.wait_for(
+                        self.search_page.goto(next_url, wait_until='domcontentloaded'),
+                        timeout=10
+                    )
+                    await asyncio.sleep(1)
+                except:
+                    break
+
+    async def run(self):
+        """Main bot loop"""
+        print("\n" + "="*60)
+        print("🚀 FORM BOT v7 - ULTRA FAST")
+        print("="*60)
+        print("⚡ FEATURES:")
+        print("  • 5 sec/site target")
+        print("  • Multiple contact variations")
+        print("  • Auto submit + notify (no waiting)")
+        print("  • Manual review via Telegram")
+        print("  • 25 tabs per browser")
+        print("="*60)
+        
+        await self.initialize()
+        
+        cycle = 0
+        while True:
+            cycle += 1
+            print(f"\n{'='*60}")
+            print(f"🔄 CYCLE {cycle}")
+            print(f"{'='*60}")
+            
+            for keyword in self.keywords:
+                await self.scan_keyword(keyword)
+            
+            stats = get_stats()
+            msg = (
+                f"🎊 <b>CYCLE {cycle} COMPLETE</b>\n"
+                f"⏱️ {stats['elapsed']}\n"
+                f"✅ {stats['submissions']} submissions\n"
+                f"📊 {stats['rate']} success rate\n"
+                f"🌐 {stats['domains_visited']} domains visited"
+            )
+            send_text_telegram(msg)
+            print(f"\n{msg}\n")
+            
+            print("⏳ Waiting 30s before next cycle...")
+            await asyncio.sleep(30)
+
+async def main():
+    global blacklist_domains
+    blacklist_domains = load_blacklist()
+    
+    bot = FormBot()
+    try:
+        await bot.run()
+    except KeyboardInterrupt:
+        print("\n\n⏸️ BOT STOPPED")
+        print("✅ Browser remains open for manual work")
+        print("📝 Restart script to continue\n")
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\n⏸️ STOPPED\n")
