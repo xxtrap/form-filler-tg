@@ -12,22 +12,22 @@ CHAT_ID = "5172045930"
 
 # Contact variations to try
 CONTACT_VARIATIONS = [
-    {
-        'first_name': 'Kevin',
-        'last_name': 'Fang',
-        'full_name': 'Kevin Fang',
-        'email': 'kevin@kevandco.com',
+ {
+        'first_name': 'Lola',
+        'last_name': 'Issah',
+        'full_name': 'lola issah smith',
+        'email': 'lolai1964@hotmail.com',
         'phone': '+1-743-259-3319',
         'phone_formatted': '743-259-3319',
         'company': 'Kevand Co',
-        'job_title': 'Chief Executive Officer',
+        'job_title': 'COO',
         'website': 'kevandco.com',
-        'message': 'Hello,\n\nI am Kevin Fang, CEO of Kevand Co. We are seeking legal partnership opportunities and would appreciate discussing potential collaboration with your firm.\n\nThank you.\n\nKevin Fang\nCEO, Kevand Co',
-        'subject': 'Legal Partnership Inquiry',
-        'address': '789 Executive Plaza, New York, NY 10001',
+        'message': 'Hello,\n\nIm Lola, I had a work related accident i need a lawyer to assist with the settlement etc pls leave an email so i explain further\n Thanks.',
+        'subject': 'Legal Support',
+        'address': '789 Executive Plaza, New York, NY 10031',
         'city': 'New York',
         'state': 'NY',
-        'zip': '10001',
+        'zip': '10031',
         'country': 'USA'
     }
 ]
