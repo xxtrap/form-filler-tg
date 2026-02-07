@@ -1,10 +1,15 @@
-import asyncio
+import time
 import random
-from playwright.async_api import async_playwright
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 import requests
 from urllib.parse import urlparse, unquote
 import os
 from datetime import datetime
+import threading
 
 # ===== CONFIGURATION =====
 BOT_TOKEN = "7619040891:AAF9pfQQme32XvhTfUb97jzky5w4ZEaBzwc"
@@ -39,7 +44,7 @@ CONTACT_PATHS = [
     '/contact-form',
     '/get-in-touch',
     '/inquiry',
-     '/enquiry',
+    '/enquiry',
     '/reach-out',
     '/contact-us/',
     '/contact/'
@@ -47,12 +52,10 @@ CONTACT_PATHS = [
 
 # Bot configuration
 MAX_TABS_PER_BROWSER = 25
-MAX_PARALLEL_SITES = 10
 PAGES_TO_SCAN = 5
-REQUEST_DELAY = (0.5, 1.5)
 KEYWORDS_FILE = 'keywords.txt'
 BLACKLIST_FILE = 'blacklist.txt'
-SITE_TIMEOUT = 8
+SITE_TIMEOUT = 8  # seconds
 FORM_FILL_TIMEOUT = 5
 
 # Global tracking
@@ -61,6 +64,7 @@ blacklist_domains = set()
 total_browsers = 0
 total_submissions = 0
 session_start = datetime.now()
+lock = threading.Lock()
 
 # ===== UTILITY FUNCTIONS =====
 
@@ -75,7 +79,7 @@ def load_blacklist():
     return set()
 
 def add_to_blacklist(domain):
-    """Add domain to blacklist (already submitted)"""
+    """Add domain to blacklist"""
     try:
         blacklist_domains.add(domain)
         with open(BLACKLIST_FILE, 'a') as f:
@@ -135,77 +139,130 @@ def get_stats():
         'rate': f"{(total_submissions / max(len(visited_domains), 1) * 100):.1f}%"
     }
 
+# ===== BROWSER MANAGER CLASS =====
+
+class BrowserManager:
+    """Manages a single browser instance with multiple tabs"""
+    
+    def __init__(self, browser_id):
+        self.browser_id = browser_id
+        self.driver = None
+        self.tab_count = 0
+        self.pending_tabs = []
+        self.window_handles = []
+        
+    def initialize(self):
+        """Start this browser instance"""
+        print(f"\n{'='*60}")
+        print(f"🪟 BROWSER #{self.browser_id} STARTING")
+        print(f"{'='*60}")
+        
+        options = webdriver.ChromeOptions()
+        options.add_argument('--start-maximized')
+        options.add_argument('--disable-blink-features=AutomationControlled')
+        options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        options.add_experimental_option('useAutomationExtension', False)
+        
+        self.driver = webdriver.Chrome(options=options)
+        self.driver.set_window_size(1365, 901)
+        
+        # Initial tab (search tab)
+        self.window_handles.append(self.driver.current_window_handle)
+        self.tab_count = 1
+        
+        send_text_telegram(f"🪟 BROWSER #{self.browser_id} READY\n📝 Max: {MAX_TABS_PER_BROWSER} tabs")
+        
+    def create_tab(self):
+        """Create new tab in this browser"""
+        self.tab_count += 1
+        self.driver.execute_script("window.open('');")
+        self.window_handles = self.driver.window_handles
+        self.driver.switch_to.window(self.window_handles[-1])
+        return self.driver
+    
+    def switch_to_search_tab(self):
+        """Switch back to the search tab (first tab)"""
+        self.driver.switch_to.window(self.window_handles[0])
+    
+    def can_accept_tabs(self):
+        """Check if this browser can accept more tabs"""
+        return self.tab_count < MAX_TABS_PER_BROWSER
+    
+    def is_full(self):
+        """Check if browser is at max capacity"""
+        return self.tab_count >= MAX_TABS_PER_BROWSER
+
 # ===== MAIN BOT CLASS =====
 
 class FormBot:
     def __init__(self):
-        self.playwright = None
-        self.browser = None
-        self.context = None
-        self.search_page = None
-        self.open_tabs = 0
+        self.browsers = []
+        self.current_browser = None
         self.keywords = []
-        self.pending_tabs = []  # NEW: Track pending review tabs
+        self.all_pending_tabs = []
 
-    async def initialize(self):
+    def initialize(self):
         """Start browser and load keywords"""
         global total_browsers
         self.keywords = load_keywords()
-        self.playwright = await async_playwright().start()
-        await self.create_browser()
+        self.create_new_browser()
 
-    async def create_browser(self):
-        """Create new browser instance"""
+    def create_new_browser(self):
+        """Create a brand new browser instance"""
         global total_browsers
         total_browsers += 1
         
-        print(f"\n{'='*60}")
-        print(f"🪟 BROWSER #{total_browsers} STARTING")
-        print(f"{'='*60}")
+        browser_manager = BrowserManager(total_browsers)
+        browser_manager.initialize()
         
-        self.browser = await self.playwright.chromium.launch(
-            headless=False,
-            args=['--start-maximized', '--disable-blink-features=AutomationControlled']
-        )
+        self.browsers.append(browser_manager)
+        self.current_browser = browser_manager
         
-        self.context = await self.browser.new_context(
-            viewport={'width': 1365, 'height': 901}
-        )
-        
-        self.search_page = await self.context.new_page()
-        self.open_tabs = 1
-        
-        send_text_telegram(f"🪟 BROWSER #{total_browsers} READY\n📝 Max: {MAX_TABS_PER_BROWSER} tabs\n🔍 Scanning: {', '.join(self.keywords[:3])}")
+        return browser_manager
 
-    async def create_tab(self):
-        """Create new tab"""
-        self.open_tabs += 1
-        if self.open_tabs > MAX_TABS_PER_BROWSER:
-            print(f"🪟 Max tabs reached - creating new browser")
-            await self.browser.close()
-            await self.create_browser()
-        return await self.context.new_page()
+    def get_available_browser(self):
+        """Get a browser that can accept more tabs, or create new one"""
+        with lock:
+            # Check if current browser can accept tabs
+            if self.current_browser and self.current_browser.can_accept_tabs():
+                return self.current_browser
+            
+            # Current browser is full, try to find another available browser
+            for browser in self.browsers:
+                if browser.can_accept_tabs():
+                    self.current_browser = browser
+                    print(f"🔄 Switching to Browser #{browser.browser_id} ({browser.tab_count}/{MAX_TABS_PER_BROWSER} tabs)")
+                    return browser
+            
+            # All browsers are full, create a new one
+            print(f"\n🪟 All browsers at capacity - creating new browser")
+            return self.create_new_browser()
 
-    async def close_popups(self, page):
+    def create_tab(self):
+        """Create new tab (handles browser switching automatically)"""
+        browser = self.get_available_browser()
+        return browser.create_tab()
+
+    def close_popups(self, driver):
         """Quick popup closing"""
         try:
             selectors = [
                 "button.close", ".close", "[aria-label*='close' i]",
-                "button:has-text('Close')", "button:has-text('X')"
+                "button:contains('Close')", "button:contains('X')"
             ]
             for selector in selectors[:3]:
                 try:
-                    btns = await page.query_selector_all(selector)
-                    for btn in btns[:2]:
-                        if await btn.is_visible():
-                            await btn.click(timeout=1000)
-                            await asyncio.sleep(0.1)
+                    elements = driver.find_elements(By.CSS_SELECTOR, selector)
+                    for elem in elements[:2]:
+                        if elem.is_displayed():
+                            elem.click()
+                            time.sleep(0.1)
                 except:
                     pass
-        except Exception as e:
+        except:
             pass
 
-    async def find_contact_page(self, page, base_url):
+    def find_contact_page(self, driver, base_url):
         """Try to find contact page"""
         domain = urlparse(base_url).netloc
         
@@ -213,33 +270,29 @@ class FormBot:
         for path in CONTACT_PATHS[:3]:
             try:
                 url = f"{base_url.rstrip('/')}{path}"
-                await asyncio.wait_for(
-                    page.goto(url, wait_until='domcontentloaded'),
-                    timeout=SITE_TIMEOUT
-                )
-                await asyncio.sleep(0.3)
+                driver.set_page_load_timeout(SITE_TIMEOUT)
+                driver.get(url)
+                time.sleep(0.3)
                 
                 # Check if has form
-                forms = await page.query_selector_all('input, textarea, form')
-                if len(forms) >= 2:
+                inputs = driver.find_elements(By.CSS_SELECTOR, 'input, textarea, form')
+                if len(inputs) >= 2:
                     return url
             except:
                 pass
         
         # Try homepage and search for contact link
         try:
-            await asyncio.wait_for(
-                page.goto(base_url, wait_until='domcontentloaded'),
-                timeout=SITE_TIMEOUT
-            )
-            await asyncio.sleep(0.3)
-            await self.close_popups(page)
+            driver.set_page_load_timeout(SITE_TIMEOUT)
+            driver.get(base_url)
+            time.sleep(0.3)
+            self.close_popups(driver)
             
-            links = await page.query_selector_all('a')
+            links = driver.find_elements(By.TAG_NAME, 'a')
             for link in links:
                 try:
-                    href = await link.get_attribute('href')
-                    text = (await link.text_content() or '').lower()
+                    href = link.get_attribute('href')
+                    text = link.text.lower()
                     
                     if not href:
                         continue
@@ -248,13 +301,10 @@ class FormBot:
                         full_url = href if href.startswith('http') else f"{base_url.rstrip('/')}{href}"
                         
                         try:
-                            await asyncio.wait_for(
-                                page.goto(full_url, wait_until='domcontentloaded'),
-                                timeout=SITE_TIMEOUT
-                            )
-                            await asyncio.sleep(0.3)
-                            forms = await page.query_selector_all('input, textarea, form')
-                            if len(forms) >= 2:
+                            driver.get(full_url)
+                            time.sleep(0.3)
+                            inputs = driver.find_elements(By.CSS_SELECTOR, 'input, textarea, form')
+                            if len(inputs) >= 2:
                                 return full_url
                         except:
                             pass
@@ -265,32 +315,28 @@ class FormBot:
         
         return None
 
-    async def fill_form_only(self, page, contact_url, contact_info):
+    def fill_form_only(self, driver, contact_url, contact_info):
         """Fill form but DON'T submit - leave for manual review"""
         try:
-            await asyncio.wait_for(
-                page.goto(contact_url, wait_until='domcontentloaded'),
-                timeout=SITE_TIMEOUT
-            )
-            await asyncio.sleep(0.5)
-            await self.close_popups(page)
+            driver.set_page_load_timeout(SITE_TIMEOUT)
+            driver.get(contact_url)
+            time.sleep(0.5)
+            self.close_popups(driver)
             
             # Get all fillable inputs
-            inputs = await page.query_selector_all('input[type="text"], input[type="email"], input[type="tel"], textarea')
+            inputs = driver.find_elements(By.CSS_SELECTOR, 'input[type="text"], input[type="email"], input[type="tel"], textarea')
             
             filled_count = 0
             
-            # Simple strategy: just fill everything we can match
+            # Fill fields
             for inp in inputs:
                 try:
-                    # Get field identifier
-                    name = (await inp.get_attribute('name') or '').lower()
-                    field_id = (await inp.get_attribute('id') or '').lower()
-                    placeholder = (await inp.get_attribute('placeholder') or '').lower()
+                    name = (inp.get_attribute('name') or '').lower()
+                    field_id = (inp.get_attribute('id') or '').lower()
+                    placeholder = (inp.get_attribute('placeholder') or '').lower()
                     
                     identifier = f"{name} {field_id} {placeholder}".lower()
                     
-                    # Try to match and fill
                     value = None
                     
                     if 'first' in identifier:
@@ -323,63 +369,58 @@ class FormBot:
                         value = contact_info['country']
                     
                     if value:
-                        await inp.fill(value)
+                        inp.clear()
+                        inp.send_keys(value)
                         filled_count += 1
-                        await asyncio.sleep(0.05)
+                        time.sleep(0.05)
                 except:
                     pass
             
             if filled_count == 0:
                 return 'no_fill', 0
             
-            # Check and click checkboxes (especially terms/agreements)
-            checkboxes = await page.query_selector_all('input[type="checkbox"]')
+            # Check checkboxes
+            checkboxes = driver.find_elements(By.CSS_SELECTOR, 'input[type="checkbox"]')
             for checkbox in checkboxes:
                 try:
-                    if await checkbox.is_visible():
+                    if checkbox.is_displayed():
                         label_text = ""
                         try:
-                            checkbox_id = await checkbox.get_attribute('id')
+                            checkbox_id = checkbox.get_attribute('id')
                             if checkbox_id:
-                                label = await page.query_selector(f'label[for="{checkbox_id}"]')
-                                if label:
-                                    label_text = (await label.text_content()).lower()
+                                labels = driver.find_elements(By.CSS_SELECTOR, f'label[for="{checkbox_id}"]')
+                                if labels:
+                                    label_text = labels[0].text.lower()
                         except:
                             pass
                         
-                        # Check boxes related to terms, agreement, etc
                         if any(x in label_text for x in ['terms', 'agree', 'accept', 'consent', 'privacy']):
-                            if not await checkbox.is_checked():
-                                await checkbox.check()
-                                await asyncio.sleep(0.1)
+                            if not checkbox.is_selected():
+                                checkbox.click()
+                                time.sleep(0.1)
                 except:
                     pass
             
-            # DON'T submit - leave form filled for manual review
-            # Just scroll to show the form and take screenshot
+            time.sleep(0.5)
             
-            # Small pause for form to settle
-            await asyncio.sleep(0.5)
-            
-            # Try to scroll form into view
+            # Scroll form into view
             try:
-                await page.evaluate('''() => {
+                driver.execute_script('''
                     const form = document.querySelector('form');
                     if (form) form.scrollIntoView({behavior: 'smooth', block: 'center'});
-                }''')
+                ''')
             except:
                 pass
             
-            # Take screenshot of FILLED form (not result page)
-            screenshot = await page.screenshot(full_page=False)
+            # Take screenshot
+            screenshot = driver.get_screenshot_as_png()
             
-            # Return "filled" status instead of "submitted"
             return 'filled', filled_count, screenshot
             
         except Exception as e:
             return 'error', 0, str(e)
 
-    async def process_site(self, website_url, keyword):
+    def process_site(self, website_url, keyword):
         """Process single website"""
         domain = urlparse(website_url).netloc
         
@@ -389,29 +430,26 @@ class FormBot:
         visited_domains.add(domain)
         print(f"🌐 {domain}")
         
-        page = await self.create_tab()
+        driver = self.create_tab()
         
         try:
             # Find contact page
-            contact_url = await self.find_contact_page(page, website_url)
+            contact_url = self.find_contact_page(driver, website_url)
             if not contact_url:
-                await page.close()
                 add_to_blacklist(domain)
                 return
             
             # Try each contact variation
             for variation_idx, contact_info in enumerate(CONTACT_VARIATIONS):
                 try:
-                    result = await self.fill_form_only(page, contact_url, contact_info)
+                    result = self.fill_form_only(driver, contact_url, contact_info)
                     
                     if result[0] == 'filled':
-                        # Form filled but NOT submitted - send notification
                         filled = result[1]
                         screenshot = result[2]
                         
-                        # Get browser and tab info
-                        browser_num = total_browsers
-                        tab_num = self.open_tabs
+                        browser_num = self.current_browser.browser_id
+                        tab_num = self.current_browser.tab_count
                         
                         caption = (
                             f"🟡 READY FOR REVIEW\n"
@@ -425,68 +463,58 @@ class FormBot:
                         send_telegram(screenshot, caption)
                         print(f"  🟡 READY (Browser{browser_num}-Tab{tab_num})")
                         
-                        # Store tab info for tracking
-                        self.pending_tabs.append({
-                            'browser': total_browsers,
-                            'tab': self.open_tabs,
+                        tab_info = {
+                            'browser': browser_num,
+                            'tab': tab_num,
                             'domain': domain,
-                            'page': page,
                             'contact_url': contact_url,
                             'filled_count': filled
-                        })
+                        }
                         
-                        # DON'T add to blacklist yet (wait for manual submission)
-                        # DON'T close the page - leave it open for review
+                        self.current_browser.pending_tabs.append(tab_info)
+                        self.all_pending_tabs.append(tab_info)
+                        
                         return  # Keep tab open!
                     
                     elif result[0] in ['no_submit', 'no_fill']:
-                        # Try next variation
                         if variation_idx < len(CONTACT_VARIATIONS) - 1:
-                            await asyncio.sleep(0.5)
+                            time.sleep(0.5)
                             continue
                         else:
-                            # Last variation failed
-                            await page.close()
                             add_to_blacklist(domain)
                             return
                     
                     elif result[0] == 'error':
                         if variation_idx < len(CONTACT_VARIATIONS) - 1:
-                            await asyncio.sleep(0.5)
+                            time.sleep(0.5)
                             continue
                         else:
-                            await page.close()
                             add_to_blacklist(domain)
                             return
                     
-                except asyncio.TimeoutError:
+                except Exception as e:
                     if variation_idx >= len(CONTACT_VARIATIONS) - 1:
-                        await page.close()
                         add_to_blacklist(domain)
                     continue
                 
-            # If we get here, all variations failed
-            await page.close()
             add_to_blacklist(domain)
             
         except Exception as e:
             print(f"  ❌ Error: {str(e)[:40]}")
-            try:
-                await page.close()
-            except:
-                pass
             add_to_blacklist(domain)
 
-    async def extract_google_results(self):
+    def extract_google_results(self):
         """Extract URLs from current Google search page"""
-        await asyncio.sleep(1)
+        time.sleep(1)
         
         results = []
-        links = await self.search_page.query_selector_all('a')
+        driver = self.current_browser.driver
+        
+        links = driver.find_elements(By.TAG_NAME, 'a')
         
         for link in links:
             try:
-                href = await link.get_attribute('href')
+                href = link.get_attribute('href')
                 if not href:
                     continue
                 
@@ -498,7 +526,6 @@ class FormBot:
                 else:
                     continue
                 
-                # Filter out social/tracking
                 if any(x in url.lower() for x in ['google.com', 'youtube', 'facebook', 'linkedin', 'twitter', 'javascript:']):
                     continue
                 
@@ -508,17 +535,9 @@ class FormBot:
         
         return list(set(results))
 
-    async def process_batch(self, websites, keyword):
-        """Process sites in parallel"""
-        tasks = [
-            asyncio.create_task(self.process_site(website, keyword))
-            for website in websites
-        ]
-        await asyncio.gather(*tasks, return_exceptions=True)
-
-    async def scan_keyword(self, keyword):
+    def scan_keyword(self, keyword):
         """Scan Google for keyword and process results"""
-        global total_browsers  # Moved this to the top of the function
+        global total_browsers
         
         print(f"\n{'='*60}")
         print(f"🔍 KEYWORD: {keyword}")
@@ -526,23 +545,24 @@ class FormBot:
         
         search_url = f"https://www.google.com/search?q={keyword.replace(' ', '+')}"
         
+        # Switch to search tab
+        self.current_browser.switch_to_search_tab()
+        
         try:
-            await asyncio.wait_for(
-                self.search_page.goto(search_url, wait_until='domcontentloaded'),
-                timeout=10
-            )
-            await asyncio.sleep(2)
+            self.current_browser.driver.set_page_load_timeout(10)
+            self.current_browser.driver.get(search_url)
+            time.sleep(2)
         except:
             print("⚠️ Google timeout")
             return
         
         # Handle Google CAPTCHA
-        if "google.com/sorry" in self.search_page.url:
+        if "google.com/sorry" in self.current_browser.driver.current_url:
             print("🚨 GOOGLE CAPTCHA - Please solve manually")
             input(">>> Press ENTER after solving <<<")
             try:
-                await self.search_page.reload()
-                await asyncio.sleep(2)
+                self.current_browser.driver.refresh()
+                time.sleep(2)
             except:
                 pass
         
@@ -550,68 +570,66 @@ class FormBot:
         for page_num in range(1, PAGES_TO_SCAN + 1):
             print(f"\n📄 Page {page_num}")
             
-            results = await self.extract_google_results()
+            results = self.extract_google_results()
             print(f"  📌 Found {len(results)} URLs")
             
             if results:
-                # Process in batches
-                for i in range(0, len(results), MAX_PARALLEL_SITES):
-                    batch = results[i:i + MAX_PARALLEL_SITES]
-                    await self.process_batch(batch, keyword)
+                for url in results:
+                    self.process_site(url, keyword)
+                    
+                    # Switch back to search tab after processing
+                    self.current_browser.switch_to_search_tab()
                     
                     stats = get_stats()
-                    print(f"  ⏱️ {stats['elapsed']} | ✅ {stats['submissions']} | 📊 {stats['rate']}")
-                    await asyncio.sleep(0.5)
+                    print(f"  ⏱️ {stats['elapsed']} | 📋 {len(self.all_pending_tabs)} filled | 📊 {stats['rate']}")
+                    time.sleep(0.5)
             
             # Next page
             if page_num < PAGES_TO_SCAN:
                 try:
                     next_url = f"{search_url}&start={page_num * 10}"
-                    await asyncio.wait_for(
-                        self.search_page.goto(next_url, wait_until='domcontentloaded'),
-                        timeout=10
-                    )
-                    await asyncio.sleep(1)
+                    self.current_browser.switch_to_search_tab()
+                    self.current_browser.driver.get(next_url)
+                    time.sleep(1)
                 except:
                     break
         
         # Check if we should pause after reaching 5 browsers
-        if total_browsers >= 5:  # After 5 browsers (125 tabs)
+        if total_browsers >= 5:
             print(f"\n{'='*60}")
             print(f"⏸️ PAUSED - {total_browsers} browsers ready for review")
-            print(f"📋 Approximately {total_browsers * 25} tabs to review")
+            print(f"📋 {len(self.all_pending_tabs)} tabs filled and waiting")
             print(f"{'='*60}")
             
-            # Send summary to Telegram
+            for browser in self.browsers:
+                print(f"  🪟 Browser #{browser.browser_id}: {len(browser.pending_tabs)} tabs")
+            
             msg = (
                 f"⏸️ BOT PAUSED\n"
                 f"🪟 {total_browsers} browsers ready for review\n"
-                f"📋 ~{total_browsers * 25} tabs filled\n"
+                f"📋 {len(self.all_pending_tabs)} tabs filled\n"
                 f"⏰ Time for manual review!\n"
                 f"🔍 Keyword: {keyword}"
             )
             send_text_telegram(msg)
             
-            # Wait for user to finish review
             input("\n>>> Press ENTER when ready to continue (or Ctrl+C to stop)...")
-            
-            # Reset browser count for next batch
-            total_browsers = 0
 
-    async def run(self):
+    def run(self):
         """Main bot loop"""
         print("\n" + "="*60)
         print("🚀 FORM ASSISTANT - MANUAL REVIEW MODE")
         print("="*60)
         print("⚡ FEATURES:")
         print("  • Fills forms but DOESN'T submit")
-        print("  • Keeps tabs open for manual review")
+        print("  • Keeps ALL browsers and tabs open")
+        print("  • Creates new browsers when needed (25 tabs each)")
         print("  • Notifies via Telegram with tab numbers")
         print("  • Pauses after 5 browsers (125 tabs)")
         print("  • You review and submit manually")
         print("="*60)
         
-        await self.initialize()
+        self.initialize()
         
         cycle = 0
         while True:
@@ -621,13 +639,13 @@ class FormBot:
             print(f"{'='*60}")
             
             for keyword in self.keywords:
-                await self.scan_keyword(keyword)
+                self.scan_keyword(keyword)
             
             stats = get_stats()
             msg = (
                 f"🎊 <b>CYCLE {cycle} COMPLETE</b>\n"
                 f"⏱️ {stats['elapsed']}\n"
-                f"📝 {len(self.pending_tabs)} tabs ready for review\n"
+                f"📝 {len(self.all_pending_tabs)} tabs ready for review\n"
                 f"🌐 {stats['domains_visited']} domains visited\n"
                 f"🪟 {stats['browsers']} browsers created"
             )
@@ -635,23 +653,25 @@ class FormBot:
             print(f"\n{msg}\n")
             
             print("⏳ Waiting 30s before next cycle...")
-            await asyncio.sleep(30)
+            time.sleep(30)
 
-async def main():
+def main():
     global blacklist_domains
     blacklist_domains = load_blacklist()
     
     bot = FormBot()
     try:
-        await bot.run()
+        bot.run()
     except KeyboardInterrupt:
         print("\n\n⏸️ BOT STOPPED")
-        print("✅ Browsers remain open for manual review")
-        print(f"📋 You have {len(bot.pending_tabs)} tabs to review")
+        print("✅ All browsers remain open for manual review")
+        print(f"📋 You have {len(bot.all_pending_tabs)} tabs to review across {len(bot.browsers)} browsers")
+        for browser in bot.browsers:
+            print(f"  🪟 Browser #{browser.browser_id}: {len(browser.pending_tabs)} tabs")
         print("📝 Restart script to continue\n")
 
 if __name__ == "__main__":
     try:
-        asyncio.run(main())
+        main()
     except KeyboardInterrupt:
         print("\n⏸️ STOPPED\n")
